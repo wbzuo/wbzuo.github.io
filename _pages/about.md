@@ -52,8 +52,8 @@ I am always open to academic collaborations and discussions. Feel free to reach 
 - More information coming soon...
 
 # 📖 Education
-- *2025.09 - 2031.05 (Expected)*, Direct Ph.D. in Intelligent Science and Technology (Engineering), Tongji University, Shanghai, China
-- *2021.09 - 2025.07*, B.Eng. in Software Engineering, Jiangxi University of Finance and Economics, Jiangxi, China
+- *2025.09 - 2031.03 (Expected)*, Ph.D., Intelligent Science and Technology, Tongji University, Shanghai, China
+- *2021.09 - 2025.07*, B.S., Software Engineering, Jiangxi University of Finance and Economics, Jiangxi, China
 
 # 💬 Invited Talks
 - Information will be updated soon...
