@@ -63,3 +63,15 @@ I am always open to academic collaborations and discussions. Feel free to reach 
 
 # 🔗 Academic Services
 - Information will be updated soon...
+
+---
+
+# 🌍 Visitor Map
+
+<div style="text-align: center; margin-top: 30px;">
+  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YOUR_CLUSTRMAPS_ID&cl=ffffff&w=a"></script>
+</div>
+
+<p style="text-align: center; color: #999; font-size: 0.9em; margin-top: 10px;">
+  Visitor statistics powered by <a href="https://clustrmaps.com" target="_blank">ClustrMaps</a>
+</p>
