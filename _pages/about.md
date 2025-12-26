@@ -17,6 +17,10 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+<div style="text-align: right;">
+  <strong>English</strong> | <a href="/zh/">中文</a>
+</div>
+
 I am Wenbin Zuo (左文彬), a direct Ph.D. student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China. My research focuses on cutting-edge topics in artificial intelligence and machine learning.
 
 I am passionate about advancing the frontiers of AI through rigorous research and practical applications. My work aims to bridge theoretical innovations with real-world solutions, contributing to the academic community and industry alike.
