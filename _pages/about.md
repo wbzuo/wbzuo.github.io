@@ -69,9 +69,5 @@ I am always open to academic collaborations and discussions. Feel free to reach 
 # 🌍 Visitor Map
 
 <div style="text-align: center; margin-top: 30px;">
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YOUR_CLUSTRMAPS_ID&cl=ffffff&w=a"></script>
+  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54e0ojatafc&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
 </div>
-
-<p style="text-align: center; color: #999; font-size: 0.9em; margin-top: 10px;">
-  Visitor statistics powered by <a href="https://clustrmaps.com" target="_blank">ClustrMaps</a>
-</p>
