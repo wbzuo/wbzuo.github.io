@@ -70,8 +70,21 @@ I am always open to academic collaborations and discussions. Feel free to reach 
 
 <h1 style="text-align: left;">🌍 Visitor Map</h1>
 
-<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=TExqnA3tGu9npMTINv6yTrAzGBWl9pvwiau3Cx5prQg&cl=ffffff&w=a"></script>
+<div style="
+  max-width: 320px;
+  margin: 24px auto 40px auto;
+  padding: 12px 12px 4px 12px;
+  border-radius: 12px;
+  background: #f7f7f7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  text-align: center;
+">
+  <div style="font-size: 0.9rem; color: #555; margin-bottom: 8px;">
+    Visitors around the world
+  </div>
+  <script type="text/javascript" id="mapmyvisitors"
+    src="//mapmyvisitors.com/map.js?d=TExqnA3tGu9npMTINv6yTrAzGBWl9pvwiau3Cx5prQg&cl=ffffff&w=a">
+  </script>
 </div>
 
 <br>
