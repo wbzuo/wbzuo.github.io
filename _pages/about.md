@@ -71,7 +71,7 @@ I am always open to academic collaborations and discussions. Feel free to reach 
 <h1 style="text-align: left;">🌍 Visitor Map</h1>
 
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=RATsTOJsZIqujN9qZumtnpiTBB3sIXzDVVKP5Q9ErmY"></script>
+<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=TExqnA3tGu9npMTINv6yTrAzGBWl9pvwiau3Cx5prQg&cl=ffffff&w=a"></script>
 </div>
 
 <br>
