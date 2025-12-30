@@ -71,7 +71,7 @@ I am always open to academic collaborations and discussions. Feel free to reach 
 <h1 style="text-align: left;">🌍 Visitor Map</h1>
 
 <div style="
-  max-width: 320px;
+  max-width: 480px;
   margin: 24px auto 40px auto;
   padding: 12px 12px 4px 12px;
   border-radius: 12px;
