@@ -4,34 +4,51 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="sidebar">
 
+  <!-- Avatar Section -->
   <div class="author__avatar">
-    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
+    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
   </div>
 
+  <!-- Bio Section -->
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
+    {% if author.bio %}
+      <p class="author__bio" itemprop="description">{{ author.bio }}</p>
+    {% endif %}
     
     {% if author.cv %}
-      <a href="{{ author.cv | relative_url }}" class="btn-cv"><i class="fas fa-file-pdf"></i> Download CV</a>
+      <a href="{{ author.cv | relative_url }}" class="btn-cv">
+        <i class="fas fa-file-pdf"></i> Download CV
+      </a>
     {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Essential Info with Icons -->
-    <ul class="author__urls social-icons" style="margin-bottom: 1.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 1em;">
+    <!-- Contact Info: Icon Pills -->
+    <ul class="author__urls social-icons">
       {% if author.location %}
-        <li><i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> {{ author.location }}</li>
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
+          <span itemprop="name">{{ author.location }}</span>
+        </li>
       {% endif %}
+      
       {% if author.employer %}
-        <li><i class="fas fa-fw fa-university" aria-hidden="true"></i> {{ author.employer }}</li>
+        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <i class="fas fa-fw fa-university" aria-hidden="true"></i>
+          <span itemprop="name">{{ author.employer }}</span>
+        </li>
       {% endif %}
+      
       {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+        <li>
+          <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:{{ author.email }}" itemprop="email">Email Me</a>
+        </li>
       {% endif %}
     </ul>
 
-    <!-- Social Grid: Modern Compact Icons -->
+    <!-- Social Grid: Compact Modern Grid -->
     <div class="social-grid">
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
@@ -59,20 +76,24 @@
       {% endif %}
     </div>
 
-    <!-- Sidebar Widgets -->
+    <!-- Sidebar Widgets: Dynamic Content -->
     <div class="sidebar__widget">
-      <div class="widget__title"><i class="fas fa-star"></i> Highlight</div>
+      <div class="widget__title">
+        <i class="fas fa-star"></i> Latest Highlight
+      </div>
       <div class="widget__content">
-        <span class="highlight-text">Ph.D. Student @ Tongji</span><br>
-        Focusing on LLMs for Software Engineering.
+        <span class="highlight-text">Ph.D. Candidate @ Tongji</span><br>
+        Deep learning for software engineering optimization.
       </div>
     </div>
 
     <div class="sidebar__widget">
-      <div class="widget__title"><i class="fas fa-lightbulb"></i> Research</div>
+      <div class="widget__title">
+        <i class="fas fa-flask"></i> Research Focus
+      </div>
       <div class="widget__content">
-        • LLM Code Generation<br>
-        • AI for Software Testing
+        • Large Language Models<br>
+        • Automated Testing
       </div>
     </div>
 
