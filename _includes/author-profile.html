@@ -18,7 +18,7 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Essential Info with Icons -->
+    <!-- Essential Info -->
     <ul class="author__urls social-icons" style="margin-bottom: 1.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 1em;">
       {% if author.location %}
         <li><i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> {{ author.location }}</li>
@@ -31,7 +31,7 @@
       {% endif %}
     </ul>
 
-    <!-- Social Grid: Modern Compact Icons -->
+    <!-- Social Grid -->
     <div class="social-grid">
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
@@ -51,28 +51,17 @@
       {% if author.dblp %}
         <a href="{{ author.dblp }}" title="DBLP"><i class="ai ai-dblp"></i></a>
       {% endif %}
-      {% if author.researchgate %}
-        <a href="{{ author.researchgate }}" title="ResearchGate"><i class="fab fa-fw fa-researchgate"></i></a>
-      {% endif %}
       {% if author.uri %}
         <a href="{{ author.uri }}" title="Website"><i class="fas fa-fw fa-link"></i></a>
       {% endif %}
     </div>
 
-    <!-- Sidebar Widgets -->
+    <!-- Widgets -->
     <div class="sidebar__widget">
       <div class="widget__title"><i class="fas fa-star"></i> Highlight</div>
       <div class="widget__content">
-        <span class="highlight-text">Ph.D. Student @ Tongji</span><br>
-        Focusing on LLMs for Software Engineering.
-      </div>
-    </div>
-
-    <div class="sidebar__widget">
-      <div class="widget__title"><i class="fas fa-lightbulb"></i> Research</div>
-      <div class="widget__content">
-        • LLM Code Generation<br>
-        • AI for Software Testing
+        <span class="highlight-text">Your Position @ Institution</span><br>
+        Short description of your current focus.
       </div>
     </div>
 
