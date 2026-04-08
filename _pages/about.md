@@ -35,35 +35,39 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 </div>
 
 <span class='anchor' id='news'></span>
-<div class="section-card" markdown="1">
+<div class="section-card card-news" markdown="1">
 
 # <i class="fas fa-fw fa-fire"></i> News
+
 <ul class="news-list">
   <li>
+    <span class="news-type type-info">Update</span>
     <span class="news-date">2025.12</span>
-    🎉🎉 Personal academic homepage launched! Stay tuned for more updates on my research journey.
+    <div class="news-content">🎉🎉 Personal academic homepage launched! Stay tuned for more updates on my research journey.</div>
   </li>
   <li>
+    <span class="news-type type-edu">Academic</span>
     <span class="news-date">2025.09</span>
-    🎓🎓 Started my Ph.D. journey at <strong>Tongji University</strong>, Shanghai! Excited to explore the frontiers of AI and SE.
+    <div class="news-content">🎓🎓 Started my Ph.D. journey at <strong>Tongji University</strong>, Shanghai! Excited to explore the frontiers of AI and SE.</div>
   </li>
 </ul>
 
 </div>
 
 <span class='anchor' id='publications'></span>
-<div class="section-card" markdown="1">
+<div class="section-card card-pub" markdown="1">
 
 # <i class="fas fa-fw fa-book"></i> Publications 
 
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
-      <div class="badge">Coming Soon</div>
+      <div class="badge">In Progress</div>
       <img src='images/500x300.png' alt="publication-thumb">
     </div>
   </div>
   <div class='paper-box-text'>
+    <span class="paper-label label-preprint">Preprint</span>
     <a href="https://github.com/wbzuo" class="paper-title">Future Publication Title: Optimizing Large Language Models for Software Engineering Tasks</a>
 
     <p class="paper-authors"><strong>Wenbin Zuo</strong>, Co-authors</p>
@@ -72,7 +76,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
     <div class="paper-links">
       <a href="https://github.com/wbzuo"><i class="fab fa-github"></i> Project</a>
-      <a href="#"><i class="fas fa-file-pdf"></i> Paper (Coming Soon)</a>
+      <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
       <a href="#"><i class="fas fa-code"></i> Code</a>
       <span class='show_paper_citations' data=''></span>
     </div>
@@ -105,12 +109,12 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 </div>
 
 <span class='anchor' id='education'></span>
-<div class="section-card" markdown="1">
+<div class="section-card card-edu" markdown="1">
 
 # <i class="fas fa-fw fa-graduation-cap"></i> Education
 
 <div class="exp-item">
-  <div class="exp-logo">TJ</div>
+  <div class="exp-logo logo-tj">TJ</div>
   <div class="exp-content">
     <p class="exp-title">Tongji University</p>
     <div class="exp-meta-row">
@@ -123,7 +127,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 </div>
 
 <div class="exp-item">
-  <div class="exp-logo">JUFE</div>
+  <div class="exp-logo logo-jufe">JF</div>
   <div class="exp-content">
     <p class="exp-title">Jiangxi University of Finance and Economics</p>
     <div class="exp-meta-row">
@@ -138,7 +142,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 </div>
 
 <span class='anchor' id='research-experience'></span>
-<div class="section-card" markdown="1">
+<div class="section-card card-exp" markdown="1">
 
 # <i class="fas fa-fw fa-laptop-code"></i> Research Experience
 
