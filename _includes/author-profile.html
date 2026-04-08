@@ -107,23 +107,46 @@
         <li><a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine" aria-hidden="true"></i> Vine</a></li>
       {% endif %}
       {% if author.googlescholar %}
-        <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
-      {% endif %}
-      {% if author.pubmed %}
-        <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
-      {% endif %}
-      {% if author.orcid %}
-        <li><a href="{{ author.orcid }}"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
-      {% endif %}
-      {% if author.impactstory %}
-        <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>
-      {% endif %}
-      {% if author.wikipedia %}
-        <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
-{% endif %}
-    </ul>
-      <div class="author__urls_sm">
-      {% if author.uri %}
+          <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+        {% endif %}
+        {% if author.pubmed %}
+          <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
+        {% endif %}
+        {% if author.orcid %}
+          <li><a href="{{ author.orcid }}"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+        {% endif %}
+        {% if author.impactstory %}
+          <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>
+        {% endif %}
+        {% if author.wikipedia %}
+          <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
+        {% endif %}
+      </ul>
+
+      <!-- Sidebar Widget: Latest Highlight -->
+      <div class="sidebar__widget">
+        <div class="widget__title">
+          <i class="fas fa-star"></i> Latest Highlight
+        </div>
+        <div class="widget__content">
+          <span class="highlight-text">Ph.D. Student @ Tongji</span><br>
+          Researching LLMs for Automated Software Engineering.
+        </div>
+      </div>
+
+      <!-- Sidebar Widget: Research Interests -->
+      <div class="sidebar__widget">
+        <div class="widget__title">
+          <i class="fas fa-microscope"></i> Interests
+        </div>
+        <div class="widget__content" style="font-size: 0.9em;">
+          • LLMs & Code Gen<br>
+          • AI for Testing<br>
+          • Soft Analysis
+        </div>
+      </div>
+
+        <div class="author__urls_sm">      {% if author.uri %}
         <a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.email %}
