@@ -4,18 +4,25 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="sidebar">
 
-  <!-- Avatar Section -->
   <div class="author__avatar">
     <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
   </div>
 
-  <!-- Bio Section -->
   <div class="author__content">
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.bio %}
       <p class="author__bio" itemprop="description">{{ author.bio }}</p>
     {% endif %}
     
+    <div class="author__meta">
+      {% if author.location %}
+        <span><i class="fas fa-map-marker-alt"></i> {{ author.location }}</span>
+      {% endif %}
+      {% if author.employer %}
+        <span><i class="fas fa-university"></i> {{ author.employer }}</span>
+      {% endif %}
+    </div>
+
     {% if author.cv %}
       <a href="{{ author.cv | relative_url }}" class="btn-cv">
         <i class="fas fa-file-pdf"></i> Download CV
@@ -24,76 +31,30 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Contact Info: Icon Pills -->
-    <ul class="author__urls social-icons">
-      {% if author.location %}
-        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
-          <span itemprop="name">{{ author.location }}</span>
-        </li>
-      {% endif %}
-      
-      {% if author.employer %}
-        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          <i class="fas fa-fw fa-university" aria-hidden="true"></i>
-          <span itemprop="name">{{ author.employer }}</span>
-        </li>
-      {% endif %}
-      
+    <!-- Unified 5-Column Link Grid -->
+    <div class="link-grid">
       {% if author.email %}
-        <li>
-          <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
-          <a href="mailto:{{ author.email }}" itemprop="email">Email Me</a>
-        </li>
+        <a href="mailto:{{ author.email }}" title="Email"><i class="fas fa-envelope"></i></a>
       {% endif %}
-    </ul>
-
-    <!-- Social Grid: Compact Modern Grid -->
-    <div class="social-grid">
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
       {% endif %}
       {% if author.github %}
-        <a href="https://github.com/{{ author.github }}" title="GitHub"><i class="fab fa-fw fa-github"></i></a>
+        <a href="https://github.com/{{ author.github }}" title="GitHub"><i class="fab fa-github"></i></a>
       {% endif %}
       {% if author.linkedin %}
-        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn"><i class="fab fa-fw fa-linkedin"></i></a>
-      {% endif %}
-      {% if author.twitter %}
-        <a href="https://twitter.com/{{ author.twitter }}" title="Twitter"><i class="fab fa-fw fa-twitter"></i></a>
-      {% endif %}
-      {% if author.orcid %}
-        <a href="{{ author.orcid }}" title="ORCID"><i class="ai ai-orcid"></i></a>
-      {% endif %}
-      {% if author.dblp %}
-        <a href="{{ author.dblp }}" title="DBLP"><i class="ai ai-dblp"></i></a>
-      {% endif %}
-      {% if author.researchgate %}
-        <a href="{{ author.researchgate }}" title="ResearchGate"><i class="fab fa-fw fa-researchgate"></i></a>
+        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       {% endif %}
       {% if author.uri %}
-        <a href="{{ author.uri }}" title="Website"><i class="fas fa-fw fa-link"></i></a>
+        <a href="{{ author.uri }}" title="Website"><i class="fas fa-link"></i></a>
       {% endif %}
     </div>
 
-    <!-- Sidebar Widgets: Dynamic Content -->
-    <div class="sidebar__widget">
-      <div class="widget__title">
-        <i class="fas fa-star"></i> Latest Highlight
-      </div>
-      <div class="widget__content">
-        <span class="highlight-text">Ph.D. Candidate @ Tongji</span><br>
-        Deep learning for software engineering optimization.
-      </div>
-    </div>
-
-    <div class="sidebar__widget">
-      <div class="widget__title">
-        <i class="fas fa-flask"></i> Research Focus
-      </div>
-      <div class="widget__content">
-        • Large Language Models<br>
-        • Automated Testing
+    <!-- Quick Info Block -->
+    <div class="sidebar__info-block">
+      <div class="block-title">Current Focus</div>
+      <div class="block-content">
+        LLMs for Automated Software Engineering & Testing.
       </div>
     </div>
 
