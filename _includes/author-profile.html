@@ -4,34 +4,45 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="sidebar">
 
+  <!-- Prominent Avatar -->
   <div class="author__avatar">
     <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
   </div>
 
+  <!-- Centered Identity Section -->
   <div class="author__content">
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.bio %}
       <p class="author__bio" itemprop="description">{{ author.bio }}</p>
     {% endif %}
     
+    <!-- Info Capsules -->
     <div class="author__meta">
       {% if author.location %}
-        <span><i class="fas fa-map-marker-alt"></i> {{ author.location }}</span>
+        <span itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
+          <span itemprop="name">{{ author.location }}</span>
+        </span>
       {% endif %}
+      
       {% if author.employer %}
-        <span><i class="fas fa-university"></i> {{ author.employer }}</span>
+        <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <i class="fas fa-fw fa-university" aria-hidden="true"></i>
+          <span itemprop="name">{{ author.employer }}</span>
+        </span>
       {% endif %}
     </div>
 
+    <!-- Primary Action Button -->
     {% if author.cv %}
       <a href="{{ author.cv | relative_url }}" class="btn-cv">
-        <i class="fas fa-file-pdf"></i> Download CV
+        <i class="fas fa-file-pdf"></i> Download Full CV
       </a>
     {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Unified 5-Column Link Grid -->
+    <!-- Elevated 5-Column Social Grid -->
     <div class="link-grid">
       {% if author.email %}
         <a href="mailto:{{ author.email }}" title="Email"><i class="fas fa-envelope"></i></a>
@@ -50,11 +61,18 @@
       {% endif %}
     </div>
 
-    <!-- Quick Info Block -->
+    <!-- Rationalized Info Blocks -->
     <div class="sidebar__info-block">
-      <div class="block-title">Current Focus</div>
+      <div class="block-title"><i class="fas fa-rocket"></i> Research Mission</div>
       <div class="block-content">
-        LLMs for Automated Software Engineering & Testing.
+        Building trustworthy intelligent software systems through LLMs and formal analysis.
+      </div>
+    </div>
+
+    <div class="sidebar__info-block">
+      <div class="block-title"><i class="fas fa-code"></i> Open Source</div>
+      <div class="block-content">
+        Active contributor to academic AI & SE tools on GitHub.
       </div>
     </div>
 
