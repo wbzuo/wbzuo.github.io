@@ -36,7 +36,7 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
-/* --- Dark Mode Variables & System --- */
+/* --- Modern Card-Based Layout (Variable-Driven for Stability) --- */
 
 :root {
     --bg-color: #f4f7f9;
@@ -46,6 +46,8 @@
     --border-color: #e1e4e8;
     --nav-bg: #ffffff;
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    --accent-blue: #00369f;
+    --highlight-bg: #f8fafc;
 }
 
 [data-theme="dark"] {
@@ -56,26 +58,29 @@
     --border-color: #334155;
     --nav-bg: #1e293b;
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    
-    body { background-color: var(--bg-color); color: var(--text-main); }
-    .masthead { background-color: var(--nav-bg); border-bottom: 1px solid var(--border-color); }
-    .section-card { background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow); h1 { color: #63b3ed; border-bottom-color: #334155; } }
-    .paper-box { background: #1e293b; border-color: #334155; .paper-title { color: #f1f5f9; } .paper-authors strong { color: #f1f5f9; border-bottom-color: #4a5568; } }
-    .news-list li { background: #1e293b; border-color: #334155; .news-content { color: #cbd5e1; } }
-    .exp-item .exp-logo { background: #334155; color: #63b3ed; }
-    .exp-item .exp-content .exp-title { color: #f1f5f9; }
-    .research-tag { background: #1e293b; border-color: #334155; color: #94a3b8; }
-    .award-item .award-title { color: #cbd5e1; }
-    .author__name, .author__bio, .author__urls a { color: #f1f5f9; }
-    .greedy-nav { background: var(--nav-bg); }
-    .visible-links a { color: #94a3b8; }
-    .paper-links a { background: #334155; color: #63b3ed; border-color: #475569; }
-    pre { background: #0f172a; color: #cbd5e1; border-color: #334155; }
+    --accent-blue: #63b3ed;
+    --highlight-bg: #334155;
 }
 
 body {
     background-color: var(--bg-color);
+    color: var(--text-main);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.masthead {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.greedy-nav {
+    background: var(--nav-bg);
+    transition: background-color 0.3s ease;
+    .visible-links a {
+        color: var(--text-muted);
+        &:hover { color: var(--accent-blue); }
+    }
 }
 
 /* --- Section Card System --- */
@@ -96,7 +101,7 @@ body {
         height: 4px; background: #00369f;
     }
 
-    &:hover { box-shadow: 0 15px 45px rgba(0, 54, 159, 0.06); transform: translateY(-2px); }
+    &:hover { box-shadow: 0 15px 45px rgba(0, 54, 159, 0.08); transform: translateY(-2px); }
 
     &.card-news::before { background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%); }
     &.card-pub::before { background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%); }
@@ -106,8 +111,9 @@ body {
     h1 {
         margin-top: 0 !important; margin-bottom: 1.5em !important;
         padding-bottom: 0.8em; border-bottom: 1px solid var(--border-color);
-        color: #2d3748; display: flex; align-items: center;
+        color: var(--text-main); display: flex; align-items: center;
         font-size: 1.7em; font-weight: 800;
+        transition: color 0.3s ease, border-bottom-color 0.3s ease;
         i { 
             margin-right: 15px; font-size: 0.9em; 
             background: linear-gradient(135deg, #00369f 0%, #4a90e2 100%);
@@ -116,69 +122,93 @@ body {
     }
 }
 
-/* --- Sidebar Widget Styling --- */
+/* --- Publication Cards (Paper Box) --- */
 
-.sidebar__widget {
-    margin-top: 20px;
-    padding: 15px;
+.paper-box {
+    display: flex; flex-direction: row; flex-wrap: wrap; 
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    font-size: 0.85em;
-    box-shadow: var(--card-shadow);
-}
+    border-radius: 14px; border: 1px solid var(--border-color);
+    padding: 1.8em; margin-bottom: 1.8em; 
+    transition: all 0.4s ease;
+    
+    &:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 54, 159, 0.1); border-color: var(--accent-blue); }
 
-.widget__title {
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    color: #00369f;
-    i { margin-right: 8px; }
-}
-
-.widget__content {
-    color: var(--text-muted);
-    line-height: 1.4;
-    .highlight-text {
-        font-weight: 600;
-        color: var(--text-main);
+    .paper-box-image {
+        display: flex; justify-content: center; width: 100%; margin-bottom: 1.2em;
+        border-radius: 8px; overflow: hidden; background: var(--highlight-bg); border: 1px solid var(--border-color);
+        img { max-width: 100%; height: auto; object-fit: cover; transition: transform 0.6s ease; }
+    }
+    
+    .paper-box-text {
+        flex: 1;
+        .paper-title { font-size: 1.25em; font-weight: 800; color: var(--text-main); line-height: 1.3; text-decoration: none; }
+        .paper-authors { color: var(--text-muted); margin-bottom: 0.5em; strong { color: var(--text-main); border-bottom: 2px solid var(--highlight-bg); } }
+        .paper-links a { 
+            background: var(--highlight-bg); color: var(--text-muted); border: 1px solid var(--border-color); border-radius: 8px;
+            &:hover { background: var(--accent-blue); color: #fff; border-color: var(--accent-blue); }
+        }
+    }
+    
+    @include breakpoint($medium) {
+        flex-wrap: nowrap; gap: 2.5em;
+        .paper-box-image { flex: 0 0 260px; height: 160px; margin-bottom: 0; }
     }
 }
 
-/* --- ScrollSpy Active Link --- */
-.greedy-nav .visible-links a.active {
-    color: #00369f !important;
-    font-weight: 700;
-    border-bottom: 2px solid #00369f;
+/* --- News Timeline --- */
+
+.news-list {
+    margin: 0; padding: 0 0 0 25px; list-style: none; position: relative;
+    &::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--border-color); border-radius: 3px; }
+    li {
+        position: relative; margin-bottom: 20px; padding: 15px 20px;
+        background: var(--highlight-bg); border-radius: 12px; border: 1px solid transparent;
+        transition: all 0.3s ease;
+        &::before { content: ""; position: absolute; left: -31px; top: 1.5em; width: 14px; height: 14px; background: var(--card-bg); border: 3px solid var(--accent-blue); border-radius: 50%; z-index: 2; }
+        &:hover { background: var(--card-bg); border-color: var(--border-color); transform: scale(1.02); }
+    }
 }
 
-/* --- (Previously defined paper-box, news-list, etc. refined for dark mode) --- */
+/* --- Experience & Education --- */
 
-.paper-box {
-    display: flex; flex-direction: row; flex-wrap: wrap; background: var(--card-bg);
-    border-radius: 14px; border: 1px solid var(--border-color);
-    padding: 1.8em; margin-bottom: 1.8em; transition: all 0.4s ease;
-    &:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 54, 159, 0.1); border-color: #4a90e2; }
-    .paper-title { font-size: 1.25em; font-weight: 800; color: var(--text-main); line-height: 1.3; }
-    .paper-authors { color: var(--text-muted); strong { color: var(--text-main); } }
-    .paper-links a { background: #f8fafc; color: #4a5568; border: 1px solid #e2e8f0; }
+.exp-item {
+    display: flex; gap: 1.8em; margin-bottom: 2.5em;
+    .exp-logo {
+        flex: 0 0 70px; height: 70px; border-radius: 16px; display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 1.3em; background: var(--highlight-bg); color: var(--accent-blue); border: 2px solid var(--border-color);
+    }
+    .exp-content {
+        flex: 1;
+        .exp-title { font-weight: 800; font-size: 1.2em; color: var(--text-main); }
+        .exp-meta-row { font-size: 0.9em; color: var(--text-muted); span i { color: var(--accent-blue); } }
+        .exp-desc { color: var(--text-muted); }
+    }
 }
 
-[data-theme="dark"] .paper-links a { background: #334155; color: #63b3ed; border-color: #475569; &:hover { background: #4a90e2; color: #fff; } }
+/* --- Sidebar & Widgets --- */
 
-.news-list li {
-    background: #f8fafc; border-radius: 12px; transition: all 0.3s ease;
-    &:hover { background: var(--card-bg); border-color: #e2e8f0; transform: scale(1.02); }
+.sidebar {
+    .author__name, .author__bio { color: var(--text-main); }
+    .author__urls a { color: var(--text-muted); &:hover { color: var(--accent-blue); } }
+}
+
+.sidebar__widget {
+    margin-top: 20px; padding: 15px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: var(--card-shadow);
+    .widget__title { color: var(--accent-blue); font-weight: 700; }
+    .widget__content { color: var(--text-muted); .highlight-text { color: var(--text-main); } }
 }
 
 /* --- Utilities --- */
 
+.greedy-nav .visible-links a.active {
+    color: var(--accent-blue) !important;
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
 .badge {
     padding: 4px 12px; position: absolute; top: 12px; left: 12px;
-    color: white; background: rgba(26, 32, 44, 0.85);
-    backdrop-filter: blur(4px); font-size: 0.7em; font-weight: 800;
-    border-radius: 6px; z-index: 5;
+    color: white; background: rgba(26, 32, 44, 0.85); backdrop-filter: blur(4px); border-radius: 6px; z-index: 5;
 }
 
 html { scroll-behavior: smooth; }

@@ -19,40 +19,43 @@ function copyBibtex(id) {
     });
 }
 
-// --- Dark Mode Logic ---
+// --- Dark Mode Logic (Refined) ---
 const toggleBtn = document.getElementById('dark-mode-toggle');
 const body = document.body;
-const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme) {
-    body.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'dark') {
-        toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+// Initialize theme from local storage or system preference
+const initTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        body.setAttribute('data-theme', 'dark');
+        if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
     }
-} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    body.setAttribute('data-theme', 'dark');
-    toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+};
+
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent jump/reload
+        let theme = 'light';
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            theme = 'dark';
+        }
+        localStorage.setItem('theme', theme);
+    });
 }
 
-toggleBtn.addEventListener('click', () => {
-    let theme = 'light';
-    if (body.getAttribute('data-theme') === 'dark') {
-        body.removeAttribute('data-theme');
-        toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        theme = 'dark';
-    }
-    localStorage.setItem('theme', theme);
-});
-
-// --- ScrollSpy & Active Link Logic ---
+// --- ScrollSpy & Active Link Logic (Refined) ---
 window.addEventListener('DOMContentLoaded', () => {
+    initTheme(); // Set theme on load
+
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            if (entry.intersectionRatio > 0.5) {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
                 document.querySelectorAll('.greedy-nav .visible-links a').forEach(navLink => {
                     navLink.classList.remove('active');
                     const href = navLink.getAttribute('href');
@@ -62,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    }, { threshold: [0, 0.5, 1.0] });
+    }, { threshold: 0.2, rootMargin: "-10% 0px -70% 0px" });
 
     document.querySelectorAll('span.anchor').forEach(section => {
         observer.observe(section);
