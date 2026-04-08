@@ -16,33 +16,42 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
-
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-user"></i> About Me
 
 I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China. I received my B.S. degree in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025.
 
-My research interests primarily lie in the intersection of **Artificial Intelligence** and **Software Engineering**, with a focus on:
-- 🚀 **Large Language Models (LLMs)** for Code Generation
-- 🔍 **Software Analysis and Verification**
-- 🤖 **Automated Software Engineering**
-- 🧠 **Deep Learning** for Optimization
+My research interests primarily lie in the intersection of **Artificial Intelligence** and **Software Engineering**. I am passionate about building intelligent systems that enhance software development productivity and reliability. Currently, I am exploring the potential of LLMs in automating complex software engineering tasks.
 
-I am passionate about building intelligent systems that enhance software development productivity and reliability. Currently, I am exploring the potential of LLMs in automating complex software engineering tasks.
+<div class="tag-cloud">
+  <span class="research-tag">🚀 Large Language Models (LLMs)</span>
+  <span class="research-tag">🔍 Software Analysis & Verification</span>
+  <span class="research-tag">🤖 Automated Software Engineering</span>
+  <span class="research-tag">🧠 Deep Learning for Optimization</span>
+  <span class="research-tag">💻 Code Generation</span>
+</div>
 
 </div>
 
+<span class='anchor' id='news'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-fire"></i> News
 <ul class="news-list">
-  <li><span class="news-date">2025.12</span> 🎉🎉 Personal academic homepage launched! Stay tuned for more updates.</li>
-  <li><span class="news-date">2025.09</span> 🎓🎓 Started my Ph.D. journey at <strong>Tongji University</strong>, Shanghai!</li>
+  <li>
+    <span class="news-date">2025.12</span>
+    🎉🎉 Personal academic homepage launched! Stay tuned for more updates on my research journey.
+  </li>
+  <li>
+    <span class="news-date">2025.09</span>
+    🎓🎓 Started my Ph.D. journey at <strong>Tongji University</strong>, Shanghai! Excited to explore the frontiers of AI and SE.
+  </li>
 </ul>
 
 </div>
 
+<span class='anchor' id='publications'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-book"></i> Publications 
@@ -76,23 +85,40 @@ I am passionate about building intelligent systems that enhance software develop
 
 </div>
 
+<span class='anchor' id='honors-and-awards'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-trophy"></i> Honors and Awards
-- *2025.07*: Outstanding Graduate, Jiangxi University of Finance and Economics
-- *2021 - 2025*: Multiple University-level Scholarships and Awards
+
+<div class="award-item">
+  <div class="award-icon"><i class="fas fa-medal"></i></div>
+  <div class="award-year">2025.07</div>
+  <div class="award-title">Outstanding Graduate, Jiangxi University of Finance and Economics</div>
+</div>
+
+<div class="award-item">
+  <div class="award-icon"><i class="fas fa-award"></i></div>
+  <div class="award-year">2021 - 2025</div>
+  <div class="award-title">Multiple University-level Scholarships and Academic Excellence Awards</div>
+</div>
 
 </div>
 
+<span class='anchor' id='education'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-graduation-cap"></i> Education
+
 <div class="exp-item">
   <div class="exp-logo">TJ</div>
   <div class="exp-content">
     <p class="exp-title">Tongji University</p>
-    <p class="exp-meta">Ph.D. in Intelligent Science and Technology | 2025.09 - 2031.03 (Expected)</p>
-    <p class="exp-meta">Shanghai, China</p>
+    <div class="exp-meta-row">
+      <span><i class="fas fa-user-graduate"></i> Ph.D. in Intelligent Science and Technology</span>
+      <span><i class="fas fa-calendar-alt"></i> 2025.09 - 2031.03 (Expected)</span>
+      <span><i class="fas fa-map-marker-alt"></i> Shanghai, China</span>
+    </div>
+    <p class="exp-desc">Focusing on the intersection of AI and Software Engineering, particularly Large Language Models for automated code generation and software verification.</p>
   </div>
 </div>
 
@@ -100,22 +126,31 @@ I am passionate about building intelligent systems that enhance software develop
   <div class="exp-logo">JUFE</div>
   <div class="exp-content">
     <p class="exp-title">Jiangxi University of Finance and Economics</p>
-    <p class="exp-meta">B.S. in Software Engineering | 2021.09 - 2025.07</p>
-    <p class="exp-meta">Jiangxi, China</p>
+    <div class="exp-meta-row">
+      <span><i class="fas fa-graduation-cap"></i> B.S. in Software Engineering</span>
+      <span><i class="fas fa-calendar-alt"></i> 2021.09 - 2025.07</span>
+      <span><i class="fas fa-map-marker-alt"></i> Jiangxi, China</span>
+    </div>
+    <p class="exp-desc">Graduated as an Outstanding Graduate with multiple scholarships and academic honors.</p>
   </div>
 </div>
 
 </div>
 
+<span class='anchor' id='research-experience'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-laptop-code"></i> Research Experience
+
 <div class="exp-item">
   <div class="exp-logo">RA</div>
   <div class="exp-content">
     <p class="exp-title">Research Assistant @ Tongji University</p>
-    <p class="exp-meta">2025.09 - Present</p>
-    <p class="exp-meta">Focus on LLM-based software engineering and automated software testing.</p>
+    <div class="exp-meta-row">
+      <span><i class="fas fa-calendar-alt"></i> 2025.09 - Present</span>
+      <span><i class="fas fa-flask"></i> Intelligent Software Engineering Lab</span>
+    </div>
+    <p class="exp-desc">Conducting research on LLM-based software engineering, focusing on improving the accuracy and reliability of automated code synthesis.</p>
   </div>
 </div>
 
@@ -123,20 +158,29 @@ I am passionate about building intelligent systems that enhance software develop
   <div class="exp-logo">PRJ</div>
   <div class="exp-content">
     <p class="exp-title">Intelligent Software Testing Project</p>
-    <p class="exp-meta">2024.06 - 2025.05</p>
-    <p class="exp-meta">Undergraduate Research Project focusing on deep learning for optimization.</p>
+    <div class="exp-meta-row">
+      <span><i class="fas fa-calendar-alt"></i> 2024.06 - 2025.05</span>
+      <span><i class="fas fa-code-branch"></i> Undergraduate Research Project</span>
+    </div>
+    <p class="exp-desc">Explored deep learning techniques for software optimization and automated test case generation.</p>
   </div>
 </div>
 
 </div>
 
+<span class='anchor' id='academic-services'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-users"></i> Academic Services
-- Reviewer for upcoming conferences/journals in AI and Software Engineering.
+
+<div class="award-item">
+  <div class="award-icon" style="color: #00369f;"><i class="fas fa-check-circle"></i></div>
+  <div class="award-title">Reviewer for upcoming conferences/journals in AI and Software Engineering.</div>
+</div>
 
 </div>
 
+<span class='anchor' id='visitor-map'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-fw fa-globe"></i> Visitor Map
