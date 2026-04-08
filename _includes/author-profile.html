@@ -4,41 +4,52 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="sidebar">
 
-  <!-- Left-Aligned Avatar -->
+  <!-- Premium Avatar with Depth -->
   <div class="author__avatar">
     <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
   </div>
 
-  <!-- Left-Aligned Identity -->
+  <!-- Identity & Bio -->
   <div class="author__content">
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.bio %}
       <p class="author__bio" itemprop="description">{{ author.bio }}</p>
     {% endif %}
     
-    <!-- Minimal Meta List -->
+    <!-- Structured Meta Info -->
     <div class="author__meta">
       {% if author.location %}
-        <div><i class="fas fa-map-marker-alt"></i> {{ author.location }}</div>
+        <div itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-map-marker-alt"></i>
+          <span itemprop="name">{{ author.location }}</span>
+        </div>
       {% endif %}
+      
       {% if author.employer %}
-        <div><i class="fas fa-university"></i> {{ author.employer }}</div>
+        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <i class="fas fa-university"></i>
+          <span itemprop="name">{{ author.employer }}</span>
+        </div>
       {% endif %}
+
       {% if author.email %}
-        <div><i class="fas fa-envelope"></i> <a href="mailto:{{ author.email }}">Email Me</a></div>
+        <div>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:{{ author.email }}" itemprop="email">Email / Contact</a>
+        </div>
       {% endif %}
     </div>
 
-    <!-- Slim Action Button -->
+    <!-- Elevated Action Button -->
     {% if author.cv %}
       <a href="{{ author.cv | relative_url }}" class="btn-cv">
-        <i class="fas fa-file-pdf"></i> Download CV
+        <i class="fas fa-file-pdf"></i> Curriculum Vitae
       </a>
     {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Compact Link Grid -->
+    <!-- Circular Social Grid -->
     <div class="link-grid">
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
@@ -57,23 +68,22 @@
       {% endif %}
     </div>
 
-    <!-- Rational Research Interests -->
+    <!-- Minimalist Sidebar Widgets -->
     <div class="sidebar__widget">
-      <div class="widget__title">Research Interests</div>
+      <div class="widget__title">Research Focus</div>
       <div class="widget__content">
         <ul>
           <li>Large Language Models</li>
           <li>Software Engineering</li>
-          <li>Code Generation</li>
+          <li>Formal Verification</li>
         </ul>
       </div>
     </div>
 
-    <!-- Compact Latest Highlight -->
     <div class="sidebar__widget">
-      <div class="widget__title">Latest Update</div>
+      <div class="widget__title">Recent Highlight</div>
       <div class="widget__content">
-        Started Ph.D. journey @ <strong>Tongji University</strong>
+        Admitted to Ph.D. program @ <strong>Tongji University</strong>.
       </div>
     </div>
 
