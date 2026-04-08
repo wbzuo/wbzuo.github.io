@@ -69,166 +69,145 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* --- Section Card System --- */
+/* --- Sidebar (Left Area) Optimization --- */
+
+.sidebar {
+    border: none;
+    background: transparent;
+    
+    .author__avatar img {
+        border-radius: 12px;
+        border: 2px solid var(--border-color);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        margin-bottom: 1.5em;
+    }
+
+    .author__name {
+        font-size: 1.4em;
+        font-weight: 800;
+        margin-bottom: 0.2em;
+        color: var(--text-main);
+    }
+
+    .author__bio {
+        font-size: 0.95em;
+        color: var(--text-muted);
+        line-height: 1.4;
+        margin-bottom: 1.2em;
+    }
+
+    /* CV Button */
+    .btn-cv {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(135deg, var(--accent-blue) 0%, #4a90e2 100%);
+        color: #ffffff !important;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 0.9em;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        transition: all 0.3s ease;
+        margin-bottom: 1.5em;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+            filter: brightness(1.1);
+        }
+        
+        i { margin-right: 8px; }
+    }
+
+    /* Sidebar Social Grid */
+    .social-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 1.5em;
+        
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 1.1em;
+            transition: all 0.2s;
+            
+            &:hover {
+                color: var(--accent-blue);
+                border-color: var(--accent-blue);
+                background: var(--highlight-bg);
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    /* Sidebar Widgets */
+    .sidebar__widget {
+        margin-top: 1.5em;
+        padding: 1.2em;
+        border-radius: 12px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        
+        .widget__title {
+            color: var(--text-main);
+            font-size: 0.9em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            i { color: var(--accent-blue); font-size: 1em; }
+        }
+        
+        .widget__content {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            line-height: 1.5;
+            .highlight-text { font-weight: 600; color: var(--text-main); }
+        }
+    }
+}
+
+/* --- Section Card & Grid --- */
 
 .section-card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
-    padding: 2em;
+    padding: 2.5em;
     margin-bottom: 2em;
     box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-
-    &::after {
-        content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
-        border-radius: 12px 12px 0 0; background: var(--accent-blue); opacity: 0.1;
-    }
-
-    h1 {
-        margin-top: 0 !important; margin-bottom: 1.2em !important;
-        padding-bottom: 0.6em; border-bottom: 1px solid var(--border-color);
-        color: var(--text-main); display: flex; align-items: center;
-        font-size: 1.5em; font-weight: 700;
-        i { margin-right: 12px; color: var(--accent-blue); font-size: 0.9em; }
-    }
+    overflow: hidden;
+    &::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; border-radius: 16px 16px 0 0; background: var(--accent-blue); opacity: 0.1; }
+    h1 { margin-top: 0 !important; border-bottom: 1px solid var(--border-color); color: var(--text-main); font-size: 1.6em; font-weight: 800; i { color: var(--accent-blue); } }
 }
-
-/* --- Publication Card (Rationalized Layout) --- */
 
 .paper-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5em;
-    padding: 1.5em;
-    margin-bottom: 1.5em;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-
-    &:hover {
-        border-color: var(--accent-blue);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transform: translateY(-2px);
-    }
-
-    .paper-box-image {
-        width: 100%;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid var(--border-color);
-        background: var(--highlight-bg);
-        img { width: 100%; height: 100%; object-fit: cover; }
-    }
-
-    .paper-box-text {
-        .paper-label {
-            display: inline-block; padding: 2px 8px; border-radius: 4px;
-            font-size: 0.7em; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;
-            background: var(--highlight-bg); color: var(--accent-blue);
-        }
-        .paper-title {
-            font-size: 1.1em; font-weight: 700; color: var(--text-main); line-height: 1.4;
-            text-decoration: none; margin-bottom: 0.4em; display: block;
-            &:hover { color: var(--accent-blue); }
-        }
-        .paper-authors { font-size: 0.95em; color: var(--text-muted); margin-bottom: 0.3em; strong { color: var(--text-main); border-bottom: 1px solid var(--border-color); } }
-        .paper-conf { font-size: 0.9em; color: var(--accent-blue); font-weight: 500; font-style: italic; }
-        
-        .paper-links {
-            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1em;
-            a {
-                padding: 4px 12px; border-radius: 6px; font-size: 0.8em; font-weight: 600;
-                background: var(--highlight-bg); color: var(--text-muted); border: 1px solid var(--border-color);
-                text-decoration: none; transition: all 0.2s;
-                &:hover { background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue); }
-                i { margin-right: 4px; }
-            }
-        }
-    }
-
-    @include breakpoint($medium) {
-        grid-template-columns: 220px 1fr;
-        align-items: start;
-    }
+    display: grid; grid-template-columns: 1fr; gap: 1.5em; padding: 1.5em; margin-bottom: 1.5em; 
+    background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; transition: all 0.3s;
+    &:hover { border-color: var(--accent-blue); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    @include breakpoint($medium) { grid-template-columns: 240px 1fr; }
 }
 
-/* --- News Timeline (Clean & Modern) --- */
-
-.news-list {
-    margin: 0; padding: 0; list-style: none;
-    li {
-        display: flex; gap: 1.5em; padding: 1em 0; border-bottom: 1px dashed var(--border-color);
-        &:last-child { border-bottom: none; }
-        .news-date {
-            min-width: 85px; font-size: 0.85em; font-weight: 700; color: var(--accent-blue);
-            padding-top: 2px;
-        }
-        .news-content {
-            flex: 1; font-size: 0.95em; line-height: 1.5; color: var(--text-main);
-            .news-tag {
-                display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 0.7em;
-                font-weight: 800; text-transform: uppercase; margin-right: 8px; vertical-align: middle;
-                background: var(--highlight-bg); color: var(--text-muted);
-            }
-        }
-    }
-}
-
-/* --- Experience & Education (Aligned Layout) --- */
-
-.exp-item {
-    display: flex; gap: 1.5em; margin-bottom: 2em;
-    .exp-logo {
-        flex: 0 0 60px; height: 60px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
-        font-weight: 800; font-size: 1.2em; background: var(--highlight-bg); color: var(--accent-blue); border: 1px solid var(--border-color);
-    }
-    .exp-content {
-        flex: 1;
-        .exp-title { font-weight: 700; font-size: 1.1em; color: var(--text-main); margin-bottom: 4px; }
-        .exp-institution { font-weight: 600; color: var(--accent-blue); font-size: 0.95em; margin-bottom: 6px; }
-        .exp-meta-row {
-            display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.85em; color: var(--text-muted);
-            span { display: flex; align-items: center; gap: 5px; i { color: var(--accent-blue); opacity: 0.7; } }
-        }
-        .exp-desc { margin-top: 10px; font-size: 0.92em; line-height: 1.6; color: var(--text-muted); }
-    }
-}
-
-/* --- Sidebar Refinement --- */
-
-.author__avatar img {
-    border-radius: 10%; /* More modern than full circle */
-    border: 3px solid var(--card-bg);
-    box-shadow: var(--card-shadow);
-}
-
-.sidebar__widget {
-    margin-top: 1.5em; padding: 1.2em; border-radius: 10px; background: var(--highlight-bg);
-    border: 1px solid var(--border-color); font-size: 0.85em;
-    .widget__title { color: var(--text-main); font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; i { color: var(--accent-blue); } }
-    .widget__content { color: var(--text-muted); line-height: 1.5; }
-}
-
-/* --- ScrollSpy & Active State --- */
-
-.greedy-nav .visible-links a.active {
-    color: var(--accent-blue) !important;
-    font-weight: 700;
-    position: relative;
-    &::after {
-        content: ""; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--accent-blue);
-    }
-}
-
-/* --- Utility Components --- */
+/* --- Utilities --- */
 
 .badge {
     padding: 2px 10px; position: absolute; top: 10px; left: 10px;
-    color: white; background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(4px);
-    border-radius: 4px; z-index: 5; font-size: 0.65em; font-weight: 800; text-transform: uppercase;
+    color: white; background: rgba(30, 41, 59, 0.85); backdrop-filter: blur(4px); border-radius: 4px; font-size: 0.65em; font-weight: 800;
 }
 
 html { scroll-behavior: smooth; }
