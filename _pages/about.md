@@ -30,23 +30,30 @@ I am passionate about building intelligent systems that enhance software develop
 Feel free to reach out for collaborations or academic discussions!
 
 # 🔥 News
-- *2025.12*: &nbsp;🎉🎉 Personal academic homepage launched!
-- *2025.09*: &nbsp;🎓🎓 Started my Ph.D. journey at Tongji University!
+<ul class="news-list">
+  <li><span class="news-date">2025.12</span> 🎉🎉 Personal academic homepage launched! Stay tuned for more updates.</li>
+  <li><span class="news-date">2025.09</span> 🎓🎓 Started my Ph.D. journey at <strong>Tongji University</strong>, Shanghai!</li>
+</ul>
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Coming Soon</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">Coming Soon</div>
+      <img src='images/500x300.png' alt="publication-thumb">
+    </div>
+  </div>
+  <div class='paper-box-text' markdown="1">
+    [Future Publication Title](https://github.com/wbzuo)
 
-[Future Publication Title](https://github.com/wbzuo)
+    **Wenbin Zuo**, Co-authors
 
-**Wenbin Zuo**, Co-authors
+    *To be submitted / Under review*, 2026
 
-*To be submitted / Under review*, 2026
-
-[**Project**](https://github.com/wbzuo) <strong><span class='show_paper_citations' data=''></span></strong>
-- Stay tuned for updates on my latest research work!
-</div>
+    [**Project**](https://github.com/wbzuo) <strong><span class='show_paper_citations' data=''></span></strong>
+    - Stay tuned for updates on my latest research work regarding LLMs and Software Engineering!
+  </div>
 </div>
 
 # 🎖 Honors and Awards
@@ -54,12 +61,42 @@ Feel free to reach out for collaborations or academic discussions!
 - *2021 - 2025*: Multiple University-level Scholarships and Awards
 
 # 📖 Education
-- *2025.09 - 2031.03 (Expected)*, Ph.D. in Intelligent Science and Technology, **Tongji University**, Shanghai, China
-- *2021.09 - 2025.07*, B.S. in Software Engineering, **Jiangxi University of Finance and Economics**, Jiangxi, China
+<div class="exp-item">
+  <div class="exp-logo">TJ</div>
+  <div class="exp-content">
+    <p class="exp-title">Tongji University</p>
+    <p class="exp-meta">Ph.D. in Intelligent Science and Technology | 2025.09 - 2031.03 (Expected)</p>
+    <p class="exp-meta">Shanghai, China</p>
+  </div>
+</div>
+
+<div class="exp-item">
+  <div class="exp-logo">JUFE</div>
+  <div class="exp-content">
+    <p class="exp-title">Jiangxi University of Finance and Economics</p>
+    <p class="exp-meta">B.S. in Software Engineering | 2021.09 - 2025.07</p>
+    <p class="exp-meta">Jiangxi, China</p>
+  </div>
+</div>
 
 # 💻 Research Experience
-- *2025.09 - Present*: Research Assistant, Tongji University. Focus on LLM-based software engineering.
-- *2024.06 - 2025.05*: Undergraduate Research Project on Intelligent Software Testing.
+<div class="exp-item">
+  <div class="exp-logo">RA</div>
+  <div class="exp-content">
+    <p class="exp-title">Research Assistant @ Tongji University</p>
+    <p class="exp-meta">2025.09 - Present</p>
+    <p class="exp-meta">Focus on LLM-based software engineering and automated software testing.</p>
+  </div>
+</div>
+
+<div class="exp-item">
+  <div class="exp-logo">PRJ</div>
+  <div class="exp-content">
+    <p class="exp-title">Intelligent Software Testing Project</p>
+    <p class="exp-meta">2024.06 - 2025.05</p>
+    <p class="exp-meta">Undergraduate Research Project focusing on deep learning for optimization.</p>
+  </div>
+</div>
 
 # 🔗 Academic Services
 - Reviewer for upcoming conferences/journals in AI and Software Engineering.
@@ -68,19 +105,22 @@ Feel free to reach out for collaborations or academic discussions!
 
 ---
 
-<h1 style="text-align: left;">🌍 Visitor Map</h1>
+<h1 style="text-align: left; margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 10px;">🌍 Visitor Map</h1>
 
 <div style="
-  max-width: 480px;
-  margin: 24px auto 40px auto;
-  padding: 12px 12px 4px 12px;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 16px;
   border-radius: 12px;
-  background: #f7f7f7;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-">
-  <div style="font-size: 0.9rem; color: #555; margin-bottom: 8px;">
-    Visitors around the world
+" onmouseover="this.style.transform='translateY(-5px)'; this.style.box-shadow='0 8px 24px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.box-shadow='0 4px 12px rgba(0,0,0,0.05)';"
+>
+  <div style="font-size: 0.95rem; font-weight: 500; color: #333; margin-bottom: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    Global Visitor Distribution
   </div>
   <script type="text/javascript" id="mapmyvisitors"
     src="//mapmyvisitors.com/map.js?d=TExqnA3tGu9npMTINv6yTrAzGBWl9pvwiau3Cx5prQg&cl=ffffff&w=a">
