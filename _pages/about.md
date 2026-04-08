@@ -54,15 +54,23 @@ I am passionate about building intelligent systems that enhance software develop
       <img src='images/500x300.png' alt="publication-thumb">
     </div>
   </div>
-  <div class='paper-box-text' markdown="1">
-    [Future Publication Title](https://github.com/wbzuo)
+  <div class='paper-box-text'>
+    <a href="https://github.com/wbzuo" class="paper-title">Future Publication Title: Optimizing Large Language Models for Software Engineering Tasks</a>
 
-    **Wenbin Zuo**, Co-authors
+    <p class="paper-authors"><strong>Wenbin Zuo</strong>, Co-authors</p>
+    
+    <p class="paper-conf">To be submitted / Under review, 2026</p>
 
-    *To be submitted / Under review*, 2026
+    <div class="paper-links">
+      <a href="https://github.com/wbzuo"><i class="fab fa-github"></i> Project</a>
+      <a href="#"><i class="fas fa-file-pdf"></i> Paper (Coming Soon)</a>
+      <a href="#"><i class="fas fa-code"></i> Code</a>
+      <span class='show_paper_citations' data=''></span>
+    </div>
 
-    [**Project**](https://github.com/wbzuo) <strong><span class='show_paper_citations' data=''></span></strong>
-    - Stay tuned for updates on my latest research work regarding LLMs and Software Engineering!
+    <ul style="margin-top: 15px;">
+      <li>Stay tuned for updates on my latest research work regarding LLMs and Software Engineering!</li>
+    </ul>
   </div>
 </div>
 
