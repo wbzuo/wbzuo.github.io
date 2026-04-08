@@ -17,6 +17,10 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-fw fa-user"></i> About Me
+
 I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China. I received my B.S. degree in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025.
 
 My research interests primarily lie in the intersection of **Artificial Intelligence** and **Software Engineering**, with a focus on:
@@ -27,15 +31,21 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 I am passionate about building intelligent systems that enhance software development productivity and reliability. Currently, I am exploring the potential of LLMs in automating complex software engineering tasks.
 
-Feel free to reach out for collaborations or academic discussions!
+</div>
 
-# 🔥 News
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-fw fa-fire"></i> News
 <ul class="news-list">
   <li><span class="news-date">2025.12</span> 🎉🎉 Personal academic homepage launched! Stay tuned for more updates.</li>
   <li><span class="news-date">2025.09</span> 🎓🎓 Started my Ph.D. journey at <strong>Tongji University</strong>, Shanghai!</li>
 </ul>
 
-# 📝 Publications 
+</div>
+
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-fw fa-book"></i> Publications 
 
 <div class='paper-box'>
   <div class='paper-box-image'>
@@ -56,11 +66,19 @@ Feel free to reach out for collaborations or academic discussions!
   </div>
 </div>
 
-# 🎖 Honors and Awards
+</div>
+
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-fw fa-trophy"></i> Honors and Awards
 - *2025.07*: Outstanding Graduate, Jiangxi University of Finance and Economics
 - *2021 - 2025*: Multiple University-level Scholarships and Awards
 
-# 📖 Education
+</div>
+
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-fw fa-graduation-cap"></i> Education
 <div class="exp-item">
   <div class="exp-logo">TJ</div>
   <div class="exp-content">
@@ -79,7 +97,11 @@ Feel free to reach out for collaborations or academic discussions!
   </div>
 </div>
 
-# 💻 Research Experience
+</div>
+
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-fw fa-laptop-code"></i> Research Experience
 <div class="exp-item">
   <div class="exp-logo">RA</div>
   <div class="exp-content">
@@ -98,33 +120,33 @@ Feel free to reach out for collaborations or academic discussions!
   </div>
 </div>
 
-# 🔗 Academic Services
+</div>
+
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-fw fa-users"></i> Academic Services
 - Reviewer for upcoming conferences/journals in AI and Software Engineering.
 
-<br>
+</div>
 
----
+<div class="section-card" markdown="1">
 
-<h1 style="text-align: left; margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 10px;">🌍 Visitor Map</h1>
+# <i class="fas fa-fw fa-globe"></i> Visitor Map
 
 <div style="
   max-width: 500px;
-  margin: 30px auto;
-  padding: 16px;
-  border-radius: 12px;
-  background: #ffffff;
-  border: 1px solid #e1e4e8;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px auto;
+  padding: 10px;
   text-align: center;
-" onmouseover="this.style.transform='translateY(-5px)'; this.style.box-shadow='0 8px 24px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.box-shadow='0 4px 12px rgba(0,0,0,0.05)';"
->
-  <div style="font-size: 0.95rem; font-weight: 500; color: #333; margin-bottom: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+">
+  <div style="font-size: 0.95rem; font-weight: 500; color: #00369f; margin-bottom: 12px;">
     Global Visitor Distribution
   </div>
   <script type="text/javascript" id="mapmyvisitors"
     src="//mapmyvisitors.com/map.js?d=TExqnA3tGu9npMTINv6yTrAzGBWl9pvwiau3Cx5prQg&cl=ffffff&w=a">
   </script>
+</div>
+
 </div>
 
 <br>

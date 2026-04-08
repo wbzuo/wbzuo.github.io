@@ -42,41 +42,81 @@
 
 /* Custom Modern Components */
 
+/* Modern Card-Based Layout System */
+
+.section-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e1e4e8;
+    padding: 2.5em;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+
+    /* Section Title within Card */
+    h1 {
+        margin-top: 0 !important;
+        margin-bottom: 1.5em !important;
+        padding-bottom: 0.8em;
+        border-bottom: 2px solid #f0f0f0;
+        color: #00369f; /* Primary Blue Accent */
+        display: flex;
+        align-items: center;
+        font-size: 1.6em;
+        
+        &::before {
+            display: none !important; /* Remove the old anchor spacing hack for card titles */
+        }
+        
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #00369f;
+        }
+    }
+}
+
 .paper-box {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    background: #ffffff;
+    background: #fcfcfc; /* Slightly different from card bg for contrast */
     border-radius: 10px;
     border: 1px solid #f0f0f0;
     padding: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.2em;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 
     &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        border-color: #e0e0e0;
+        transform: scale(1.01);
+        border-color: #00369f;
+        background: #fff;
     }
-
+    
+    /* ... (rest of paper-box nested styles remain similar but refined) */
     .paper-box-image {
         display: flex;
         justify-content: center;
         width: 100%;
         margin-bottom: 1em;
-        position: relative;
-        overflow: hidden;
         border-radius: 6px;
+        overflow: hidden;
 
         img {
             max-width: 100%;
             height: auto;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.5s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
         }
     }
     
@@ -86,119 +126,62 @@
         
         a {
             font-weight: 600;
-            color: #333;
+            color: #00369f;
             text-decoration: none;
-            &:hover {
-                color: #00369f;
-                text-decoration: underline;
-            }
+            &:hover { text-decoration: underline; }
         }
-
-        strong {
-            color: #222;
-        }
-
+        
         ul {
             margin-top: 0.8em;
             padding-left: 1.2em;
             font-size: 0.95em;
-            color: #666;
+            color: #555;
         }
     }
     
     @include breakpoint($medium) {
         flex-wrap: nowrap;
         gap: 2em;
-
-        .paper-box-image {
-            flex: 0 0 220px;
-            margin-bottom: 0;
-            img {
-                width: 100%;
-            }
-        }
-        
-        .paper-box-text {
-            flex: 1;
-        }
+        .paper-box-image { flex: 0 0 200px; margin-bottom: 0; }
+        .paper-box-text { flex: 1; }
     }
 }
 
-/* News List Styling */
+/* Updated News & Exp for Card Layout */
 .news-list {
-    margin: 1.5em 0;
-    padding: 0;
-    list-style: none;
-
+    margin: 0;
     li {
-        position: relative;
-        padding: 0.5em 0 0.5em 1.5em;
-        margin-bottom: 0.3em;
-        border-left: 2px solid #eee;
-        transition: border-color 0.3s ease;
-
-        &:hover {
-            border-left-color: #00369f;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: -5px;
-            top: 1.2em;
-            width: 8px;
-            height: 8px;
-            background: #fff;
-            border: 2px solid #00369f;
-            border-radius: 50%;
-        }
-
-        .news-date {
-            font-weight: 600;
-            color: #666;
-            margin-right: 0.8em;
-            font-size: 0.9em;
-            display: inline-block;
-            min-width: 80px;
-        }
+        border-left: 2px solid #eef2f8;
+        &:hover { border-left-color: #00369f; }
+        .news-date { color: #00369f; font-weight: 700; }
     }
 }
 
-/* Education & Experience Styling */
 .exp-item {
-    margin-bottom: 1.5em;
-    display: flex;
-    gap: 1.5em;
-    
+    padding: 0.5em 0;
     .exp-logo {
-        flex: 0 0 60px;
-        height: 60px;
-        background: #f8f9fa;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: #adb5bd;
-        font-size: 0.8em;
-        border: 1px solid #eee;
+        background: #f0f4ff;
+        color: #00369f;
+        border: none;
     }
+    .exp-title { color: #222; }
+}
 
-    .exp-content {
-        flex: 1;
-        
-        .exp-title {
-            font-weight: 600;
-            font-size: 1.1em;
-            margin: 0;
-        }
-        
-        .exp-meta {
-            color: #666;
-            font-size: 0.95em;
-            margin: 0.2em 0;
-        }
-    }
+/* Page Background for contrast */
+body {
+    background-color: #f8f9fb; /* Light grey background to make white cards pop */
+}
+
+#main {
+    background-color: transparent;
+}
+
+.archive {
+    background-color: transparent;
+}
+
+.page {
+    background-color: transparent;
 }
 
 .badge {
