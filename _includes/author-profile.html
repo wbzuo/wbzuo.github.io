@@ -4,49 +4,42 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="sidebar">
 
-  <!-- Prominent Avatar -->
+  <!-- Left-Aligned Avatar -->
   <div class="author__avatar">
     <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
   </div>
 
-  <!-- Centered Identity Section -->
+  <!-- Left-Aligned Identity -->
   <div class="author__content">
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.bio %}
       <p class="author__bio" itemprop="description">{{ author.bio }}</p>
     {% endif %}
     
-    <!-- Info Capsules -->
+    <!-- Minimal Meta List -->
     <div class="author__meta">
       {% if author.location %}
-        <span itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
-          <span itemprop="name">{{ author.location }}</span>
-        </span>
+        <div><i class="fas fa-map-marker-alt"></i> {{ author.location }}</div>
       {% endif %}
-      
       {% if author.employer %}
-        <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          <i class="fas fa-fw fa-university" aria-hidden="true"></i>
-          <span itemprop="name">{{ author.employer }}</span>
-        </span>
+        <div><i class="fas fa-university"></i> {{ author.employer }}</div>
+      {% endif %}
+      {% if author.email %}
+        <div><i class="fas fa-envelope"></i> <a href="mailto:{{ author.email }}">Email Me</a></div>
       {% endif %}
     </div>
 
-    <!-- Primary Action Button -->
+    <!-- Slim Action Button -->
     {% if author.cv %}
       <a href="{{ author.cv | relative_url }}" class="btn-cv">
-        <i class="fas fa-file-pdf"></i> Download Full CV
+        <i class="fas fa-file-pdf"></i> Download CV
       </a>
     {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Elevated 5-Column Social Grid -->
+    <!-- Compact Link Grid -->
     <div class="link-grid">
-      {% if author.email %}
-        <a href="mailto:{{ author.email }}" title="Email"><i class="fas fa-envelope"></i></a>
-      {% endif %}
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
       {% endif %}
@@ -56,23 +49,31 @@
       {% if author.linkedin %}
         <a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       {% endif %}
+      {% if author.twitter %}
+        <a href="https://twitter.com/{{ author.twitter }}" title="Twitter"><i class="fab fa-twitter"></i></a>
+      {% endif %}
       {% if author.uri %}
         <a href="{{ author.uri }}" title="Website"><i class="fas fa-link"></i></a>
       {% endif %}
     </div>
 
-    <!-- Rationalized Info Blocks -->
-    <div class="sidebar__info-block">
-      <div class="block-title"><i class="fas fa-rocket"></i> Research Mission</div>
-      <div class="block-content">
-        Building trustworthy intelligent software systems through LLMs and formal analysis.
+    <!-- Rational Research Interests -->
+    <div class="sidebar__widget">
+      <div class="widget__title">Research Interests</div>
+      <div class="widget__content">
+        <ul>
+          <li>Large Language Models</li>
+          <li>Software Engineering</li>
+          <li>Code Generation</li>
+        </ul>
       </div>
     </div>
 
-    <div class="sidebar__info-block">
-      <div class="block-title"><i class="fas fa-code"></i> Open Source</div>
-      <div class="block-content">
-        Active contributor to academic AI & SE tools on GitHub.
+    <!-- Compact Latest Highlight -->
+    <div class="sidebar__widget">
+      <div class="widget__title">Latest Update</div>
+      <div class="widget__content">
+        Started Ph.D. journey @ <strong>Tongji University</strong>
       </div>
     </div>
 
