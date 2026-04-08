@@ -5,23 +5,26 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "AcadHomepage | Template"
-description              : "A modern, card-based academic personal homepage template for researchers."
-og_image                 : "/images/favicon.ico"
-repository               : "username/repository"
+title                    : "Wenbin Zuo | Tongji University"
+description              : "Wenbin Zuo is a PhD student at Tongji University, focusing on LLMs for Software Engineering and Intelligent Software Analysis."
+og_image                 : "/images/android-chrome-512x512.png"
+repository               : "wbzuo/wbzuo.github.io"
 google_scholar_stats_use_cdn : true
+
+# google analytics
+google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : "images/favicon.ico"
-  bio              : "Your Title @ Your University"
-  location         : "City, Country"
-  employer         : "Your Institution"
-  googlescholar    : "https://scholar.google.com/citations?user=YOUR_ID"
-  cv               : "assets/files/your_cv.pdf"
-  email            : "your_email@example.com"
-  github           : "your_username"
+  name             : "Wenbin Zuo"
+  avatar           : "images/android-chrome-512x512.png"
+  bio              : "PhD Student @ Tongji University"
+  location         : "Shanghai, China"
+  employer         : "Tongji University"
+  googlescholar    : "https://scholar.google.com/citations?user=YOUR_ID_HERE"
+  cv               : "assets/files/CV_Wenbin_Zuo.pdf"
+  email            : "wbzuo02@gmail.com"
+  github           : "wbzuo"
   twitter          : ""
   linkedin         : ""
   orcid            : ""
