@@ -1,65 +1,30 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
+# This config file is meant for settings that affect your entire site.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Wenbin Zuo | Tongji University"
-description              : "Wenbin Zuo is a PhD student at Tongji University, focusing on LLMs for Software Engineering and Intelligent Software Analysis."
-og_image                 : "/images/android-chrome-512x512.png"
-repository               : "wbzuo/wbzuo.github.io"
+title                    : "AcadHomepage | Template"
+description              : "A modern, card-based academic personal homepage template for researchers."
+og_image                 : "/images/favicon.ico"
+repository               : "username/repository"
 google_scholar_stats_use_cdn : true
-
-# google analytics
-google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
-
-# SEO Related
-google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
-bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
-baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
 
 # Site Author
 author:
-  name             : "Wenbin Zuo"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "PhD Student @ Tongji University"
-  location         : "Shanghai, China"
-  employer         : "Tongji University"
-  pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=YOUR_ID_HERE"
-  cv               : "assets/files/CV_Wenbin_Zuo.pdf"
-  email            : "wbzuo02@gmail.com"
-  researchgate     : 
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "wbzuo"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         : # e.g., "linkedin username"
-  dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : # e.g., "https://orcid.org/xxxx"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : 
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
-
+  name             : "Your Name"
+  avatar           : "images/favicon.ico"
+  bio              : "Your Title @ Your University"
+  location         : "City, Country"
+  employer         : "Your Institution"
+  googlescholar    : "https://scholar.google.com/citations?user=YOUR_ID"
+  cv               : "assets/files/your_cv.pdf"
+  email            : "your_email@example.com"
+  github           : "your_username"
+  twitter          : ""
+  linkedin         : ""
+  orcid            : ""
 
 # Reading Files
 include:
@@ -67,38 +32,18 @@ include:
   - _pages
   - files
 exclude:
-  - docs
   - google_scholar_crawler
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - .github
-  - CHANGELOG
-  - Capfile
   - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
+  - Gemfile.lock
   - node_modules
-  - package.json
-  - tmp
   - vendor
+  - .sass-cache
+  - .jekyll-assets-cache
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
 
 # Conversion
 markdown: kramdown
@@ -106,7 +51,6 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -119,6 +63,11 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
 # Defaults
 defaults:
   # _pages
@@ -129,37 +78,19 @@ defaults:
       layout: default
       author_profile: true
 
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
 # Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jekyll-redirect-from
-# mimic GitHub Pages with --safe
+  - jemoji
+  - jekyll-include-cache
+
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
-
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+  - jekyll-include-cache

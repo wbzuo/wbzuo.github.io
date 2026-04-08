@@ -1,95 +1,90 @@
-# AcadHomepage: Modern Academic Personal Homepage
+# AcadHomepage: Modern Academic Portfolio Template
 
-AcadHomepage is a professional, responsive, and highly customizable academic personal homepage template. Built with **Jekyll** and based on a deeply refined **Minimal Mistakes** theme, it is designed for researchers, PhD students, and scholars to showcase their research, publications, and academic journey with a modern "card-based" aesthetic.
+**AcadHomepage** is a professional, responsive, and highly customizable academic personal homepage template. Built with **Jekyll** and a deeply refined **Minimal Mistakes** theme, it provides a modern "card-based" aesthetic for researchers, PhD students, and scholars.
+
+[**Demo & Personal Example**](https://wbzuo.github.io)
+
+---
 
 ## ✨ Key Features
 
-- 🃏 **Card-Based Layout**: Distinct, color-coded sections for News, Publications, Education, and more.
-- 🎨 **Modern Visuals**: Subtle hover effects, gradient icons, and a clean White/Blue academic color palette.
-- 🤖 **Automated Citations**: Integrated Python crawler to sync Google Scholar citations automatically via GitHub Actions.
-- 📱 **Fully Responsive**: Optimized for desktop, tablets, and mobile devices.
-- 🔗 **Smooth Navigation**: One-page scrolling experience with anchor-link support.
+- 🃏 **Card-Based Layout**: Elevated white cards with color-coded section accents.
+- 🌓 **One-Click Dark Mode**: Smooth transition between light and dark themes.
+- 📖 **Publication Management**: Interactive cards with integrated BibTeX copying and Altmetric/Dimensions badges.
+- 🤖 **Automated Citations**: Sync Google Scholar citation counts via GitHub Actions.
+- 📱 **Fully Responsive**: Perfect display on desktop, tablet, and mobile.
+- 🔗 **ScrollSpy Navigation**: Header menu highlights the active section as you scroll.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### Prerequisites
-
-- **Ruby** (v3.0+) and **Bundler**
-- **Python** (v3.8+) for the Google Scholar crawler
+### 1. Prerequisites
+Ensure you have the following installed:
+- **Ruby** (v3.0+) & **Bundler**
 - **Jekyll**
+- **Python** (v3.8+) — *Optional, only for citation crawler*
 
-### Local Development
-
-1. **Clone the repository:**
+### 2. Fork and Clone
+1. Fork this repository.
+2. Clone your fork:
    ```bash
-   git clone https://github.com/wbzuo/wbzuo.github.io.git
-   cd wbzuo.github.io
+   git clone https://github.com/yourusername/yourusername.github.io.git
+   cd yourusername.github.io
    ```
 
-2. **Install dependencies:**
-   ```bash
-   bundle install
-   pip install -r google_scholar_crawler/requirements.txt
-   ```
+### 3. Install & Run
+```bash
+# Install Ruby dependencies
+bundle install
 
-3. **Run the local server:**
-   ```bash
-   bash run_server.sh
-   ```
-   Open your browser and navigate to `http://127.0.0.1:4000`.
+# Run the local server
+bash run_server.sh
+```
+Visit `http://127.0.0.1:4000` to preview.
 
 ---
 
-## 🛠 Maintenance Guide
+## 🛠 Customization Guide
 
-### 1. Personal Information & Sidebar
-Edit `_config.yml` to update your name, bio, social links (GitHub, Google Scholar, Twitter), and avatar.
-> **Note**: Restart the server after modifying `_config.yml`.
+### 1. Basic Info
+Open `_config.yml` and update the following:
+- `title`, `description`, `author.name`, `bio`, `social links`, etc.
+- Replace `images/favicon.ico` with your own avatar.
 
-### 2. Main Content (About Me, News, Pubs)
-Primary content is managed in `_pages/about.md`. The page uses custom HTML components:
+### 2. Main Content
+Edit `_pages/about.md`. Use the provided HTML components:
+- **News**: Use `<ul class="news-list">` with `type-info`/`type-edu` tags.
+- **Publications**: Use the `.paper-box` structure for each paper. 
+- **Experience/Education**: Use `.exp-item` with custom logos.
 
-- **Adding News**: Wrap items in `<ul class="news-list">` using `news-type` and `news-date` spans.
-- **Adding Publications**: Use the `.paper-box` component. It supports:
-  - `paper-label`: `label-conf`, `label-journal`, or `label-preprint`.
-  - `paper-links`: Stylized buttons for Project, PDF, and Code.
-- **Education & Experience**: Use the `.exp-item` component with `exp-logo` and `exp-meta-row`.
-
-### 3. Navigation Menu
-Update links and labels in `_data/navigation.yml`. Ensure URL anchors (e.g., `#publications`) match the IDs in `about.md`.
-
----
-
-## 📊 Automated Google Scholar Citations
-
-This project uses a GitHub Action to keep your citation counts up to date.
-
-1. **Configure your ID**: In `_config.yml`, set `googlescholar` to your profile URL.
-2. **Setup Secret**: In your GitHub repository settings, go to `Settings > Secrets and variables > Actions` and add a new secret named `GOOGLE_SCHOLAR_ID` with your unique ID (found in the URL after `user=`).
-3. **Display Citations**: Use `<span class='show_paper_citations' data='PAPER_ID'></span>` in `about.md` where `PAPER_ID` is the ID of the specific paper.
+### 3. Automated Citations (Google Scholar)
+To enable automatic citation updates:
+1. In `_config.yml`, set your `googlescholar` ID.
+2. Add a GitHub Secret: `Settings > Secrets > Actions > New repository secret`.
+   - Name: `GOOGLE_SCHOLAR_ID`
+   - Value: Your unique ID (e.g., `TExqnA3...`).
+3. In `about.md`, use: `<span class='show_paper_citations' data='PAPER_ID'></span>`.
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-├── _config.yml          # Site configuration & Metadata
-├── _data/               # Navigation & data files
-├── _includes/           # HTML partials (Sidebar, Map, etc.)
-├── _pages/about.md      # MAIN CONTENT FILE
-├── _sass/               # Custom SCSS styles (Card system)
-├── assets/              # CSS, JS, Fonts, and Images
-├── google_scholar_crawler/ # Python citation automation
-└── .github/workflows/   # CI/CD (Auto-update & Deploy)
+├── _config.yml          # Global configuration & Metadata
+├── _data/               # Navigation menu configuration
+├── _includes/           # HTML partials (Sidebars, Masthead, Widgets)
+├── _pages/about.md      # THE MAIN CONTENT FILE (Edit this!)
+├── _sass/               # Custom SCSS (Variable-driven card system)
+├── assets/js/custom.js  # Dark mode & ScrollSpy logic
+└── google_scholar_crawler/ # Python automation engine
 ```
 
 ---
 
-## 📄 License & Credits
+## 📄 License & Acknowledgements
 
-- **Theme**: Based on [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) by Michael Rose.
-- **License**: MIT License.
+- **Theme**: Based on [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) by Michael Rose.
+- **License**: MIT.
 
-Feel free to fork this project and adapt it for your own academic homepage! If you find it helpful, a ⭐️ is much appreciated.
+If you like this template, please give it a ⭐!
