@@ -255,6 +255,13 @@ body {
 
 /* --- Utilities --- */
 
+/* ScrollSpy Active Link */
+.greedy-nav .visible-links a.active {
+    color: #00369f !important;
+    font-weight: 700;
+    border-bottom: 2px solid #00369f;
+}
+
 .badge {
     padding: 4px 12px; position: absolute; top: 12px; left: 12px;
     color: white; background: rgba(26, 32, 44, 0.85);
