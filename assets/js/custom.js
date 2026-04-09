@@ -1,17 +1,25 @@
 function toggleBibtex(id, event) {
-    if (event) event.preventDefault();
-    const bibtex = document.getElementById(id);
-    if (bibtex.style.display === "none" || bibtex.style.display === "") {
-        bibtex.style.display = "block";
-    } else {
-        bibtex.style.display = "none";
+    // 彻底阻止任何可能的跳转或滚动行为
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
     }
+    
+    const bibtex = document.getElementById(id);
+    if (bibtex) {
+        if (bibtex.style.display === "none" || bibtex.style.display === "") {
+            bibtex.style.display = "block";
+        } else {
+            bibtex.style.display = "none";
+        }
+    }
+    return false; // 双重保险
 }
 
 function copyBibtex(id) {
     const text = document.getElementById(id + '-text').innerText;
     navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector(`[onclick="copyBibtex('${id}')"]`);
+        const btn = document.querySelector(`[onclick*="copyBibtex('${id}')"]`);
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
         setTimeout(() => {
@@ -20,11 +28,10 @@ function copyBibtex(id) {
     });
 }
 
-// --- Dark Mode Logic (Refined) ---
+// --- Dark Mode Logic ---
 const toggleBtn = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
-// Initialize theme from local storage or system preference
 const initTheme = () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -35,7 +42,7 @@ const initTheme = () => {
 
 if (toggleBtn) {
     toggleBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent jump/reload
+        e.preventDefault();
         let theme = 'light';
         if (body.getAttribute('data-theme') === 'dark') {
             body.removeAttribute('data-theme');
@@ -49,10 +56,9 @@ if (toggleBtn) {
     });
 }
 
-// --- ScrollSpy & Active Link Logic (Refined) ---
+// --- ScrollSpy ---
 window.addEventListener('DOMContentLoaded', () => {
-    initTheme(); // Set theme on load
-
+    initTheme();
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

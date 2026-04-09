@@ -82,7 +82,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
     <div class="paper-links">
       <a href="https://github.com/wbzuo"><i class="fab fa-github"></i> GitHub</a>
       <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-      <a href="javascript:void(0)" onclick="toggleBibtex('paper1-bib', event)" class="btn-cite"><i class="fas fa-quote-right"></i> Cite</a>
+      <a href="javascript:void(0)" onclick="return toggleBibtex('paper1-bib', event)" class="btn-cite"><i class="fas fa-quote-right"></i> Cite</a>
       <a href="#"><i class="fas fa-code"></i> Code</a>
       <span class='show_paper_citations' data=''></span>
     </div>
