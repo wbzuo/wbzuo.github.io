@@ -62,25 +62,23 @@
 
 body { background-color: var(--bg-color); color: var(--text-main); transition: all 0.3s ease; }
 
-/* --- Sidebar: Optimized Link Icons --- */
+/* --- Sidebar: Two-Row Optimized Grid --- */
 
 .sidebar {
-    border: none !important;
-    background: transparent !important;
-    padding: 0 !important;
+    border: none !important; background: transparent !important; padding: 0 !important;
     
     .author__avatar {
         margin-bottom: 1.8em;
         img {
             width: 200px; height: 200px; border-radius: 24px; border: 1px solid var(--border-color);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            &:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            &:hover { transform: translateY(-4px); }
         }
     }
 
-    .author__name { font-size: 1.6em; font-weight: 800; color: var(--text-main); margin-bottom: 0.2em; letter-spacing: -0.5px; }
-    .author__bio { font-size: 0.95em; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5em; font-weight: 500; }
+    .author__name { font-size: 1.6em; font-weight: 800; color: var(--text-main); margin-bottom: 0.2em; }
+    .author__bio { font-size: 0.95em; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5em; }
 
     .author__meta {
         font-size: 0.85em; color: var(--text-muted); margin-bottom: 1.8em;
@@ -89,16 +87,16 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
 
     .btn-cv {
         display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px;
-        background: var(--accent-blue); color: #fff !important; border-radius: 12px; font-weight: 700; font-size: 0.85em;
+        background: var(--accent-blue); color: #fff !important; border-radius: 12px; font-weight: 700;
         box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: all 0.2s;
-        &:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3); }
+        &:hover { transform: translateY(-2px); }
     }
 
-    /* --- Social Link Icons Grid Optimization --- */
+    /* --- Rationalized 4-Column Grid (Two Rows) --- */
     .link-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+        gap: 10px;
         margin-top: 1.8em;
         padding-top: 1.8em;
         border-top: 1px solid var(--border-color);
@@ -107,9 +105,8 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
+            aspect-ratio: 1;
+            border-radius: 12px;
             background: var(--highlight-bg);
             border: 1px solid var(--border-color);
             color: var(--text-muted);
@@ -124,12 +121,17 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
 
-            /* Brand Colors on Hover */
-            &[title="GitHub"]:hover { background: #333; border-color: #333; }
-            &[title="Google Scholar"]:hover { background: #4285f4; border-color: #4285f4; }
-            &[title="LinkedIn"]:hover { background: #0077b5; border-color: #0077b5; }
-            &[title="Twitter"]:hover { background: #1da1f2; border-color: #1da1f2; }
-            &[title="ORCID"]:hover { background: #a6ce39; border-color: #a6ce39; }
+            /* --- Extensive Brand Colors --- */
+            &[title*="GitHub"]:hover { background: #333; border-color: #333; }
+            &[title*="Google Scholar"]:hover { background: #4285f4; border-color: #4285f4; }
+            &[title*="LinkedIn"]:hover { background: #0077b5; border-color: #0077b5; }
+            &[title*="Twitter"]:hover { background: #1da1f2; border-color: #1da1f2; }
+            &[title*="ORCID"]:hover { background: #a6ce39; border-color: #a6ce39; }
+            &[title*="DBLP"]:hover { background: #1d4f91; border-color: #1d4f91; }
+            &[title*="ResearchGate"]:hover { background: #00ccbb; border-color: #00ccbb; }
+            &[title*="Email"]:hover { background: #ea4335; border-color: #ea4335; }
+            &[title*="YouTube"]:hover { background: #ff0000; border-color: #ff0000; }
+            &[title*="CV"]:hover { background: #ff9900; border-color: #ff9900; }
         }
     }
 
@@ -140,19 +142,13 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
     }
 }
 
-/* --- Responsive & Content --- */
+/* --- Content & Helpers --- */
 
 @include breakpoint($medium) { .sidebar { position: sticky; top: 4em; padding-right: 2em !important; } }
 
 .section-card {
     background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border-color); padding: 2.5em; margin-bottom: 2em; box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     h1 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.5em; font-weight: 800; i { color: var(--accent-blue); } }
-}
-
-.paper-box {
-    display: grid; grid-template-columns: 1fr; gap: 2.5em; padding: 1.8em; background: var(--highlight-bg); border: 1px solid var(--border-color); border-radius: 16px;
-    &:hover { border-color: var(--accent-blue); background: var(--card-bg); transform: translateY(-2px); }
-    @include breakpoint($medium) { grid-template-columns: 240px 1fr; }
 }
 
 html { scroll-behavior: smooth; }

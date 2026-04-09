@@ -4,53 +4,40 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="sidebar">
 
-  <!-- Premium Avatar with Depth -->
+  <!-- Avatar -->
   <div class="author__avatar">
     <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
   </div>
 
-  <!-- Identity & Bio -->
+  <!-- Identity -->
   <div class="author__content">
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.bio %}
       <p class="author__bio" itemprop="description">{{ author.bio }}</p>
     {% endif %}
     
-    <!-- Structured Meta Info -->
     <div class="author__meta">
       {% if author.location %}
-        <div itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
-          <i class="fas fa-map-marker-alt"></i>
-          <span itemprop="name">{{ author.location }}</span>
-        </div>
+        <div><i class="fas fa-map-marker-alt"></i> {{ author.location }}</div>
       {% endif %}
-      
       {% if author.employer %}
-        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          <i class="fas fa-university"></i>
-          <span itemprop="name">{{ author.employer }}</span>
-        </div>
-      {% endif %}
-
-      {% if author.email %}
-        <div>
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:{{ author.email }}" itemprop="email">Email / Contact</a>
-        </div>
+        <div><i class="fas fa-university"></i> {{ author.employer }}</div>
       {% endif %}
     </div>
 
-    <!-- Elevated Action Button -->
     {% if author.cv %}
       <a href="{{ author.cv | relative_url }}" class="btn-cv">
-        <i class="fas fa-file-pdf"></i> Curriculum Vitae
+        <i class="fas fa-file-alt"></i> Curriculum Vitae
       </a>
     {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Circular Social Grid -->
+    <!-- Optimized 4-Column Grid (Designed for 2 Rows) -->
     <div class="link-grid">
+      {% if author.email %}
+        <a href="mailto:{{ author.email }}" title="Email" itemprop="email"><i class="fas fa-envelope"></i></a>
+      {% endif %}
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
       {% endif %}
@@ -60,30 +47,36 @@
       {% if author.linkedin %}
         <a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       {% endif %}
-      {% if author.twitter %}
-        <a href="https://twitter.com/{{ author.twitter }}" title="Twitter"><i class="fab fa-twitter"></i></a>
+      {% if author.orcid %}
+        <a href="{{ author.orcid }}" title="ORCID"><i class="ai ai-orcid"></i></a>
+      {% endif %}
+      {% if author.dblp %}
+        <a href="{{ author.dblp }}" title="DBLP"><i class="ai ai-dblp"></i></a>
+      {% endif %}
+      {% if author.researchgate %}
+        <a href="{{ author.researchgate }}" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
       {% endif %}
       {% if author.uri %}
-        <a href="{{ author.uri }}" title="Website"><i class="fas fa-link"></i></a>
+        <a href="{{ author.uri }}" title="Personal Website"><i class="fas fa-link"></i></a>
       {% endif %}
     </div>
 
-    <!-- Minimalist Sidebar Widgets -->
+    <!-- Widgets -->
     <div class="sidebar__widget">
       <div class="widget__title">Research Focus</div>
       <div class="widget__content">
         <ul>
           <li>Large Language Models</li>
           <li>Software Engineering</li>
-          <li>Formal Verification</li>
+          <li>Code Generation</li>
         </ul>
       </div>
     </div>
 
     <div class="sidebar__widget">
-      <div class="widget__title">Recent Highlight</div>
+      <div class="widget__title">Latest Update</div>
       <div class="widget__content">
-        Admitted to Ph.D. program @ <strong>Tongji University</strong>.
+        Ph.D. Student @ <strong>Tongji University</strong>
       </div>
     </div>
 
