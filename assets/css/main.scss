@@ -62,7 +62,7 @@
 
 body { background-color: var(--bg-color); color: var(--text-main); transition: all 0.3s ease; }
 
-/* --- Sidebar: Premium Structural Redesign --- */
+/* --- Sidebar: Optimized Link Icons --- */
 
 .sidebar {
     border: none !important;
@@ -72,79 +72,77 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
     .author__avatar {
         margin-bottom: 1.8em;
         img {
-            width: 200px;
-            height: 200px;
-            border-radius: 24px; /* More modern rounding */
-            border: 1px solid var(--border-color);
+            width: 200px; height: 200px; border-radius: 24px; border: 1px solid var(--border-color);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            &:hover {
-                transform: translateY(-4px) scale(1.02);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            }
+            &:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         }
     }
 
-    .author__name {
-        font-size: 1.6em; font-weight: 800; color: var(--text-main);
-        margin-bottom: 0.2em; letter-spacing: -0.5px;
-    }
+    .author__name { font-size: 1.6em; font-weight: 800; color: var(--text-main); margin-bottom: 0.2em; letter-spacing: -0.5px; }
+    .author__bio { font-size: 0.95em; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5em; font-weight: 500; }
 
-    .author__bio {
-        font-size: 0.95em; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5em; font-weight: 500;
-    }
-
-    /* Contact Meta: Clean Icons */
     .author__meta {
         font-size: 0.85em; color: var(--text-muted); margin-bottom: 1.8em;
-        div {
-            display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
-            i { color: var(--accent-blue); font-size: 1em; width: 18px; text-align: center; }
-            a { color: inherit; text-decoration: none; &:hover { color: var(--accent-blue); } }
-        }
+        div { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; i { color: var(--accent-blue); font-size: 1em; width: 18px; text-align: center; } }
     }
 
-    /* CV Button: Refined Elevation */
     .btn-cv {
         display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px;
-        background: var(--accent-blue); color: #fff !important; border-radius: 12px;
-        font-weight: 700; font-size: 0.85em; text-decoration: none !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: all 0.2s ease;
-        &:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3); filter: brightness(1.05); }
+        background: var(--accent-blue); color: #fff !important; border-radius: 12px; font-weight: 700; font-size: 0.85em;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: all 0.2s;
+        &:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3); }
     }
 
-    /* Social Grid: Circular Pill Style */
+    /* --- Social Link Icons Grid Optimization --- */
     .link-grid {
-        display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 1.8em; padding-top: 1.8em; border-top: 1px solid var(--border-color);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 1.8em;
+        padding-top: 1.8em;
+        border-top: 1px solid var(--border-color);
+        
         a {
-            display: flex; align-items: center; justify-content: center; aspect-ratio: 1; border-radius: 50%;
-            background: var(--highlight-bg); color: var(--text-muted); font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--highlight-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 1.2em;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            &:hover { background: var(--accent-blue); color: #fff; transform: scale(1.15); }
+            
+            &:hover {
+                color: #ffffff;
+                background: var(--accent-blue);
+                border-color: var(--accent-blue);
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Brand Colors on Hover */
+            &[title="GitHub"]:hover { background: #333; border-color: #333; }
+            &[title="Google Scholar"]:hover { background: #4285f4; border-color: #4285f4; }
+            &[title="LinkedIn"]:hover { background: #0077b5; border-color: #0077b5; }
+            &[title="Twitter"]:hover { background: #1da1f2; border-color: #1da1f2; }
+            &[title="ORCID"]:hover { background: #a6ce39; border-color: #a6ce39; }
         }
     }
 
-    /* Sidebar Widgets: Minimalist Separators */
     .sidebar__widget {
         margin-top: 2em; padding-top: 1.5em; border-top: 1px solid var(--border-color);
-        .widget__title { 
-            font-size: 0.7em; font-weight: 800; text-transform: uppercase; 
-            letter-spacing: 1.5px; color: var(--accent-blue); margin-bottom: 12px; 
-        }
-        .widget__content { 
-            font-size: 0.85em; color: var(--text-muted); line-height: 1.6;
-            ul { margin: 0; padding: 0; list-style: none; li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; &::before { content: "→"; color: var(--accent-blue); opacity: 0.6; } } }
-        }
+        .widget__title { font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-blue); margin-bottom: 12px; }
+        .widget__content { font-size: 0.85em; color: var(--text-muted); line-height: 1.6; ul { margin: 0; padding: 0; list-style: none; li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; &::before { content: "→"; color: var(--accent-blue); opacity: 0.6; } } } }
     }
 }
 
-/* --- Responsive & Sticky --- */
+/* --- Responsive & Content --- */
 
-@include breakpoint($medium) {
-    .sidebar { position: sticky; top: 4em; padding-right: 2em !important; }
-}
-
-/* --- Section Card Systems --- */
+@include breakpoint($medium) { .sidebar { position: sticky; top: 4em; padding-right: 2em !important; } }
 
 .section-card {
     background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border-color); padding: 2.5em; margin-bottom: 2em; box-shadow: 0 1px 3px rgba(0,0,0,0.02);
