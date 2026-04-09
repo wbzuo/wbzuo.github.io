@@ -129,6 +129,26 @@ html[data-theme="dark"] body::after {
     z-index: 1;
 }
 
+@include breakpoint($large) {
+    #main {
+        display: grid;
+        grid-template-columns: clamp(280px, 30vw, 360px) minmax(0, 1fr);
+        gap: clamp(1.5rem, 3vw, 2.75rem);
+        align-items: start;
+    }
+
+    #main > .sidebar,
+    #main > .page {
+        float: none !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    #main > .page {
+        min-width: 0;
+    }
+}
+
 ::selection {
     background: var(--accent-soft);
     color: var(--text-main);
