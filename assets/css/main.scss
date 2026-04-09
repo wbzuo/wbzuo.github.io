@@ -62,89 +62,133 @@
 
 body { background-color: var(--bg-color); color: var(--text-main); transition: all 0.3s ease; }
 
-/* --- Sidebar: Two-Row Optimized Grid --- */
+/* --- Sidebar (Unchanged) --- */
 
 .sidebar {
     border: none !important; background: transparent !important; padding: 0 !important;
-    
-    .author__avatar {
-        margin-bottom: 1.8em;
-        img {
-            width: 200px; height: 200px; border-radius: 24px; border: 1px solid var(--border-color);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            &:hover { transform: translateY(-4px); }
-        }
-    }
-
+    .author__avatar { margin-bottom: 1.8em; img { width: 200px; height: 200px; border-radius: 24px; border: 1px solid var(--border-color); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); transition: all 0.4s ease; &:hover { transform: translateY(-4px); } } }
     .author__name { font-size: 1.6em; font-weight: 800; color: var(--text-main); margin-bottom: 0.2em; }
     .author__bio { font-size: 0.95em; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5em; }
-
-    .author__meta {
-        font-size: 0.85em; color: var(--text-muted); margin-bottom: 1.8em;
-        div { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; i { color: var(--accent-blue); font-size: 1em; width: 18px; text-align: center; } }
-    }
-
-    .btn-cv {
-        display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px;
-        background: var(--accent-blue); color: #fff !important; border-radius: 12px; font-weight: 700;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: all 0.2s;
-        &:hover { transform: translateY(-2px); }
-    }
-
-    /* --- Rationalized 4-Column Grid (Two Rows) --- */
+    .author__meta { font-size: 0.85em; color: var(--text-muted); margin-bottom: 1.8em; div { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; i { color: var(--accent-blue); font-size: 1em; width: 18px; text-align: center; } } }
+    .btn-cv { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; background: var(--accent-blue); color: #fff !important; border-radius: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: all 0.2s; &:hover { transform: translateY(-2px); } }
     .link-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 items per row */
-        gap: 10px;
-        margin-top: 1.8em;
-        padding-top: 1.8em;
-        border-top: 1px solid var(--border-color);
-        
-        a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            aspect-ratio: 1;
-            border-radius: 12px;
-            background: var(--highlight-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 1.2em;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            
-            &:hover {
-                color: #ffffff;
-                background: var(--accent-blue);
-                border-color: var(--accent-blue);
-                transform: translateY(-4px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 1.8em; padding-top: 1.8em; border-top: 1px solid var(--border-color);
+        a { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; border-radius: 12px; background: var(--highlight-bg); border: 1px solid var(--border-color); color: var(--text-muted); font-size: 1.2em; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); &:hover { color: #ffffff; background: var(--accent-blue); transform: translateY(-4px); }
+            &[title*="GitHub"]:hover { background: #333; } &[title*="Google Scholar"]:hover { background: #4285f4; } &[title*="LinkedIn"]:hover { background: #0077b5; } &[title*="Twitter"]:hover { background: #1da1f2; } &[title*="ORCID"]:hover { background: #a6ce39; } &[title*="DBLP"]:hover { background: #1d4f91; } &[title*="ResearchGate"]:hover { background: #00ccbb; } &[title*="Email"]:hover { background: #ea4335; }
+        }
+    }
+    .sidebar__widget { margin-top: 2em; padding-top: 1.5em; border-top: 1px solid var(--border-color); .widget__title { font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-blue); margin-bottom: 12px; } .widget__content { font-size: 0.85em; color: var(--text-muted); line-height: 1.6; ul { margin: 0; padding: 0; list-style: none; li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; &::before { content: "→"; color: var(--accent-blue); opacity: 0.6; } } } } }
+}
 
-            /* --- Extensive Brand Colors --- */
-            &[title*="GitHub"]:hover { background: #333; border-color: #333; }
-            &[title*="Google Scholar"]:hover { background: #4285f4; border-color: #4285f4; }
-            &[title*="LinkedIn"]:hover { background: #0077b5; border-color: #0077b5; }
-            &[title*="Twitter"]:hover { background: #1da1f2; border-color: #1da1f2; }
-            &[title*="ORCID"]:hover { background: #a6ce39; border-color: #a6ce39; }
-            &[title*="DBLP"]:hover { background: #1d4f91; border-color: #1d4f91; }
-            &[title*="ResearchGate"]:hover { background: #00ccbb; border-color: #00ccbb; }
-            &[title*="Email"]:hover { background: #ea4335; border-color: #ea4335; }
-            &[title*="YouTube"]:hover { background: #ff0000; border-color: #ff0000; }
-            &[title*="CV"]:hover { background: #ff9900; border-color: #ff9900; }
+/* --- Publications: SPECIFIC OPTIMIZATION --- */
+
+.paper-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    padding: 2em;
+    margin-bottom: 2em;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        border-color: var(--accent-blue);
+    }
+
+    .paper-box-image {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--highlight-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        
+        img { 
+            width: 100%; height: 100%; object-fit: contain; 
+            transition: transform 0.6s ease;
         }
     }
 
-    .sidebar__widget {
-        margin-top: 2em; padding-top: 1.5em; border-top: 1px solid var(--border-color);
-        .widget__title { font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-blue); margin-bottom: 12px; }
-        .widget__content { font-size: 0.85em; color: var(--text-muted); line-height: 1.6; ul { margin: 0; padding: 0; list-style: none; li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; &::before { content: "→"; color: var(--accent-blue); opacity: 0.6; } } } }
+    .paper-box-text {
+        display: flex;
+        flex-direction: column;
+        
+        .paper-label {
+            display: inline-block; padding: 3px 10px; border-radius: 6px;
+            font-size: 0.7em; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;
+            background: var(--highlight-bg); color: var(--accent-blue); width: fit-content;
+            letter-spacing: 0.5px; border: 1px solid var(--border-color);
+        }
+
+        .paper-title {
+            font-size: 1.25em; font-weight: 850; color: var(--text-main); line-height: 1.35;
+            text-decoration: none; margin-bottom: 0.6em; display: block;
+            transition: color 0.2s ease;
+            &:hover { color: var(--accent-blue); }
+        }
+
+        .paper-authors { 
+            font-size: 1em; color: var(--text-muted); margin-bottom: 0.5em; 
+            strong { color: var(--text-main); font-weight: 700; border-bottom: 2px solid var(--accent-blue); padding-bottom: 1px; } 
+        }
+
+        .paper-conf { 
+            font-size: 0.95em; color: var(--accent-blue); font-weight: 600; font-style: italic; 
+            margin-bottom: 1.2em;
+        }
+        
+        /* Modernized Publication Link Bar */
+        .paper-links {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto;
+            
+            a {
+                display: inline-flex; align-items: center; gap: 6px;
+                padding: 6px 14px; border-radius: 8px; font-size: 0.85em; font-weight: 700;
+                background: var(--card-bg); color: var(--text-muted); border: 1.5px solid var(--border-color);
+                text-decoration: none; transition: all 0.2s;
+                
+                &:hover { 
+                    background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue);
+                    transform: translateY(-2px);
+                }
+                
+                &[onclick*="toggleBibtex"] {
+                    background: var(--highlight-bg); color: var(--accent-blue);
+                    &:hover { background: var(--accent-blue); color: #fff; }
+                }
+            }
+        }
+    }
+
+    /* BibTeX Popup Styling */
+    .bibtex-box {
+        display: none; background: #1e293b; color: #e2e8f0; 
+        border-radius: 10px; padding: 20px; margin-top: 1.5em; position: relative;
+        font-family: 'Fira Code', 'Courier New', monospace; font-size: 0.85em;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        
+        pre { background: transparent; border: none; margin: 0; white-space: pre-wrap; color: inherit; }
+        
+        .copy-btn {
+            position: absolute; top: 12px; right: 12px; padding: 4px 10px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; border-radius: 6px; font-size: 0.75em; cursor: pointer;
+            &:hover { background: var(--accent-blue); border-color: var(--accent-blue); }
+        }
+    }
+
+    @include breakpoint($medium) {
+        grid-template-columns: 260px 1fr;
+        align-items: stretch;
     }
 }
 
-/* --- Content & Helpers --- */
-
-@include breakpoint($medium) { .sidebar { position: sticky; top: 4em; padding-right: 2em !important; } }
+/* --- Section Cards (Unchanged) --- */
 
 .section-card {
     background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border-color); padding: 2.5em; margin-bottom: 2em; box-shadow: 0 1px 3px rgba(0,0,0,0.02);

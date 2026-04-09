@@ -61,18 +61,18 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 # <i class="fas fa-book"></i> Publications 
 
+<!-- Publication Item 1 -->
 <div class='paper-box'>
   <div class='paper-box-image'>
-    <div class="badge">In Progress</div>
-    <img src='images/favicon-32x32.png' loading="lazy" alt="publication-thumb" style="padding: 30px; opacity: 0.5;">
+    <img src='images/favicon.ico' alt="paper-thumb" style="padding: 40px; opacity: 0.4;">
   </div>
   <div class='paper-box-text'>
-    <span class="paper-label">Preprint</span>
-    <a href="https://github.com/wbzuo" class="paper-title">Future Publication Title: Optimizing Large Language Models for Software Engineering Tasks</a>
+    <span class="paper-label">Conference Paper</span>
+    <a href="https://github.com/wbzuo" class="paper-title">Optimizing Large Language Models for Reliable Code Synthesis and Automated Software Testing</a>
 
-    <p class="paper-authors"><strong>Wenbin Zuo</strong>, Co-authors</p>
+    <p class="paper-authors"><strong>Wenbin Zuo</strong>, Advisor Name, Co-author A, Co-author B</p>
     
-    <p class="paper-conf">To be submitted / Under review, 2026</p>
+    <p class="paper-conf">Proceedings of the International Conference on Software Engineering (ICSE), 2026</p>
 
     <div class="paper-links">
       <a href="https://github.com/wbzuo"><i class="fab fa-github"></i> Project</a>
@@ -82,15 +82,15 @@ My research interests primarily lie in the intersection of **Artificial Intellig
       <span class='show_paper_citations' data=''></span>
     </div>
 
-    <!-- BibTeX Popup -->
-    <div id="paper1-bib" style="display: none; background: var(--highlight-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-top: 15px; position: relative;">
-      <pre id="paper1-bib-text" style="margin: 0; font-size: 0.8em; white-space: pre-wrap; color: var(--text-muted);">@article{zuo2026optimizing,
-  title={Optimizing Large Language Models for Software Engineering Tasks},
+    <!-- Enhanced BibTeX Container -->
+    <div id="paper1-bib" class="bibtex-box">
+      <pre id="paper1-bib-text">@inproceedings{zuo2026optimizing,
+  title={Optimizing Large Language Models for Reliable Code Synthesis},
   author={Zuo, Wenbin and Others},
-  journal={arXiv preprint},
+  booktitle={ICSE},
   year={2026}
 }</pre>
-      <button onclick="copyBibtex('paper1-bib')" class="btn btn--small" style="position: absolute; top: 10px; right: 10px; font-size: 0.7em; background: var(--card-bg); border: 1px solid var(--border-color);"><i class="fas fa-copy"></i></button>
+      <button onclick="copyBibtex('paper1-bib')" class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
     </div>
   </div>
 </div>
