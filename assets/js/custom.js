@@ -1,6 +1,7 @@
-function toggleBibtex(id) {
+function toggleBibtex(id, event) {
+    if (event) event.preventDefault();
     const bibtex = document.getElementById(id);
-    if (bibtex.style.display === "none") {
+    if (bibtex.style.display === "none" || bibtex.style.display === "") {
         bibtex.style.display = "block";
     } else {
         bibtex.style.display = "none";
