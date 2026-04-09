@@ -4,12 +4,12 @@
 
 <div itemscope itemtype="http://schema.org/Person" class="sidebar">
 
-  <!-- Avatar -->
+  <!-- Avatar Section -->
   <div class="author__avatar">
     <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image">
   </div>
 
-  <!-- Identity -->
+  <!-- Identity Section -->
   <div class="author__content">
     <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% if author.bio %}
@@ -18,22 +18,28 @@
     
     <div class="author__meta">
       {% if author.location %}
-        <div><i class="fas fa-map-marker-alt"></i> {{ author.location }}</div>
+        <div itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i>
+          <span itemprop="name">{{ author.location }}</span>
+        </div>
       {% endif %}
       {% if author.employer %}
-        <div><i class="fas fa-university"></i> {{ author.employer }}</div>
+        <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <i class="fas fa-fw fa-university" aria-hidden="true"></i>
+          <span itemprop="name">{{ author.employer }}</span>
+        </div>
       {% endif %}
     </div>
 
     {% if author.cv %}
       <a href="{{ author.cv | relative_url }}" class="btn-cv">
-        <i class="fas fa-file-alt"></i> Curriculum Vitae
+        <i class="fas fa-file-alt"></i> Download CV
       </a>
     {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Optimized 4-Column Grid (Designed for 2 Rows) -->
+    <!-- Link Grid (Unchanged Layout) -->
     <div class="link-grid">
       {% if author.email %}
         <a href="mailto:{{ author.email }}" title="Email" itemprop="email"><i class="fas fa-envelope"></i></a>
@@ -61,22 +67,25 @@
       {% endif %}
     </div>
 
-    <!-- Widgets -->
+    <!-- REFINED SIDEBAR WIDGETS -->
     <div class="sidebar__widget">
-      <div class="widget__title">Research Focus</div>
+      <div class="widget__title"><i class="fas fa-microscope"></i> Research Area</div>
       <div class="widget__content">
         <ul>
-          <li>Large Language Models</li>
-          <li>Software Engineering</li>
-          <li>Code Generation</li>
+          <li><strong>Large Language Models</strong> for SE</li>
+          <li><strong>Software Analysis</strong> & Testing</li>
+          <li><strong>Deep Learning</strong> Optimization</li>
         </ul>
       </div>
     </div>
 
     <div class="sidebar__widget">
-      <div class="widget__title">Latest Update</div>
+      <div class="widget__title"><i class="fas fa-bolt"></i> Quick News</div>
       <div class="widget__content">
-        Ph.D. Student @ <strong>Tongji University</strong>
+        <ul>
+          <li>Started PhD @ <strong>Tongji University</strong></li>
+          <li>Looking for <strong>Research Internships</strong></li>
+        </ul>
       </div>
     </div>
 
