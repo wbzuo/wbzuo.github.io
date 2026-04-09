@@ -24,10 +24,10 @@ I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology
 
 My research interests primarily lie in the intersection of **Artificial Intelligence** and **Software Engineering**, with a focus on LLMs for Code Generation, Software Analysis, and deep learning for optimization.
 
-<div class="tag-cloud" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-  <span class="research-tag" style="padding: 4px 12px; background: var(--highlight-bg); border-radius: 20px; font-size: 0.85em; font-weight: 600; color: var(--accent-blue);">🚀 Large Language Models (LLMs)</span>
-  <span class="research-tag" style="padding: 4px 12px; background: var(--highlight-bg); border-radius: 20px; font-size: 0.85em; font-weight: 600; color: var(--accent-blue);">🔍 Software Analysis & Verification</span>
-  <span class="research-tag" style="padding: 4px 12px; background: var(--highlight-bg); border-radius: 20px; font-size: 0.85em; font-weight: 600; color: var(--accent-blue);">🤖 Automated Software Engineering</span>
+<div class="tag-cloud">
+  <span class="research-tag">🚀 Large Language Models (LLMs)</span>
+  <span class="research-tag">🔍 Software Analysis & Verification</span>
+  <span class="research-tag">🤖 Automated Software Engineering</span>
 </div>
 
 </div>
@@ -64,7 +64,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 <!-- Publication Item 1 -->
 <div class='paper-box'>
   <div class='paper-box-image'>
-    <img src='images/favicon.ico' alt="paper-thumb" style="padding: 40px; opacity: 0.2;">
+    <img src='images/favicon.ico' alt="paper-thumb" class="paper-thumb-placeholder">
   </div>
   <div class='paper-box-text'>
     <span class="paper-type-tag">Conference Paper</span>
@@ -158,8 +158,8 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 # <i class="fas fa-laptop-code"></i> Research Experience
 
-<div style="margin-bottom: 30px; text-align: center;">
-  <img src="https://github-readme-stats.vercel.app/api?username=wbzuo&show_icons=true&theme=buefy&hide_border=true&count_private=true" alt="GitHub Stats" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+<div class="stats-panel">
+  <img src="https://github-readme-stats.vercel.app/api?username=wbzuo&show_icons=true&theme=buefy&hide_border=true&count_private=true" alt="GitHub Stats" class="stats-panel__image">
 </div>
 
 <div class="exp-item">
@@ -193,13 +193,8 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 # <i class="fas fa-globe"></i> Visitor Map
 
-<div style="
-  max-width: 500px;
-  margin: 10px auto;
-  padding: 10px;
-  text-align: center;
-">
-  <div style="font-size: 0.95rem; font-weight: 500; color: #00369f; margin-bottom: 12px;">
+<div class="visitor-map-panel">
+  <div class="visitor-map-panel__title">
     Global Visitor Distribution
   </div>
   <script type="text/javascript" id="mapmyvisitors"
