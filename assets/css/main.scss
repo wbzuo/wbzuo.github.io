@@ -144,6 +144,12 @@ html[data-theme="dark"] body::after {
         margin: 0 !important;
     }
 
+    #main > .sidebar > .sidebar {
+        float: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
     #main > .page {
         min-width: 0;
     }
@@ -166,6 +172,10 @@ html[data-theme="dark"] body::after {
     border: 1px solid var(--border-color) !important;
     border-radius: 28px;
     padding: 1.4rem;
+    width: 100% !important;
+    max-width: none !important;
+    float: none !important;
+    margin: 0 !important;
     box-shadow: var(--shadow-card);
     overflow: hidden;
     position: relative;
