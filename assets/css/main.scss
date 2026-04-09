@@ -43,10 +43,9 @@
     --nav-bg: #ffffff;
     --accent-blue: #2563eb;
     --highlight-bg: #f8fafc;
-    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-[data-theme="dark"] {
+html[data-theme="dark"] {
     --bg-color: #0f172a;
     --card-bg: #1e293b;
     --text-main: #f8fafc;
@@ -55,23 +54,25 @@
     --nav-bg: #1e293b;
     --accent-blue: #60a5fa;
     --highlight-bg: #0f172a;
-    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
-body { background-color: var(--bg-color); color: var(--text-main); transition: all 0.3s ease; }
+body { 
+    background-color: var(--bg-color) !important; 
+    color: var(--text-main) !important; 
+    transition: background-color 0.3s ease; 
+}
 
 /* --- Sidebar Adaptations --- */
 
 .sidebar {
     background: transparent !important;
     border: none !important;
-    color: var(--text-main) !important;
 }
 
 .author__avatar img {
     border-radius: 24px;
-    border: 3px solid var(--card-bg);
-    box-shadow: var(--box-shadow);
+    border: 3px solid var(--card-bg) !important;
+    background: var(--card-bg) !important;
 }
 
 .author__name { color: var(--text-main) !important; }
@@ -79,35 +80,45 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
 
 /* Link Icons Grid */
 .link-grid a {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
 }
 .link-grid a:hover { 
-    background: var(--accent-blue); 
-    border-color: var(--accent-blue);
-    color: #fff; 
+    background: var(--accent-blue) !important; 
+    border-color: var(--accent-blue) !important;
+    color: #fff !important; 
 }
 
-/* Sidebar Widgets: FIXING THE BOX */
+/* Sidebar Widgets: THE DEFINITIVE FIX */
 .sidebar__widget {
     margin-top: 2em;
     padding: 1.2em;
-    background: var(--card-bg) !important; /* Force current theme color */
-    border: 1px solid var(--border-color) !important;
     border-radius: 16px;
-    box-shadow: var(--box-shadow);
+    position: relative;
     transition: all 0.3s ease;
+    
+    /* Variables for the box */
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
     
     &::before {
         content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; 
-        background: var(--accent-blue); border-radius: 16px 0 0 16px;
+        background: var(--accent-blue) !important; border-radius: 16px 0 0 16px;
     }
 
-    .widget__title { color: var(--accent-blue) !important; }
+    .widget__title { color: var(--accent-blue) !important; font-weight: 800 !important; }
     .widget__content { color: var(--text-muted) !important; }
-    .widget__content ul li::before { color: var(--accent-blue); }
     .widget__content strong { color: var(--text-main) !important; }
+    .widget__content ul li::before { color: var(--accent-blue) !important; }
+}
+
+/* Dark mode specific overrides for extra safety */
+html[data-theme="dark"] .sidebar__widget {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* --- Main Content Cards --- */
@@ -118,27 +129,27 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
     border-radius: 20px;
     padding: 2.5em;
     margin-bottom: 2.2em;
-    box-shadow: var(--box-shadow);
 }
 
-.section-card h1 { border-bottom: 1px solid var(--border-color); color: var(--text-main); }
+.section-card h1 { border-bottom: 1px solid var(--border-color) !important; color: var(--text-main) !important; }
 
 .paper-box {
-    background: var(--highlight-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-}
-.paper-box:hover { background: var(--card-bg); border-color: var(--accent-blue); }
-
-.paper-title { color: var(--text-main) !important; }
-.author-me { background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); }
-
-/* --- BibTeX Box Adaptation --- */
-.bibtex-box {
-    background: var(--bg-color) !important; /* Darker than card in dark mode */
+    background: var(--highlight-bg) !important;
     border: 1px solid var(--border-color) !important;
-    color: var(--text-main) !important;
 }
+.paper-box:hover { background: var(--card-bg) !important; border-color: var(--accent-blue) !important; }
+
+.author-me { background: rgba(37, 99, 235, 0.15) !important; color: var(--accent-blue) !important; }
+
+/* --- Masthead/Nav --- */
+.masthead {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+.greedy-nav { background: var(--nav-bg) !important; }
+.visible-links a { color: var(--text-muted) !important; }
+.visible-links a:hover { color: var(--accent-blue) !important; }
+.visible-links a.active { color: var(--accent-blue) !important; font-weight: 700; }
 
 html { scroll-behavior: smooth; }
 $scroll_offset : 6em;
