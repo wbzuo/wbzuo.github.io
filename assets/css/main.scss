@@ -39,7 +39,7 @@
 /* --- Design Tokens --- */
 
 :root {
-    --bg-color: #fcfdfe;
+    --bg-color: #f8fafc;
     --card-bg: #ffffff;
     --text-main: #0f172a;
     --text-muted: #64748b;
@@ -80,37 +80,48 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
     .sidebar__widget { margin-top: 2em; padding-top: 1.5em; border-top: 1px solid var(--border-color); .widget__title { font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-blue); margin-bottom: 12px; } .widget__content { font-size: 0.85em; color: var(--text-muted); line-height: 1.6; ul { margin: 0; padding: 0; list-style: none; li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; &::before { content: "→"; color: var(--accent-blue); opacity: 0.6; } } } } }
 }
 
-/* --- Publications: SPECIFIC OPTIMIZATION --- */
+/* --- Publications: ULTIMATE AESTHETIC OPTIMIZATION --- */
 
 .paper-box {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2em;
-    padding: 2em;
-    margin-bottom: 2em;
+    gap: 2.5em;
+    padding: 2.2em;
+    margin-bottom: 2.5em;
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 20px;
+    border: 1px solid rgba(37, 99, 235, 0.05);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03), 0 4px 6px -2px rgba(37, 99, 235, 0.02);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     position: relative;
 
     &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-        border-color: var(--accent-blue);
+        transform: translateY(-6px);
+        box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.12);
+        border-color: rgba(37, 99, 235, 0.2);
+        
+        .paper-box-image img {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
     }
 
     .paper-box-image {
         width: 100%;
+        height: auto;
         border-radius: 12px;
         overflow: hidden;
-        background: var(--highlight-bg);
+        background: #fff;
         border: 1px solid var(--border-color);
-        box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
         
         img { 
             width: 100%; height: 100%; object-fit: contain; 
-            transition: transform 0.6s ease;
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
     }
 
@@ -118,73 +129,84 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: a
         display: flex;
         flex-direction: column;
         
-        .paper-label {
-            display: inline-block; padding: 3px 10px; border-radius: 6px;
-            font-size: 0.7em; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;
-            background: var(--highlight-bg); color: var(--accent-blue); width: fit-content;
-            letter-spacing: 0.5px; border: 1px solid var(--border-color);
+        .paper-type-tag {
+            font-size: 0.65em; font-weight: 900; text-transform: uppercase;
+            letter-spacing: 1.5px; color: var(--accent-blue); opacity: 0.8;
+            margin-bottom: 10px; display: block;
         }
 
         .paper-title {
-            font-size: 1.25em; font-weight: 850; color: var(--text-main); line-height: 1.35;
-            text-decoration: none; margin-bottom: 0.6em; display: block;
-            transition: color 0.2s ease;
+            font-size: 1.35em; font-weight: 900; color: var(--text-main); 
+            line-height: 1.3; margin-bottom: 0.8em; text-decoration: none;
+            display: block; letter-spacing: -0.3px;
+            transition: color 0.3s ease;
             &:hover { color: var(--accent-blue); }
         }
 
         .paper-authors { 
-            font-size: 1em; color: var(--text-muted); margin-bottom: 0.5em; 
-            strong { color: var(--text-main); font-weight: 700; border-bottom: 2px solid var(--accent-blue); padding-bottom: 1px; } 
+            font-size: 1em; color: var(--text-muted); margin-bottom: 0.8em; line-height: 1.6;
+            
+            /* Special Highlight for Wenbin Zuo */
+            .author-me {
+                background: rgba(37, 99, 235, 0.08);
+                color: var(--accent-blue);
+                padding: 2px 8px;
+                border-radius: 6px;
+                font-weight: 700;
+                display: inline-block;
+            }
         }
 
-        .paper-conf { 
-            font-size: 0.95em; color: var(--accent-blue); font-weight: 600; font-style: italic; 
-            margin-bottom: 1.2em;
+        .paper-venue { 
+            font-size: 0.9em; color: var(--text-main); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            margin-bottom: 1.5em; opacity: 0.9;
+            span { color: var(--accent-blue); font-style: italic; text-transform: none; font-weight: 500; }
         }
         
-        /* Modernized Publication Link Bar */
         .paper-links {
-            display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto;
+            display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto;
             
             a {
-                display: inline-flex; align-items: center; gap: 6px;
-                padding: 6px 14px; border-radius: 8px; font-size: 0.85em; font-weight: 700;
-                background: var(--card-bg); color: var(--text-muted); border: 1.5px solid var(--border-color);
-                text-decoration: none; transition: all 0.2s;
+                display: inline-flex; align-items: center; gap: 8px;
+                padding: 8px 16px; border-radius: 10px; font-size: 0.82em; font-weight: 800;
+                background: rgba(37, 99, 235, 0.04); color: var(--text-muted); 
+                border: 1px solid transparent; text-decoration: none; transition: all 0.3s ease;
                 
                 &:hover { 
-                    background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue);
-                    transform: translateY(-2px);
+                    background: var(--accent-blue); color: #ffffff !important;
+                    transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
                 }
                 
-                &[onclick*="toggleBibtex"] {
-                    background: var(--highlight-bg); color: var(--accent-blue);
-                    &:hover { background: var(--accent-blue); color: #fff; }
+                &.btn-cite {
+                    background: var(--accent-blue); color: #fff;
+                    &:hover { filter: brightness(1.1); }
                 }
             }
         }
     }
 
-    /* BibTeX Popup Styling */
+    /* BibTeX High-End Design */
     .bibtex-box {
-        display: none; background: #1e293b; color: #e2e8f0; 
-        border-radius: 10px; padding: 20px; margin-top: 1.5em; position: relative;
-        font-family: 'Fira Code', 'Courier New', monospace; font-size: 0.85em;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        display: none; background: #0f172a; color: #94a3b8; 
+        border-radius: 14px; padding: 24px; margin-top: 2em; position: relative;
+        font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8em;
+        line-height: 1.6; border: 1px solid #1e293b;
         
-        pre { background: transparent; border: none; margin: 0; white-space: pre-wrap; color: inherit; }
+        pre { background: transparent; border: none; margin: 0; white-space: pre-wrap; color: #cbd5e1; }
         
         .copy-btn {
-            position: absolute; top: 12px; right: 12px; padding: 4px 10px;
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-            color: #fff; border-radius: 6px; font-size: 0.75em; cursor: pointer;
-            &:hover { background: var(--accent-blue); border-color: var(--accent-blue); }
+            position: absolute; top: 15px; right: 15px; padding: 6px 12px;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8; border-radius: 8px; font-size: 0.7em; cursor: pointer;
+            font-weight: 700; transition: all 0.2s;
+            &:hover { background: var(--accent-blue); color: #fff; border-color: var(--accent-blue); }
         }
     }
 
     @include breakpoint($medium) {
-        grid-template-columns: 260px 1fr;
-        align-items: stretch;
+        grid-template-columns: 240px 1fr;
+        align-items: flex-start;
     }
 }
 
