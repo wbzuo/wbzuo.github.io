@@ -85,33 +85,10 @@ function initTypewriter() {
     setTimeout(tick, 800);
 }
 
-// --- Smooth Anchor Navigation ---
-// Binds directly to each anchor element so greedy-nav stopPropagation can't block it
-function initAnchorLinks() {
-    document.querySelectorAll('a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href) return;
-        const match = href.match(/^(?:\/)?#(.+)$/);
-        if (!match) return;
-        const targetId = match[1];
-        link.addEventListener('click', function(e) {
-            const target = document.getElementById(targetId);
-            if (!target) return;
-            e.preventDefault();
-            const navEl = document.querySelector('.masthead');
-            const navHeight = navEl ? navEl.offsetHeight : 70;
-            const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
-            window.scrollTo({ top, behavior: 'smooth' });
-            history.pushState(null, '', '/#' + targetId);
-        });
-    });
-}
-
 // --- ScrollSpy ---
 window.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initTypewriter();
-    initAnchorLinks();
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -120,7 +97,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.greedy-nav .visible-links a').forEach(navLink => {
                     navLink.classList.remove('active');
                     const href = navLink.getAttribute('href');
-                    if (href === '/#' + id || href === '#' + id) navLink.classList.add('active');
+                    if (href === '#' + id) navLink.classList.add('active');
                 });
             }
         });

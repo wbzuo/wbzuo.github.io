@@ -1,22 +1,22 @@
 # main links links
 main:
   - title: "About Me"
-    url: "/#about-me"
+    url: "#about-me"
 
   - title: "News"
-    url: "/#news"
+    url: "#news"
 
   - title: "Publications"
-    url: "/#publications"
+    url: "#publications"
 
   - title: "Honors"
-    url: "/#honors-and-awards"
+    url: "#honors-and-awards"
 
   - title: "Education"
-    url: "/#education"
+    url: "#education"
 
   - title: "Experience"
-    url: "/#research-experience"
+    url: "#research-experience"
 
   - title: "Academic Services"
-    url: "/#academic-services"
+    url: "#academic-services"

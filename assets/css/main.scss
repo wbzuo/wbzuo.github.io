@@ -921,8 +921,16 @@ html[data-theme="dark"] .visitor-map-panel {
 }
 
 html { scroll-behavior: smooth; }
-$scroll_offset : 6em;
-h1:before, .anchor:before { content: ''; display: block; position: relative; width: 0; height: $scroll_offset; margin-top: -$scroll_offset; }
+
+/* Native scroll offset — replaces old pseudo-element hack */
+.anchor {
+    scroll-margin-top: 80px;
+}
+
+/* Ensure bottom sections can always scroll into view */
+.page__content {
+    padding-bottom: 60vh;
+}
 
 /* --- Scroll Progress Bar --- */
 #scroll-progress {
