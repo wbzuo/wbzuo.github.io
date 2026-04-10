@@ -86,31 +86,32 @@ function initTypewriter() {
 }
 
 // --- Smooth Anchor Navigation ---
-// Intercepts all #hash and /#hash links and scrolls smoothly without page reload
-document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    const match = href.match(/^(?:\/)?#(.+)$/);
-    if (!match) return;
-
-    const targetId = match[1];
-    const target = document.getElementById(targetId);
-    if (!target) return;
-
-    e.preventDefault();
-    const navHeight = document.querySelector('.masthead') ? document.querySelector('.masthead').offsetHeight : 70;
-    const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
-    window.scrollTo({ top, behavior: 'smooth' });
-    history.pushState(null, '', '/#' + targetId);
-});
+// Binds directly to each anchor element so greedy-nav stopPropagation can't block it
+function initAnchorLinks() {
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const match = href.match(/^(?:\/)?#(.+)$/);
+        if (!match) return;
+        const targetId = match[1];
+        link.addEventListener('click', function(e) {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            e.preventDefault();
+            const navEl = document.querySelector('.masthead');
+            const navHeight = navEl ? navEl.offsetHeight : 70;
+            const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+            window.scrollTo({ top, behavior: 'smooth' });
+            history.pushState(null, '', '/#' + targetId);
+        });
+    });
+}
 
 // --- ScrollSpy ---
 window.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initTypewriter();
+    initAnchorLinks();
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
