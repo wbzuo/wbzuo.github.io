@@ -132,8 +132,8 @@ html[data-theme="dark"] body::after {
 @include breakpoint($large) {
     #main {
         display: grid;
-        grid-template-columns: clamp(280px, 30vw, 360px) minmax(0, 1fr);
-        gap: clamp(1.5rem, 3vw, 2.75rem);
+        grid-template-columns: unquote("clamp(280px, 30vw, 360px)") minmax(0, 1fr);
+        gap: unquote("clamp(1.5rem, 3vw, 2.75rem)");
         align-items: start;
     }
 
@@ -378,7 +378,7 @@ html[data-theme="dark"] .sidebar__widget {
 
 @include breakpoint($large) {
     .author__name {
-        font-size: clamp(1.55rem, 1.2rem + 0.7vw, 1.95rem);
+        font-size: unquote("clamp(1.55rem, 1.2rem + 0.7vw, 1.95rem)");
     }
 
     .author__bio {
