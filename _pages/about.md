@@ -24,6 +24,8 @@ I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology
 
 My research interests primarily lie in the intersection of **Artificial Intelligence** and **Software Engineering**, with a focus on LLMs for Code Generation, Software Analysis, and deep learning for optimization.
 
+<p class="typewriter-line">Currently exploring: <span id="tw-focus"></span><span class="tw-cursor">|</span></p>
+
 <div class="tag-cloud">
   <span class="research-tag">🚀 Large Language Models (LLMs)</span>
   <span class="research-tag">🔍 Software Analysis & Verification</span>
