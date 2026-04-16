@@ -27,9 +27,10 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 <p class="typewriter-line">Currently exploring: <span id="tw-focus"></span><span class="tw-cursor">|</span></p>
 
 <div class="tag-cloud">
-  <span class="research-tag">🚀 Large Language Models (LLMs)</span>
-  <span class="research-tag">🔍 Software Analysis & Verification</span>
-  <span class="research-tag">🤖 Automated Software Engineering</span>
+  <span class="research-tag">Large Language Models</span>
+  <span class="research-tag">Code Generation</span>
+  <span class="research-tag">Software Analysis</span>
+  <span class="research-tag">Automated SE</span>
 </div>
 
 </div>
@@ -68,7 +69,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 </div>
 
 <span class='anchor' id='honors-and-awards'></span>
-<div class="section-card" markdown="1">
+<div class="section-card card-award" markdown="1">
 
 # <i class="fas fa-trophy"></i> Honors and Awards
 
