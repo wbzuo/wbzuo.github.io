@@ -63,44 +63,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 # <i class="fas fa-book"></i> Publications 
 
-<!-- Publication Item 1 -->
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <img src='images/favicon.ico' alt="paper-thumb" class="paper-thumb-placeholder">
-  </div>
-  <div class='paper-box-text'>
-    <span class="paper-type-tag">Conference Paper</span>
-    <a href="https://github.com/wbzuo" class="paper-title">Optimizing Large Language Models for Reliable Code Synthesis and Automated Software Testing</a>
-
-    <p class="paper-authors">
-      <span class="author-me">Wenbin Zuo</span>, Advisor Name, Co-author A, Co-author B
-    </p>
-    
-    <p class="paper-venue">
-      Proceedings of the International Conference on Software Engineering (ICSE), 2026 
-      <br><span>[Featured as Top Academic Highlight]</span>
-    </p>
-
-    <div class="paper-links">
-      <a href="https://github.com/wbzuo"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-      <a href="javascript:void(0)" onclick="return toggleBibtex('paper1-bib', event)" class="btn-cite"><i class="fas fa-quote-right"></i> Cite</a>
-      <a href="#"><i class="fas fa-code"></i> Code</a>
-      <span class='show_paper_citations' data=''></span>
-    </div>
-
-    <!-- BibTeX Popup -->
-    <div id="paper1-bib" class="bibtex-box">
-      <pre id="paper1-bib-text">@inproceedings{zuo2026optimizing,
-  title={Optimizing Large Language Models for Reliable Code Synthesis},
-  author={Zuo, Wenbin and Others},
-  booktitle={ICSE},
-  year={2026}
-}</pre>
-      <button onclick="copyBibtex('paper1-bib')" class="copy-btn"><i class="fas fa-copy"></i> Copy BibTeX</button>
-    </div>
-  </div>
-</div>
+<p style="color: var(--text-muted); font-style: italic;">Papers in preparation. Stay tuned!</p>
 
 </div>
 
@@ -184,9 +147,7 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 # <i class="fas fa-users"></i> Academic Services
 
-<ul style="margin: 0; padding-left: 1.2em; color: var(--text-muted); font-size: 0.95em;">
-  <li style="margin-bottom: 8px;">Reviewer for upcoming conferences/journals in AI and Software Engineering.</li>
-</ul>
+<p style="color: var(--text-muted); font-style: italic;">To be updated.</p>
 
 </div>
 
