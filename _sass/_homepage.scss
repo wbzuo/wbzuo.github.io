@@ -424,11 +424,29 @@ html { scroll-behavior: smooth; }
 
 /* --- GitHub activity + visitor map --- */
 
-.github-stats img {
-    max-width: 100%;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+.gh-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
 }
+
+.gh-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5em 0.75em;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--card-bg);
+}
+
+.gh-img--narrow { max-width: 460px; }
+
+/* Light/dark variants toggle with the site theme */
+.gh-img--dark { display: none; }
+[data-theme="dark"] .gh-img--light { display: none; }
+[data-theme="dark"] .gh-img--dark { display: block; }
 
 .visitor-map {
     max-width: 480px;

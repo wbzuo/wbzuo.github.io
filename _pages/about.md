@@ -171,8 +171,15 @@ redirect_from:
 
 # GitHub Activity
 
-<div class="github-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=wbzuo&show_icons=true&theme=graywhite&hide_border=true&count_private=true" loading="lazy" alt="GitHub Stats">
+<div class="gh-stats">
+  <img class="gh-img gh-img--narrow gh-img--light" loading="lazy" alt="GitHub contribution streak"
+       src="https://streak-stats.demolab.com/?user=wbzuo&hide_border=true&background=00000000&ring=34507e&fire=34507e&currStreakNum=1a1a1a&sideNums=1a1a1a&currStreakLabel=4a4a4a&sideLabels=4a4a4a&dates=6b7280&stroke=e7e7ea">
+  <img class="gh-img gh-img--narrow gh-img--dark" loading="lazy" alt="GitHub contribution streak"
+       src="https://streak-stats.demolab.com/?user=wbzuo&hide_border=true&background=00000000&ring=93b1da&fire=93b1da&currStreakNum=e6e7e9&sideNums=e6e7e9&currStreakLabel=9aa0aa&sideLabels=9aa0aa&dates=9aa0aa&stroke=262a31">
+  <img class="gh-img gh-img--light" loading="lazy" alt="GitHub contribution activity"
+       src="https://github-readme-activity-graph.vercel.app/graph?username=wbzuo&hide_border=true&bg_color=00000000&color=1a1a1a&line=34507e&point=34507e&area=true&area_color=34507e">
+  <img class="gh-img gh-img--dark" loading="lazy" alt="GitHub contribution activity"
+       src="https://github-readme-activity-graph.vercel.app/graph?username=wbzuo&hide_border=true&bg_color=00000000&color=e6e7e9&line=93b1da&point=93b1da&area=true&area_color=93b1da">
 </div>
 
 </div>
