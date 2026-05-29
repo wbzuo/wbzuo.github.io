@@ -20,6 +20,7 @@ redirect_from:
 <div class="about-hero">
   <div class="about-aside">
     <img class="about-photo" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
+    {% if site.author.email != blank %}<p class="about-email"><a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope"></i> {{ site.author.email }}</a></p>{% endif %}
     {% include author-links.html %}
   </div>
   <div class="about-body">
