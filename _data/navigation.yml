@@ -1,19 +1,20 @@
-# main nav links — order mirrors the section order in _pages/about.md
+# main nav links — order mirrors the section order in _pages/about.md.
+# Pure in-page anchors (#id) so clicks never reload / open a new page.
 main:
   - title: "About"
-    url: "/#about-me"
+    url: "#about-me"
 
   - title: "News"
-    url: "/#news"
+    url: "#news"
 
   - title: "Education"
-    url: "/#education"
+    url: "#education"
 
   - title: "Experience"
-    url: "/#research-experience"
+    url: "#research-experience"
 
   - title: "Publications"
-    url: "/#publications"
+    url: "#publications"
 
   - title: "Honors"
-    url: "/#honors-and-awards"
+    url: "#honors-and-awards"

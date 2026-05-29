@@ -70,3 +70,16 @@ window.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 });
+
+// --- Nav links: smooth in-page scroll only (no reload, no URL change) ---
+// Capture phase + stopPropagation overrides the theme's $("a").smoothScroll,
+// so clicking a nav link never changes the URL or adds a history entry.
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('.site-nav a[href^="#"]');
+    if (!link) return;
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (!target) return;
+    e.preventDefault();
+    e.stopPropagation();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}, true);
