@@ -15,6 +15,7 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
+<!-- ============================= ABOUT ME ============================= -->
 <span class='anchor' id='about-me'></span>
 <div class="section-card" markdown="1">
 
@@ -24,19 +25,17 @@ I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology
 
 My research interests primarily lie in the intersection of **Artificial Intelligence** and **Software Engineering**, with a focus on LLMs for Code Generation, Software Analysis, and deep learning for optimization.
 
-<p class="typewriter-line">Currently exploring: <span id="tw-focus"></span><span class="tw-cursor">|</span></p>
-
 <div class="tag-cloud">
-  <span class="research-tag">Large Language Models</span>
-  <span class="research-tag">Code Generation</span>
-  <span class="research-tag">Software Analysis</span>
-  <span class="research-tag">Automated SE</span>
+  <span class="research-tag">🚀 Large Language Models (LLMs)</span>
+  <span class="research-tag">🔍 Software Analysis &amp; Verification</span>
+  <span class="research-tag">🤖 Automated Software Engineering</span>
 </div>
 
 </div>
 
+<!-- ============================= NEWS ============================= -->
 <span class='anchor' id='news'></span>
-<div class="section-card card-news" markdown="1">
+<div class="section-card" markdown="1">
 
 # <i class="fas fa-fire"></i> News
 
@@ -44,14 +43,14 @@ My research interests primarily lie in the intersection of **Artificial Intellig
   <li>
     <div class="news-date">2025.12</div>
     <div class="news-content">
-      <span class="news-tag">Update</span> 
+      <span class="news-tag">Update</span>
       🎉🎉 Personal academic homepage launched! Stay tuned for more updates.
     </div>
   </li>
   <li>
     <div class="news-date">2025.09</div>
     <div class="news-content">
-      <span class="news-tag">Academic</span> 
+      <span class="news-tag">Academic</span>
       🎓🎓 Started my Ph.D. journey at <strong>Tongji University</strong>, Shanghai!
     </div>
   </li>
@@ -59,35 +58,9 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 </div>
 
-<span class='anchor' id='publications'></span>
-<div class="section-card card-pub" markdown="1">
-
-# <i class="fas fa-book"></i> Publications 
-
-<p style="color: var(--text-muted); font-style: italic;">Papers in preparation. Stay tuned!</p>
-
-</div>
-
-<span class='anchor' id='honors-and-awards'></span>
-<div class="section-card card-award" markdown="1">
-
-# <i class="fas fa-trophy"></i> Honors and Awards
-
-<div class="news-list" style="border: none;">
-  <li style="border: none; padding: 0.5em 0;">
-    <div class="news-date">2025.07</div>
-    <div class="news-content"><strong>Outstanding Graduate Award</strong>, Jiangxi University of Finance and Economics</div>
-  </li>
-  <li style="border: none; padding: 0.5em 0;">
-    <div class="news-date">2021 - 2025</div>
-    <div class="news-content"><strong>Multiple University-level Scholarships</strong> and Academic Excellence Awards</div>
-  </li>
-</div>
-
-</div>
-
+<!-- ============================= EDUCATION ============================= -->
 <span class='anchor' id='education'></span>
-<div class="section-card card-edu" markdown="1">
+<div class="section-card" markdown="1">
 
 # <i class="fas fa-graduation-cap"></i> Education
 
@@ -119,14 +92,11 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 </div>
 
+<!-- ============================= RESEARCH EXPERIENCE ============================= -->
 <span class='anchor' id='research-experience'></span>
-<div class="section-card card-exp" markdown="1">
+<div class="section-card" markdown="1">
 
 # <i class="fas fa-laptop-code"></i> Research Experience
-
-<div class="stats-panel">
-  <img src="https://github-readme-stats.vercel.app/api?username=wbzuo&show_icons=true&theme=buefy&hide_border=true&count_private=true" alt="GitHub Stats" class="stats-panel__image">
-</div>
 
 <div class="exp-item">
   <div class="exp-logo">RA</div>
@@ -143,24 +113,92 @@ My research interests primarily lie in the intersection of **Artificial Intellig
 
 </div>
 
+<!-- ============================= PUBLICATIONS ============================= -->
+<span class='anchor' id='publications'></span>
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-book"></i> Publications
+
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div class="badge">In Progress</div>
+    <img src='images/favicon-32x32.png' loading="lazy" alt="publication-thumb">
+  </div>
+  <div class='paper-box-text'>
+    <span class="paper-label">Preprint</span>
+    <a href="https://github.com/wbzuo" class="paper-title">Future Publication Title: Optimizing Large Language Models for Software Engineering Tasks</a>
+    <p class="paper-authors"><strong>Wenbin Zuo</strong>, Co-authors</p>
+    <p class="paper-conf">To be submitted / Under review, 2026</p>
+    <div class="paper-links">
+      <a href="https://github.com/wbzuo"><i class="fab fa-github"></i> Project</a>
+      <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+      <a href="javascript:void(0)" onclick="toggleBibtex('paper1-bib')"><i class="fas fa-quote-right"></i> Cite</a>
+      <a href="#"><i class="fas fa-code"></i> Code</a>
+      <span class='show_paper_citations' data=''></span>
+    </div>
+    <div id="paper1-bib" class="bibtex-popup">
+      <pre id="paper1-bib-text">@article{zuo2026optimizing,
+  title={Optimizing Large Language Models for Software Engineering Tasks},
+  author={Zuo, Wenbin and Others},
+  journal={arXiv preprint},
+  year={2026}
+}</pre>
+      <button class="bibtex-copy" onclick="copyBibtex('paper1-bib')"><i class="fas fa-copy"></i></button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ============================= HONORS & AWARDS ============================= -->
+<span class='anchor' id='honors-and-awards'></span>
+<div class="section-card" markdown="1">
+
+# <i class="fas fa-trophy"></i> Honors and Awards
+
+<ul class="news-list news-list--plain">
+  <li>
+    <div class="news-date">2025.07</div>
+    <div class="news-content"><strong>Outstanding Graduate Award</strong>, Jiangxi University of Finance and Economics</div>
+  </li>
+  <li>
+    <div class="news-date">2021 - 2025</div>
+    <div class="news-content"><strong>Multiple University-level Scholarships</strong> and Academic Excellence Awards</div>
+  </li>
+</ul>
+
+</div>
+
+<!-- ============================= ACADEMIC SERVICES ============================= -->
 <span class='anchor' id='academic-services'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-users"></i> Academic Services
 
-<p style="color: var(--text-muted); font-style: italic;">To be updated.</p>
+- Reviewer for upcoming conferences/journals in AI and Software Engineering.
 
 </div>
 
+<!-- ============================= GITHUB ACTIVITY ============================= -->
+<span class='anchor' id='github-stats'></span>
+<div class="section-card" markdown="1">
+
+# <i class="fab fa-github"></i> GitHub Activity
+
+<div class="github-stats">
+  <img src="https://github-readme-stats.vercel.app/api?username=wbzuo&show_icons=true&theme=buefy&hide_border=true&count_private=true" loading="lazy" alt="GitHub Stats">
+</div>
+
+</div>
+
+<!-- ============================= VISITOR MAP ============================= -->
 <span class='anchor' id='visitor-map'></span>
 <div class="section-card" markdown="1">
 
 # <i class="fas fa-globe"></i> Visitor Map
 
-<div class="visitor-map-panel">
-  <div class="visitor-map-panel__title">
-    Global Visitor Distribution
-  </div>
+<div class="visitor-map">
+  <div class="visitor-map__title">Global Visitor Distribution</div>
   <script type="text/javascript" id="mapmyvisitors"
     src="//mapmyvisitors.com/map.js?d=TExqnA3tGu9npMTINv6yTrAzGBWl9pvwiau3Cx5prQg&cl=ffffff&w=a">
   </script>

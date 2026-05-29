@@ -1,0 +1,473 @@
+/* ==========================================================================
+   Homepage custom styles
+   --------------------------------------------------------------------------
+   All bespoke styling for the single-page academic homepage lives here.
+   Aesthetic: "moderate restraint" — calm cards, one accent colour, no
+   gradients / colour bars / badges-with-blur / hover lifts. Everything is
+   driven by the design tokens below so light + dark themes stay in sync.
+   Imported by assets/css/main.scss.
+   ========================================================================== */
+
+/* --- Design tokens --- */
+
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --nav-bg: #ffffff;
+    --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --accent: #2563eb;
+    --highlight-bg: #f1f5f9;
+    /* Back-compat alias for any markup still using --accent-blue */
+    --accent-blue: var(--accent);
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --nav-bg: #1e293b;
+    --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+    --accent: #60a5fa;
+    --highlight-bg: #334155;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Sidebar (left column) --- */
+
+.sidebar {
+    border: none;
+    background: transparent;
+
+    .author__avatar img {
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 1.5em;
+    }
+
+    .author__name {
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 0.2em;
+        color: var(--text-main);
+    }
+
+    .author__bio {
+        font-size: 0.95em;
+        color: var(--text-muted);
+        line-height: 1.4;
+        margin-bottom: 1.2em;
+    }
+
+    /* CV button — solid accent, no gradient / no lift */
+    .btn-cv {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        background: var(--accent);
+        color: #ffffff !important;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-decoration: none;
+        transition: filter 0.2s ease;
+        margin-bottom: 1.5em;
+
+        &:hover { filter: brightness(0.92); }
+
+        i { margin-right: 8px; }
+    }
+
+    /* Social icon grid */
+    .social-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 1.5em;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 1.1em;
+            transition: color 0.2s, border-color 0.2s;
+
+            &:hover {
+                color: var(--accent);
+                border-color: var(--accent);
+            }
+        }
+    }
+
+    /* Sidebar widget */
+    .sidebar__widget {
+        margin-top: 1.5em;
+        padding: 1.2em;
+        border-radius: 12px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+
+        .widget__title {
+            color: var(--text-main);
+            font-size: 0.85em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            i { color: var(--text-muted); font-size: 1em; }
+        }
+
+        .widget__content {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            line-height: 1.5;
+            .highlight-text { font-weight: 600; color: var(--text-main); }
+        }
+    }
+}
+
+/* --- Section card --- */
+
+.section-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.75em;
+    margin-bottom: 1.5em;
+    box-shadow: var(--card-shadow);
+
+    h1 {
+        margin-top: 0 !important;
+        margin-bottom: 0.8em;
+        padding-bottom: 0.4em;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-main);
+        font-size: 1.35em;
+        font-weight: 700;
+
+        i {
+            color: var(--text-muted);
+            margin-right: 0.4em;
+            font-size: 0.9em;
+        }
+    }
+}
+
+/* --- Research-interest tags --- */
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1em;
+}
+
+.research-tag {
+    padding: 4px 12px;
+    background: var(--highlight-bg);
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* --- News / Honors list --- */
+
+.news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: flex;
+        gap: 1em;
+        padding: 0.7em 0;
+        border-bottom: 1px solid var(--border-color);
+
+        &:last-child { border-bottom: none; }
+    }
+}
+
+.news-date {
+    flex: 0 0 5.5em;
+    color: var(--text-muted);
+    font-size: 0.9em;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.news-content {
+    flex: 1;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.news-tag {
+    display: inline-block;
+    padding: 1px 8px;
+    margin-right: 4px;
+    background: var(--highlight-bg);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+/* Honors variant — no per-row borders, tighter rhythm */
+.news-list--plain li {
+    border-bottom: none;
+    padding: 0.35em 0;
+}
+
+/* --- Experience / Education timeline --- */
+
+.exp-item {
+    display: flex;
+    gap: 1em;
+    padding: 0.9em 0;
+
+    & + .exp-item { border-top: 1px solid var(--border-color); }
+}
+
+.exp-logo {
+    flex: 0 0 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--highlight-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.exp-content { flex: 1; }
+
+.exp-title {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.exp-institution {
+    color: var(--accent);
+    font-size: 0.95em;
+    margin-top: 1px;
+}
+
+.exp-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 1.2em;
+    margin-top: 0.5em;
+    color: var(--text-muted);
+    font-size: 0.85em;
+
+    i { margin-right: 0.3em; }
+}
+
+.exp-desc {
+    margin: 0.5em 0 0;
+    color: var(--text-muted);
+    font-size: 0.92em;
+    line-height: 1.5;
+}
+
+/* --- Publications --- */
+
+.paper-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25em;
+    padding: 1.25em;
+    margin-bottom: 1.25em;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: border-color 0.2s ease;
+
+    &:hover { border-color: var(--accent); }
+
+    @include breakpoint($medium) { grid-template-columns: 220px 1fr; }
+}
+
+.paper-box-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--highlight-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 120px;
+
+    img { max-width: 100%; }
+}
+
+.paper-box-text { display: flex; flex-direction: column; }
+
+.paper-label {
+    align-self: flex-start;
+    margin-bottom: 0.4em;
+    padding: 2px 8px;
+    background: var(--highlight-bg);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.paper-title {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.4;
+    text-decoration: none;
+
+    &:hover { color: var(--accent); }
+}
+
+.paper-authors {
+    margin: 0.4em 0 0;
+    font-size: 0.92em;
+    color: var(--text-main);
+}
+
+.paper-conf {
+    margin: 0.2em 0 0;
+    font-size: 0.88em;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 1em;
+    margin-top: 0.8em;
+
+    a {
+        color: var(--text-muted);
+        font-size: 0.85em;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover { color: var(--accent); }
+        i { margin-right: 0.3em; }
+    }
+}
+
+/* In-progress / status badge on a paper thumbnail */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 2px 8px;
+    background: var(--highlight-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 0.65em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* BibTeX popup (toggled by custom.js) */
+.bibtex-popup {
+    display: none;
+    position: relative;
+    margin-top: 1em;
+    padding: 1em;
+    background: var(--highlight-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    pre {
+        margin: 0;
+        font-size: 0.8em;
+        white-space: pre-wrap;
+        color: var(--text-muted);
+    }
+
+    .bibtex-copy {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 2px 8px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        color: var(--text-muted);
+        font-size: 0.7em;
+        cursor: pointer;
+    }
+}
+
+/* --- GitHub activity (its own low-key block) --- */
+
+.github-stats {
+    text-align: center;
+
+    img {
+        max-width: 100%;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+    }
+}
+
+/* --- Visitor map --- */
+
+.visitor-map {
+    max-width: 500px;
+    margin: 0.5em auto;
+    text-align: center;
+
+    .visitor-map__title {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+    }
+}
+
+/* --- Smooth scroll + sticky-header anchor offset --- */
+
+html { scroll-behavior: smooth; }
+
+$scroll_offset: 5em;
+h1:before,
+.anchor:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: $scroll_offset;
+    margin-top: -$scroll_offset;
+}
