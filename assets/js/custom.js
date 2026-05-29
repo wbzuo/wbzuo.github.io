@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                document.querySelectorAll('.greedy-nav .visible-links a').forEach(navLink => {
+                document.querySelectorAll('.site-nav__links a').forEach(navLink => {
                     navLink.classList.remove('active');
                     const href = navLink.getAttribute('href');
                     if (href === '/#' + id || href === '#' + id) {

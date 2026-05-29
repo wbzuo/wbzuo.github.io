@@ -1,6 +1,6 @@
-# main links — order mirrors the section order in _pages/about.md
+# main nav links — order mirrors the section order in _pages/about.md
 main:
-  - title: "About Me"
+  - title: "About"
     url: "/#about-me"
 
   - title: "News"
@@ -17,6 +17,3 @@ main:
 
   - title: "Honors"
     url: "/#honors-and-awards"
-
-  - title: "Academic Services"
-    url: "/#academic-services"
