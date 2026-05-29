@@ -111,13 +111,26 @@ html { scroll-behavior: smooth; }
     border-bottom: 1px solid var(--border-color);
 }
 
-.about-hero .about-photo {
+.about-hero .about-aside {
     flex: 0 0 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-hero .about-photo {
     width: 160px;
     height: 160px;
     object-fit: cover;
     border-radius: 12px;
     border: 1px solid var(--border-color);
+}
+
+.about-hero .about-aside .social-grid {
+    justify-content: center;
+    margin-top: 0.9em;
+    font-size: 1.15em;
+    gap: 14px;
 }
 
 .about-hero .about-body { flex: 1 1 auto; min-width: 0; }
@@ -146,12 +159,11 @@ html { scroll-behavior: smooth; }
 }
 
 .about-hero .tag-cloud { margin-top: 0.8em; }
-.about-hero .social-grid { justify-content: flex-start; margin-top: 1.15em; }
 
 @media (max-width: 600px) {
     .about-hero { flex-direction: column; align-items: center; text-align: center; }
-    .about-hero .about-photo { flex-basis: 140px; width: 140px; height: 140px; }
-    .about-hero .social-grid { justify-content: center; }
+    .about-hero .about-aside { flex-basis: auto; }
+    .about-hero .about-photo { width: 140px; height: 140px; }
 }
 
 /* --- Academic / social icon row --- */
