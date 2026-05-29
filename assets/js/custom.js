@@ -1,10 +1,9 @@
 function toggleBibtex(id) {
     const bibtex = document.getElementById(id);
-    if (bibtex.style.display === "none") {
-        bibtex.style.display = "block";
-    } else {
-        bibtex.style.display = "none";
-    }
+    // Default-hidden state comes from CSS, so read the computed value
+    // rather than the (initially empty) inline style.
+    const isHidden = window.getComputedStyle(bibtex).display === "none";
+    bibtex.style.display = isHidden ? "block" : "none";
 }
 
 function copyBibtex(id) {

@@ -1,4 +1,4 @@
-# main links links
+# main links — order mirrors the section order in _pages/about.md
 main:
   - title: "About Me"
     url: "/#about-me"
@@ -6,17 +6,17 @@ main:
   - title: "News"
     url: "/#news"
 
-  - title: "Publications"
-    url: "/#publications"
-
-  - title: "Honors"
-    url: "/#honors-and-awards"
-
   - title: "Education"
     url: "/#education"
 
   - title: "Experience"
     url: "/#research-experience"
+
+  - title: "Publications"
+    url: "/#publications"
+
+  - title: "Honors"
+    url: "/#honors-and-awards"
 
   - title: "Academic Services"
     url: "/#academic-services"
