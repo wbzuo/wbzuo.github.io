@@ -1,11 +1,11 @@
 /* ==========================================================================
-   Homepage custom styles — minimal academic
+   Homepage custom styles — centered single-column academic homepage
    --------------------------------------------------------------------------
-   Pure typographic layout: no cards, no shadows. Sections are separated by
-   whitespace and a single hairline rule under each serif heading. One accent
-   colour; academic-style icon row for links. Everything is token-driven so
-   light + dark themes stay in sync. Imported by assets/css/main.scss.
-   LibSass-safe (no clamp()/@use) — GitHub Pages compiles this with sassc.
+   Modern-clean, near-monochrome. One centered reading column with a top
+   "name card" header; no top nav, no left sidebar. Serif headings + sans
+   body, hairline rules, generous whitespace. Token-driven for light/dark.
+   Imported last by assets/css/main.scss; overrides the theme's two-column
+   Susy grid and sticky-header anchor hack. LibSass-safe (no clamp()/@use).
    ========================================================================== */
 
 /* --- Design tokens --- */
@@ -15,23 +15,21 @@
     --card-bg: #ffffff;
     --text-main: #1a1a1a;
     --text-muted: #6b7280;
-    --border-color: #e5e7eb;
-    --nav-bg: #ffffff;
-    --accent: #1d4ed8;
-    --highlight-bg: #f3f4f6;
+    --border-color: #e7e7ea;
+    --accent: #34507e;            /* low-key slate blue — the only colour */
+    --highlight-bg: #f5f5f7;
     --accent-blue: var(--accent); /* back-compat alias */
     --serif: Georgia, Cambria, "Times New Roman", "Songti SC", "Noto Serif SC", serif;
 }
 
 [data-theme="dark"] {
-    --bg-color: #111418;
-    --card-bg: #111418;
-    --text-main: #e8e8e8;
-    --text-muted: #9aa3af;
-    --border-color: #2a2f37;
-    --nav-bg: #111418;
-    --accent: #7aa2f7;
-    --highlight-bg: #1c2128;
+    --bg-color: #0f1115;
+    --card-bg: #0f1115;
+    --text-main: #e6e7e9;
+    --text-muted: #9aa0aa;
+    --border-color: #262a31;
+    --accent: #93b1da;
+    --highlight-bg: #1a1d23;
 }
 
 body {
@@ -39,90 +37,148 @@ body {
     color: var(--text-main);
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
-a { color: var(--accent); }
+/* --- Layout: force a single centered column (override theme grid) --- */
 
-/* --- Sidebar (profile column) --- */
+#main {
+    max-width: 760px !important;
+    margin: 1.5em auto 3.5em !important;
+    padding: 0 1.5em !important;
+    float: none !important;
+}
 
-.sidebar {
-    border: none;
-    background: transparent;
+.page {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
 
-    .author__avatar img {
-        border-radius: 10px;
-        border: 1px solid var(--border-color);
-        margin-bottom: 1.25em;
-    }
+.page .page__inner-wrap { width: 100% !important; }
 
-    .author__name {
-        font-family: var(--serif);
-        font-size: 1.5em;
-        font-weight: 600;
-        margin-bottom: 0.15em;
-        color: var(--text-main);
-    }
+/* Neutralise the theme's sticky-header anchor hack */
+.page__content #about-me {
+    margin-top: 0;
+    &:before { display: none; }
+}
+.anchor { scroll-margin-top: 1.5em; }
+html { scroll-behavior: smooth; }
 
-    .author__bio {
-        font-size: 0.95em;
-        color: var(--text-muted);
-        line-height: 1.45;
-        margin-bottom: 1.1em;
-    }
-
-    /* CV — minimal outline link */
-    .btn-cv {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 5px 12px;
-        border: 1px solid var(--border-color);
-        border-radius: 6px;
-        color: var(--text-main) !important;
-        background: transparent;
-        font-size: 0.85em;
-        font-weight: 500;
+/* Tame the theme's default content link + paragraph-indent styling */
+.page__content {
+    a {
         text-decoration: none;
-        transition: border-color 0.2s, color 0.2s;
-        margin-bottom: 1.25em;
-
-        &:hover { border-color: var(--accent); color: var(--accent) !important; }
+        &:hover { text-decoration: underline; }
     }
+    p { margin: 0 0 1em; }
+    p + p { text-indent: 0; margin-top: 0; }
+}
 
-    /* Essential info — plain muted text lines */
-    .author__urls {
-        list-style: none;
-        margin: 0 0 1em;
-        padding: 0;
+/* --- Floating dark-mode toggle (replaces the old top-nav toggle) --- */
 
-        li {
-            color: var(--text-muted);
-            font-size: 0.9em;
-            line-height: 1.9;
-            i { width: 1.1em; margin-right: 0.4em; color: var(--text-muted); }
-            a { color: var(--text-muted); &:hover { color: var(--accent); } }
-        }
-    }
+.theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
 
-    /* Academic / social icon row */
-    .social-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-bottom: 0.5em;
-        font-size: 1.3em;
+    &:hover { color: var(--accent); border-color: var(--accent); }
+}
 
-        a {
-            color: var(--text-muted);
-            line-height: 1;
-            transition: color 0.2s, transform 0.2s;
-            &:hover { color: var(--accent); transform: translateY(-1px); }
-        }
+/* --- Top "name card" header --- */
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2.75em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-card { border: none; background: transparent; }
+
+.profile-avatar {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.9em;
+}
+
+.profile-name {
+    font-family: var(--serif);
+    font-size: 1.95em;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 0.12em;
+    padding: 0;
+    border: none;
+    color: var(--text-main);
+}
+
+.profile-title {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.02em;
+}
+
+.profile-affil {
+    margin: 0.15em 0 0;
+    color: var(--text-muted);
+    font-size: 0.92em;
+}
+
+.profile-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 1.1em;
+    padding: 5px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-main) !important;
+    font-size: 0.85em;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover { border-color: var(--accent); color: var(--accent) !important; }
+}
+
+/* --- Academic / social icon row --- */
+
+.social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 1.15em;
+    font-size: 1.3em;
+
+    a {
+        color: var(--text-muted);
+        line-height: 1;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+        &:hover { color: var(--accent); transform: translateY(-1px); }
     }
 }
 
-/* --- Sections: pure typographic, no card --- */
+/* --- Sections: pure typographic, no cards --- */
 
 .section-card {
     background: transparent;
@@ -133,16 +189,14 @@ a { color: var(--accent); }
 
     h1 {
         font-family: var(--serif);
-        font-size: 1.4em;
+        font-size: 1.35em;
         font-weight: 600;
         letter-spacing: 0.2px;
         color: var(--text-main);
-        margin: 0 0 0.7em;
+        margin: 0 0 0.7em !important;
         padding-bottom: 0.3em;
         border-bottom: 1px solid var(--border-color);
     }
-
-    > p:first-of-type { margin-top: 0; }
 }
 
 /* --- Research interests: dotted inline text --- */
@@ -170,11 +224,7 @@ a { color: var(--accent); }
     margin: 0;
     padding: 0;
 
-    li {
-        display: flex;
-        gap: 1em;
-        padding: 0.4em 0;
-    }
+    li { display: flex; gap: 1em; padding: 0.4em 0; }
 }
 
 .news-date {
@@ -184,13 +234,8 @@ a { color: var(--accent); }
     font-variant-numeric: tabular-nums;
 }
 
-.news-content {
-    flex: 1;
-    color: var(--text-main);
-    line-height: 1.55;
-}
+.news-content { flex: 1; color: var(--text-main); line-height: 1.55; }
 
-/* Optional small label before a news item (see README) */
 .news-tag {
     margin-right: 0.4em;
     color: var(--accent);
@@ -212,16 +257,8 @@ a { color: var(--accent); }
     }
 }
 
-.exp-title {
-    font-weight: 600;
-    color: var(--text-main);
-}
-
-.exp-institution {
-    color: var(--text-main);
-    font-size: 0.95em;
-    margin-top: 1px;
-}
+.exp-title { font-weight: 600; color: var(--text-main); }
+.exp-institution { color: var(--text-main); font-size: 0.95em; margin-top: 1px; }
 
 .exp-meta-row {
     margin-top: 0.25em;
@@ -253,7 +290,7 @@ a { color: var(--accent); }
     background: transparent;
     border: none;
 
-    @include breakpoint($medium) { grid-template-columns: 160px 1fr; }
+    @include breakpoint($medium) { grid-template-columns: 150px 1fr; }
 }
 
 .paper-box-image {
@@ -265,7 +302,7 @@ a { color: var(--accent); }
     border: 1px solid var(--border-color);
     border-radius: 6px;
     overflow: hidden;
-    min-height: 110px;
+    min-height: 100px;
 
     img { max-width: 100%; }
 }
@@ -276,7 +313,7 @@ a { color: var(--accent); }
     align-self: flex-start;
     margin-bottom: 0.35em;
     color: var(--text-muted);
-    font-size: 0.75em;
+    font-size: 0.74em;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.6px;
@@ -287,23 +324,12 @@ a { color: var(--accent); }
     font-weight: 600;
     color: var(--text-main);
     line-height: 1.45;
-    text-decoration: none;
 
     &:hover { color: var(--accent); }
 }
 
-.paper-authors {
-    margin: 0.35em 0 0;
-    font-size: 0.92em;
-    color: var(--text-main);
-}
-
-.paper-conf {
-    margin: 0.15em 0 0;
-    font-size: 0.88em;
-    font-style: italic;
-    color: var(--text-muted);
-}
+.paper-authors { margin: 0.35em 0 0; font-size: 0.92em; color: var(--text-main); }
+.paper-conf { margin: 0.15em 0 0; font-size: 0.88em; font-style: italic; color: var(--text-muted); }
 
 .paper-links {
     display: flex;
@@ -314,15 +340,11 @@ a { color: var(--accent); }
     a {
         color: var(--text-muted);
         font-size: 0.85em;
-        text-decoration: none;
-        transition: color 0.2s ease;
-
         &:hover { color: var(--accent); }
         i { margin-right: 0.3em; }
     }
 }
 
-/* Status badge on a paper thumbnail */
 .badge {
     position: absolute;
     top: 8px;
@@ -338,7 +360,6 @@ a { color: var(--accent); }
     letter-spacing: 0.5px;
 }
 
-/* BibTeX popup (toggled by custom.js) */
 .bibtex-popup {
     display: none;
     position: relative;
@@ -348,12 +369,7 @@ a { color: var(--accent); }
     border: 1px solid var(--border-color);
     border-radius: 6px;
 
-    pre {
-        margin: 0;
-        font-size: 0.8em;
-        white-space: pre-wrap;
-        color: var(--text-muted);
-    }
+    pre { margin: 0; font-size: 0.8em; white-space: pre-wrap; color: var(--text-muted); }
 
     .bibtex-copy {
         position: absolute;
@@ -369,17 +385,13 @@ a { color: var(--accent); }
     }
 }
 
-/* --- GitHub activity --- */
+/* --- GitHub activity + visitor map --- */
 
-.github-stats {
-    img {
-        max-width: 100%;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-    }
+.github-stats img {
+    max-width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
-
-/* --- Visitor map --- */
 
 .visitor-map {
     max-width: 480px;
@@ -390,19 +402,4 @@ a { color: var(--accent); }
         color: var(--text-muted);
         margin-bottom: 10px;
     }
-}
-
-/* --- Smooth scroll + sticky-header anchor offset --- */
-
-html { scroll-behavior: smooth; }
-
-$scroll_offset: 5em;
-h1:before,
-.anchor:before {
-    content: '';
-    display: block;
-    position: relative;
-    width: 0;
-    height: $scroll_offset;
-    margin-top: -$scroll_offset;
 }
