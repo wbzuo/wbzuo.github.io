@@ -11,33 +11,48 @@
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
     {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
-    
+
     {% if author.cv %}
-      <a href="{{ author.cv | relative_url }}" class="btn-cv"><i class="fas fa-file-pdf"></i> Download CV</a>
+      <a href="{{ author.cv | relative_url }}" class="btn-cv"><i class="fas fa-file-pdf"></i> Curriculum Vitae</a>
     {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <!-- Essential Info -->
-    <ul class="author__urls social-icons" style="margin-bottom: 1.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 1em;">
+    <!-- Essential info -->
+    <ul class="author__urls">
       {% if author.location %}
         <li><i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> {{ author.location }}</li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fas fa-fw fa-university" aria-hidden="true"></i> {{ author.employer }}</li>
       {% endif %}
-      {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
-      {% endif %}
     </ul>
 
-    <!-- Social Grid -->
+    <!-- Academic / social icon row (Academicons + Font Awesome) -->
     <div class="social-grid">
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
       {% endif %}
+      {% if author.orcid %}
+        <a href="{{ author.orcid }}" title="ORCID"><i class="ai ai-orcid"></i></a>
+      {% endif %}
+      {% if author.semanticscholar %}
+        <a href="{{ author.semanticscholar }}" title="Semantic Scholar"><i class="ai ai-semantic-scholar"></i></a>
+      {% endif %}
+      {% if author.dblp %}
+        <a href="{{ author.dblp }}" title="DBLP"><i class="ai ai-dblp"></i></a>
+      {% endif %}
+      {% if author.arxiv %}
+        <a href="{{ author.arxiv }}" title="arXiv"><i class="ai ai-arxiv"></i></a>
+      {% endif %}
+      {% if author.researchgate %}
+        <a href="{{ author.researchgate }}" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
+      {% endif %}
       {% if author.github %}
         <a href="https://github.com/{{ author.github }}" title="GitHub"><i class="fab fa-fw fa-github"></i></a>
+      {% endif %}
+      {% if author.email %}
+        <a href="mailto:{{ author.email }}" title="Email"><i class="fas fa-fw fa-envelope"></i></a>
       {% endif %}
       {% if author.linkedin %}
         <a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn"><i class="fab fa-fw fa-linkedin"></i></a>
@@ -45,24 +60,9 @@
       {% if author.twitter %}
         <a href="https://twitter.com/{{ author.twitter }}" title="Twitter"><i class="fab fa-fw fa-twitter"></i></a>
       {% endif %}
-      {% if author.orcid %}
-        <a href="{{ author.orcid }}" title="ORCID"><i class="ai ai-orcid"></i></a>
-      {% endif %}
-      {% if author.dblp %}
-        <a href="{{ author.dblp }}" title="DBLP"><i class="ai ai-dblp"></i></a>
-      {% endif %}
       {% if author.uri %}
         <a href="{{ author.uri }}" title="Website"><i class="fas fa-fw fa-link"></i></a>
       {% endif %}
-    </div>
-
-    <!-- Widgets -->
-    <div class="sidebar__widget">
-      <div class="widget__title"><i class="fas fa-star"></i> Highlight</div>
-      <div class="widget__content">
-        <span class="highlight-text">Your Position @ Institution</span><br>
-        Short description of your current focus.
-      </div>
     </div>
 
   </div>

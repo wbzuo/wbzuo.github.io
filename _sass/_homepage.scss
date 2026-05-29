@@ -1,39 +1,37 @@
 /* ==========================================================================
-   Homepage custom styles
+   Homepage custom styles — minimal academic
    --------------------------------------------------------------------------
-   All bespoke styling for the single-page academic homepage lives here.
-   Aesthetic: "moderate restraint" — calm cards, one accent colour, no
-   gradients / colour bars / badges-with-blur / hover lifts. Everything is
-   driven by the design tokens below so light + dark themes stay in sync.
-   Imported by assets/css/main.scss.
+   Pure typographic layout: no cards, no shadows. Sections are separated by
+   whitespace and a single hairline rule under each serif heading. One accent
+   colour; academic-style icon row for links. Everything is token-driven so
+   light + dark themes stay in sync. Imported by assets/css/main.scss.
+   LibSass-safe (no clamp()/@use) — GitHub Pages compiles this with sassc.
    ========================================================================== */
 
 /* --- Design tokens --- */
 
 :root {
-    --bg-color: #f8fafc;
+    --bg-color: #ffffff;
     --card-bg: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
+    --text-main: #1a1a1a;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
     --nav-bg: #ffffff;
-    --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-    --accent: #2563eb;
-    --highlight-bg: #f1f5f9;
-    /* Back-compat alias for any markup still using --accent-blue */
-    --accent-blue: var(--accent);
+    --accent: #1d4ed8;
+    --highlight-bg: #f3f4f6;
+    --accent-blue: var(--accent); /* back-compat alias */
+    --serif: Georgia, Cambria, "Times New Roman", "Songti SC", "Noto Serif SC", serif;
 }
 
 [data-theme="dark"] {
-    --bg-color: #0f172a;
-    --card-bg: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
-    --nav-bg: #1e293b;
-    --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-    --accent: #60a5fa;
-    --highlight-bg: #334155;
+    --bg-color: #111418;
+    --card-bg: #111418;
+    --text-main: #e8e8e8;
+    --text-muted: #9aa3af;
+    --border-color: #2a2f37;
+    --nav-bg: #111418;
+    --accent: #7aa2f7;
+    --highlight-bg: #1c2128;
 }
 
 body {
@@ -41,154 +39,128 @@ body {
     color: var(--text-main);
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* --- Sidebar (left column) --- */
+a { color: var(--accent); }
+
+/* --- Sidebar (profile column) --- */
 
 .sidebar {
     border: none;
     background: transparent;
 
     .author__avatar img {
-        border-radius: 12px;
+        border-radius: 10px;
         border: 1px solid var(--border-color);
-        margin-bottom: 1.5em;
+        margin-bottom: 1.25em;
     }
 
     .author__name {
-        font-size: 1.4em;
-        font-weight: 700;
-        margin-bottom: 0.2em;
+        font-family: var(--serif);
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 0.15em;
         color: var(--text-main);
     }
 
     .author__bio {
         font-size: 0.95em;
         color: var(--text-muted);
-        line-height: 1.4;
-        margin-bottom: 1.2em;
+        line-height: 1.45;
+        margin-bottom: 1.1em;
     }
 
-    /* CV button — solid accent, no gradient / no lift */
+    /* CV — minimal outline link */
     .btn-cv {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 10px;
-        background: var(--accent);
-        color: #ffffff !important;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 0.9em;
+        gap: 8px;
+        padding: 5px 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        color: var(--text-main) !important;
+        background: transparent;
+        font-size: 0.85em;
+        font-weight: 500;
         text-decoration: none;
-        transition: filter 0.2s ease;
-        margin-bottom: 1.5em;
+        transition: border-color 0.2s, color 0.2s;
+        margin-bottom: 1.25em;
 
-        &:hover { filter: brightness(0.92); }
-
-        i { margin-right: 8px; }
+        &:hover { border-color: var(--accent); color: var(--accent) !important; }
     }
 
-    /* Social icon grid */
+    /* Essential info — plain muted text lines */
+    .author__urls {
+        list-style: none;
+        margin: 0 0 1em;
+        padding: 0;
+
+        li {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            line-height: 1.9;
+            i { width: 1.1em; margin-right: 0.4em; color: var(--text-muted); }
+            a { color: var(--text-muted); &:hover { color: var(--accent); } }
+        }
+    }
+
+    /* Academic / social icon row */
     .social-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        margin-bottom: 1.5em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 0.5em;
+        font-size: 1.3em;
 
         a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 36px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
             color: var(--text-muted);
-            font-size: 1.1em;
-            transition: color 0.2s, border-color 0.2s;
-
-            &:hover {
-                color: var(--accent);
-                border-color: var(--accent);
-            }
-        }
-    }
-
-    /* Sidebar widget */
-    .sidebar__widget {
-        margin-top: 1.5em;
-        padding: 1.2em;
-        border-radius: 12px;
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-
-        .widget__title {
-            color: var(--text-main);
-            font-size: 0.85em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            i { color: var(--text-muted); font-size: 1em; }
-        }
-
-        .widget__content {
-            font-size: 0.85em;
-            color: var(--text-muted);
-            line-height: 1.5;
-            .highlight-text { font-weight: 600; color: var(--text-main); }
+            line-height: 1;
+            transition: color 0.2s, transform 0.2s;
+            &:hover { color: var(--accent); transform: translateY(-1px); }
         }
     }
 }
 
-/* --- Section card --- */
+/* --- Sections: pure typographic, no card --- */
 
 .section-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.75em;
-    margin-bottom: 1.5em;
-    box-shadow: var(--card-shadow);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 0 2.75em;
 
     h1 {
-        margin-top: 0 !important;
-        margin-bottom: 0.8em;
-        padding-bottom: 0.4em;
-        border-bottom: 1px solid var(--border-color);
+        font-family: var(--serif);
+        font-size: 1.4em;
+        font-weight: 600;
+        letter-spacing: 0.2px;
         color: var(--text-main);
-        font-size: 1.35em;
-        font-weight: 700;
-
-        i {
-            color: var(--text-muted);
-            margin-right: 0.4em;
-            font-size: 0.9em;
-        }
+        margin: 0 0 0.7em;
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid var(--border-color);
     }
+
+    > p:first-of-type { margin-top: 0; }
 }
 
-/* --- Research-interest tags --- */
+/* --- Research interests: dotted inline text --- */
 
 .tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 1em;
+    margin-top: 0.6em;
+    color: var(--text-muted);
+    font-size: 0.95em;
 }
 
 .research-tag {
-    padding: 4px 12px;
-    background: var(--highlight-bg);
-    border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: 500;
     color: var(--text-muted);
+
+    & + .research-tag::before {
+        content: "·";
+        margin: 0 0.55em;
+        color: var(--border-color);
+    }
 }
 
 /* --- News / Honors list --- */
@@ -201,99 +173,73 @@ body {
     li {
         display: flex;
         gap: 1em;
-        padding: 0.7em 0;
-        border-bottom: 1px solid var(--border-color);
-
-        &:last-child { border-bottom: none; }
+        padding: 0.4em 0;
     }
 }
 
 .news-date {
-    flex: 0 0 5.5em;
+    flex: 0 0 5em;
     color: var(--text-muted);
-    font-size: 0.9em;
-    font-weight: 600;
+    font-size: 0.92em;
     font-variant-numeric: tabular-nums;
 }
 
 .news-content {
     flex: 1;
     color: var(--text-main);
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
+/* Optional small label before a news item (see README) */
 .news-tag {
-    display: inline-block;
-    padding: 1px 8px;
-    margin-right: 4px;
-    background: var(--highlight-bg);
-    border-radius: 4px;
-    color: var(--text-muted);
-    font-size: 0.75em;
+    margin-right: 0.4em;
+    color: var(--accent);
+    font-size: 0.8em;
     font-weight: 600;
 }
 
-/* Honors variant — no per-row borders, tighter rhythm */
-.news-list--plain li {
-    border-bottom: none;
-    padding: 0.35em 0;
-}
+.news-list--plain li { padding: 0.3em 0; }
 
-/* --- Experience / Education timeline --- */
+/* --- Education / Experience entries --- */
 
 .exp-item {
-    display: flex;
-    gap: 1em;
-    padding: 0.9em 0;
+    padding: 0.45em 0 0.7em;
 
-    & + .exp-item { border-top: 1px solid var(--border-color); }
+    & + .exp-item {
+        margin-top: 0.5em;
+        padding-top: 0.9em;
+        border-top: 1px solid var(--border-color);
+    }
 }
-
-.exp-logo {
-    flex: 0 0 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--highlight-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 0.95em;
-    letter-spacing: 0.5px;
-}
-
-.exp-content { flex: 1; }
 
 .exp-title {
-    font-size: 1.05em;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-main);
 }
 
 .exp-institution {
-    color: var(--accent);
+    color: var(--text-main);
     font-size: 0.95em;
     margin-top: 1px;
 }
 
 .exp-meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4em 1.2em;
-    margin-top: 0.5em;
+    margin-top: 0.25em;
     color: var(--text-muted);
-    font-size: 0.85em;
+    font-size: 0.88em;
 
-    i { margin-right: 0.3em; }
+    span + span::before {
+        content: "·";
+        margin: 0 0.5em;
+        color: var(--border-color);
+    }
 }
 
 .exp-desc {
-    margin: 0.5em 0 0;
+    margin: 0.4em 0 0;
     color: var(--text-muted);
     font-size: 0.92em;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 /* --- Publications --- */
@@ -301,17 +247,13 @@ body {
 .paper-box {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25em;
-    padding: 1.25em;
-    margin-bottom: 1.25em;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    transition: border-color 0.2s ease;
+    gap: 1em;
+    padding: 0;
+    margin-bottom: 1.6em;
+    background: transparent;
+    border: none;
 
-    &:hover { border-color: var(--accent); }
-
-    @include breakpoint($medium) { grid-template-columns: 220px 1fr; }
+    @include breakpoint($medium) { grid-template-columns: 160px 1fr; }
 }
 
 .paper-box-image {
@@ -321,9 +263,9 @@ body {
     justify-content: center;
     background: var(--highlight-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
-    min-height: 120px;
+    min-height: 110px;
 
     img { max-width: 100%; }
 }
@@ -332,35 +274,32 @@ body {
 
 .paper-label {
     align-self: flex-start;
-    margin-bottom: 0.4em;
-    padding: 2px 8px;
-    background: var(--highlight-bg);
-    border-radius: 4px;
+    margin-bottom: 0.35em;
     color: var(--text-muted);
     font-size: 0.75em;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
 }
 
 .paper-title {
-    font-size: 1.05em;
-    font-weight: 700;
+    font-size: 1.02em;
+    font-weight: 600;
     color: var(--text-main);
-    line-height: 1.4;
+    line-height: 1.45;
     text-decoration: none;
 
     &:hover { color: var(--accent); }
 }
 
 .paper-authors {
-    margin: 0.4em 0 0;
+    margin: 0.35em 0 0;
     font-size: 0.92em;
     color: var(--text-main);
 }
 
 .paper-conf {
-    margin: 0.2em 0 0;
+    margin: 0.15em 0 0;
     font-size: 0.88em;
     font-style: italic;
     color: var(--text-muted);
@@ -369,8 +308,8 @@ body {
 .paper-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4em 1em;
-    margin-top: 0.8em;
+    gap: 0.4em 1.1em;
+    margin-top: 0.7em;
 
     a {
         color: var(--text-muted);
@@ -383,17 +322,17 @@ body {
     }
 }
 
-/* In-progress / status badge on a paper thumbnail */
+/* Status badge on a paper thumbnail */
 .badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 2px 8px;
-    background: var(--highlight-bg);
+    top: 8px;
+    left: 8px;
+    padding: 2px 7px;
+    background: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     color: var(--text-muted);
-    font-size: 0.65em;
+    font-size: 0.62em;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -403,11 +342,11 @@ body {
 .bibtex-popup {
     display: none;
     position: relative;
-    margin-top: 1em;
+    margin-top: 0.9em;
     padding: 1em;
     background: var(--highlight-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 6px;
 
     pre {
         margin: 0;
@@ -418,10 +357,10 @@ body {
 
     .bibtex-copy {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 8px;
+        right: 8px;
         padding: 2px 8px;
-        background: var(--card-bg);
+        background: var(--bg-color);
         border: 1px solid var(--border-color);
         border-radius: 4px;
         color: var(--text-muted);
@@ -430,30 +369,26 @@ body {
     }
 }
 
-/* --- GitHub activity (its own low-key block) --- */
+/* --- GitHub activity --- */
 
 .github-stats {
-    text-align: center;
-
     img {
         max-width: 100%;
         border: 1px solid var(--border-color);
-        border-radius: 10px;
+        border-radius: 8px;
     }
 }
 
 /* --- Visitor map --- */
 
 .visitor-map {
-    max-width: 500px;
-    margin: 0.5em auto;
-    text-align: center;
+    max-width: 480px;
+    margin: 0.25em 0;
 
     .visitor-map__title {
-        font-size: 0.95rem;
-        font-weight: 500;
+        font-size: 0.9rem;
         color: var(--text-muted);
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 }
 

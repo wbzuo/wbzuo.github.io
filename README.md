@@ -1,6 +1,6 @@
-# AcadHomepage: Clean Academic Portfolio Template
+# AcadHomepage: Minimal Academic Portfolio Template
 
-**AcadHomepage** is a professional, responsive academic personal homepage template. Built with **Jekyll** and a refined **Minimal Mistakes** theme, it uses a calm, restrained card layout aimed at researchers, PhD students, and scholars.
+**AcadHomepage** is a clean, responsive academic personal homepage template. Built with **Jekyll** and a refined **Minimal Mistakes** theme, it uses a minimal, typographic layout (serif headings, hairline rules, generous whitespace) aimed at researchers, PhD students, and scholars.
 
 [**Demo & Personal Example**](https://wbzuo.github.io)
 
@@ -8,12 +8,12 @@
 
 ## ✨ Key Features
 
-- 🃏 **Clean Card Layout**: Calm, evenly-spaced cards — one accent colour, no visual noise.
-- 🌓 **One-Click Dark Mode**: Smooth transition between light and dark themes (all colours are token-driven).
-- 📖 **Publication Cards**: Per-paper card with inline BibTeX copy.
+- 📄 **Minimal Typographic Layout**: No cards or shadows — serif section headings, a single hairline rule, and whitespace. Paper-like academic feel.
+- 🔗 **Academic Icon Row**: Google Scholar, ORCID, DBLP, Semantic Scholar, arXiv, ResearchGate, GitHub, Email — via [Academicons](https://jpswalsh.github.io/academicons/) + Font Awesome.
+- 🌓 **One-Click Dark Mode**: Smooth light/dark switch (all colours are token-driven).
+- 📖 **Publication Cards**: Per-paper entry with inline BibTeX copy.
 - 🤖 **Automated Citations**: Sync Google Scholar citation counts via GitHub Actions.
-- 📱 **Fully Responsive**: Works on desktop, tablet, and mobile.
-- 🔗 **ScrollSpy Navigation**: Header menu highlights the active section as you scroll.
+- 📱 **Fully Responsive** + 🔗 **ScrollSpy** header navigation.
 
 ---
 
@@ -37,12 +37,14 @@ bash run_server.sh  # run the local server
 ```
 Visit `http://127.0.0.1:4000` to preview.
 
+> **Deploy note:** this repo's live site is served from the **`personal-site`** branch (GitHub Pages → Settings → Pages → Source). Push there to update the live page; `main` is kept as a clean template and does not auto-deploy.
+
 ---
 
 ## 🛠 Customization Guide
 
-> Almost everything you edit day-to-day lives in **`_pages/about.md`** (content) and **`_config.yml`** (identity).
-> Each content section follows the same wrapper — copy a block, paste it, fill it in.
+> Day-to-day edits live in **`_pages/about.md`** (content) and **`_config.yml`** (identity).
+> Each content section uses the same wrapper — copy a block, paste it, fill it in.
 
 ### Section wrapper (the pattern every block uses)
 
@@ -50,44 +52,51 @@ Visit `http://127.0.0.1:4000` to preview.
 <span class='anchor' id='your-section-id'></span>
 <div class="section-card" markdown="1">
 
-# <i class="fas fa-user"></i> Section Title
+# Section Title
 
 ...your content...
 
 </div>
 ```
 
-- The `id` on the `<span class='anchor'>` is what the navbar links to (see *Navigation* below).
-- `markdown="1"` lets you mix Markdown and HTML inside the card.
-- Pick any [Font Awesome](https://fontawesome.com/icons) / [Academicons](https://jpswalsh.github.io/academicons/) icon for the title.
+- Headings are plain text (the serif + hairline rule is applied automatically). No icons needed.
+- The `id` on `<span class='anchor'>` is what the navbar links to (see *Navigation*).
+- `markdown="1"` lets you mix Markdown and HTML inside the block.
 
 ### 1. Identity & Sidebar — `_config.yml`
 
 ```yaml
 author:
-  name          : "Your Name"
-  avatar        : "images/your-avatar.png"   # square image looks best
-  bio           : "PhD Student @ Your University"
-  location      : "City, Country"
-  employer      : "Your University"
-  googlescholar : "https://scholar.google.com/citations?user=YOUR_ID"
-  cv            : "assets/files/Your_CV.pdf"
-  email         : "you@example.com"
-  github        : "yourhandle"               # leave "" to hide an icon
-  twitter       : ""
-  linkedin      : ""
-  orcid         : ""
+  name            : "Your Name"
+  avatar          : "images/your-avatar.png"   # square image looks best
+  bio             : "PhD Student @ Your University"
+  location        : "City, Country"
+  employer        : "Your University"
+  cv              : "assets/files/Your_CV.pdf"  # "" hides the CV link
+  email           : "you@example.com"
+  github          : "yourhandle"
+  # Academic / social links — fill any you have; empty ones are hidden:
+  googlescholar   : "https://scholar.google.com/citations?user=YOUR_ID"
+  orcid           : "https://orcid.org/0000-0000-0000-0000"
+  dblp            : "https://dblp.org/pid/XXX/YYY.html"
+  semanticscholar : "https://www.semanticscholar.org/author/XXX"
+  arxiv           : "https://arxiv.org/a/lastname_f_1"
+  researchgate    : "https://www.researchgate.net/profile/Your-Name"
+  linkedin        : ""
+  twitter         : ""
 ```
 
-Empty strings (`""`) hide the corresponding social icon automatically.
+Each filled field adds one icon to the sidebar's academic icon row. **Empty strings (`""`) are hidden automatically** — no broken links.
 
-### 2. Research-interest tags — About section
+### 2. Research interests — About section
+
+Rendered as a single dotted line (`A · B · C`):
 
 ```html
 <div class="tag-cloud">
-  <span class="research-tag">🚀 Large Language Models</span>
-  <span class="research-tag">🔍 Software Analysis</span>
-  <!-- add / remove <span> tags freely -->
+  <span class="research-tag">Large Language Models</span>
+  <span class="research-tag">Software Analysis</span>
+  <!-- add / remove <span> freely -->
 </div>
 ```
 
@@ -97,36 +106,30 @@ Empty strings (`""`) hide the corresponding social icon automatically.
 <ul class="news-list">
   <li>
     <div class="news-date">2025.12</div>
-    <div class="news-content">
-      <span class="news-tag">Update</span>
-      🎉 Your news text here.
-    </div>
+    <div class="news-content">Your news text here.</div>
   </li>
-  <!-- duplicate the <li> above for each new item (newest on top) -->
+  <!-- duplicate the <li> above for each item (newest on top) -->
 </ul>
 ```
 
-`<span class="news-tag">` is an optional small label (e.g. `Update`, `Academic`, `Paper`) — drop it if you don't want one.
+Optional small label: put `<span class="news-tag">Paper</span>` at the start of `.news-content`.
 
 ### 4. Add an Education / Experience entry
 
 ```html
 <div class="exp-item">
-  <div class="exp-logo">TJ</div>                 <!-- 2–3 letter abbreviation -->
-  <div class="exp-content">
-    <div class="exp-title">Ph.D. in Computer Science</div>
-    <div class="exp-institution">Your University</div>
-    <div class="exp-meta-row">
-      <span><i class="fas fa-calendar-alt"></i> 2025.09 - Present</span>
-      <span><i class="fas fa-map-marker-alt"></i> City, Country</span>
-    </div>
-    <p class="exp-desc">One-line description of your focus or achievement.</p>
+  <div class="exp-title">Ph.D. in Computer Science</div>
+  <div class="exp-institution">Your University</div>
+  <div class="exp-meta-row">
+    <span>2025.09 – Present</span>
+    <span>City, Country</span>
   </div>
+  <p class="exp-desc">One-line description of your focus or achievement.</p>
 </div>
 <!-- duplicate the whole .exp-item for each entry -->
 ```
 
-Education and Research Experience use the **same** `.exp-item` block.
+Education and Research Experience use the **same** `.exp-item` block. Each `<span>` in `.exp-meta-row` is joined by a `·` automatically.
 
 ### 5. Add a Publication
 
@@ -142,7 +145,7 @@ Education and Research Experience use the **same** `.exp-item` block.
     <p class="paper-authors"><strong>Your Name</strong>, Co-authors</p>
     <p class="paper-conf">Venue / Journal, Year</p>
     <div class="paper-links">
-      <a href="PROJECT_URL"><i class="fab fa-github"></i> Project</a>
+      <a href="PROJECT_URL"><i class="fas fa-link"></i> Project</a>
       <a href="PDF_URL"><i class="fas fa-file-pdf"></i> Paper</a>
       <a href="javascript:void(0)" onclick="toggleBibtex('paperN-bib')"><i class="fas fa-quote-right"></i> Cite</a>
       <a href="CODE_URL"><i class="fas fa-code"></i> Code</a>
@@ -170,54 +173,45 @@ Education and Research Experience use the **same** `.exp-item` block.
     <div class="news-date">2025.07</div>
     <div class="news-content"><strong>Award Name</strong>, Institution</div>
   </li>
-  <!-- duplicate the <li> for each award -->
 </ul>
 ```
 
-(`news-list--plain` is the borderless, tighter variant used for awards/services.)
-
 ### 7. Academic Services
 
-Just a plain Markdown list inside the card:
+Plain Markdown list inside the block:
 
 ```markdown
 - Reviewer for Conference / Journal Name.
 - PC member, Workshop Name.
 ```
 
-### 8. Change the accent colour / theme — `_sass/_homepage.scss`
+### 8. Colours & fonts — `_sass/_homepage.scss`
 
-All colours come from CSS variables at the top of the file. Edit once, both themes update:
+All colours and the serif heading font come from variables at the top of the file. Edit once, both themes update:
 
 ```scss
 :root {
-  --accent: #2563eb;        /* light-mode accent */
-  --card-bg: #ffffff;
-  --bg-color: #f8fafc;
-  /* ... */
+  --accent: #1d4ed8;        /* light-mode accent (links, hover) */
+  --text-main: #1a1a1a;
+  --bg-color: #ffffff;
+  --border-color: #e5e7eb;  /* the hairline rules */
+  --serif: Georgia, Cambria, "Times New Roman", serif;  /* heading font */
 }
-[data-theme="dark"] {
-  --accent: #60a5fa;        /* dark-mode accent */
-  /* ... */
-}
+[data-theme="dark"] { --accent: #7aa2f7; /* ... */ }
 ```
 
 ### 9. Show / hide the GitHub Stats & Visitor Map
 
-Both are self-contained `.section-card` blocks near the bottom of `about.md`.
-To remove either, delete its block (the `<span class='anchor'>` line plus the `<div class="section-card">…</div>`).
-For GitHub Stats, change `username=wbzuo` in the image URL to your handle.
+Both are self-contained `.section-card` blocks near the bottom of `about.md`. To remove one, delete its block (the `<span class='anchor'>` line plus the `<div class="section-card">…</div>`). For GitHub Stats, change `username=wbzuo` in the image URL to your handle.
 
 ### 10. Navigation menu — `_data/navigation.yml`
 
-Keep the menu order in sync with your section order. Each `url` must match a section `id`:
+Keep the menu order in sync with your section order; each `url` must match a section `id`:
 
 ```yaml
 main:
   - title: "About Me"
     url: "/#about-me"
-  - title: "News"
-    url: "/#news"
   # ...one entry per section
 ```
 
@@ -225,8 +219,7 @@ main:
 
 1. In `_config.yml`, set your `googlescholar` profile URL.
 2. Add a GitHub Secret: `Settings > Secrets and variables > Actions > New repository secret`.
-   - Name: `GOOGLE_SCHOLAR_ID`
-   - Value: your Scholar user id (e.g. `TExqnA3...`).
+   - Name: `GOOGLE_SCHOLAR_ID`, Value: your Scholar user id (e.g. `TExqnA3...`).
 3. In a publication's links, use `<span class='show_paper_citations' data='PAPER_ID'></span>`.
 
 ---
@@ -234,11 +227,11 @@ main:
 ## 📁 Project Structure
 
 ```text
-├── _config.yml            # Global configuration & identity
+├── _config.yml            # Global configuration & identity (author links here)
 ├── _data/navigation.yml   # Top navigation menu (mirror section order)
-├── _includes/             # HTML partials (sidebar, masthead, widgets)
+├── _includes/             # HTML partials (sidebar / author-profile, masthead)
 ├── _pages/about.md        # THE MAIN CONTENT FILE (edit this!)
-├── _sass/_homepage.scss   # All custom styling + theme tokens (edit colours here)
+├── _sass/_homepage.scss   # All custom styling + theme tokens (edit colours/font here)
 ├── assets/css/main.scss   # Theme imports (rarely edited)
 ├── assets/js/custom.js    # Dark mode, ScrollSpy, BibTeX toggle/copy
 └── google_scholar_crawler/ # Python citation automation
@@ -249,6 +242,7 @@ main:
 ## 📄 License & Acknowledgements
 
 - **Theme**: Based on [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) by Michael Rose.
+- **Icons**: [Academicons](https://jpswalsh.github.io/academicons/) + [Font Awesome](https://fontawesome.com/).
 - **License**: MIT.
 
 If you like this template, please give it a ⭐!

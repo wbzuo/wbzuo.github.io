@@ -27,7 +27,11 @@ author:
   github           : "wbzuo"
   twitter          : ""
   linkedin         : ""
-  orcid            : ""
+  orcid            : ""             # e.g. https://orcid.org/0000-0000-0000-0000
+  dblp             : ""             # e.g. https://dblp.org/pid/XXX/YYY.html
+  semanticscholar  : ""             # e.g. https://www.semanticscholar.org/author/XXX
+  arxiv            : ""             # e.g. https://arxiv.org/a/lastname_f_1
+  researchgate     : ""             # e.g. https://www.researchgate.net/profile/Your-Name
 
 # Reading Files
 include:
