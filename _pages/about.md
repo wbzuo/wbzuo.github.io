@@ -15,22 +15,21 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
-<!-- ============================= ABOUT ME ============================= -->
+<!-- ============================= ABOUT (hero: photo left, intro + links right) ============================= -->
 <span class='anchor' id='about-me'></span>
-<div class="section-card" markdown="1">
-
-# About Me
-
-I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China. I received my B.S. degree in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025.
-
-My research interests lie at the intersection of **Artificial Intelligence** and **Software Engineering**, with a focus on LLMs for code generation, software analysis, and deep learning for optimization.
-
-<div class="tag-cloud">
-  <span class="research-tag">Large Language Models</span>
-  <span class="research-tag">Software Analysis &amp; Verification</span>
-  <span class="research-tag">Automated Software Engineering</span>
-</div>
-
+<div class="about-hero">
+  <img class="about-photo" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
+  <div class="about-body">
+    <h1 class="about-name">{{ site.author.name }}</h1>
+    <p class="about-role">{{ site.author.bio }} · {{ site.author.location }}</p>
+    <p class="about-intro">I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at <a href="https://www.tongji.edu.cn/">Tongji University</a>, Shanghai, China. I received my B.S. in Software Engineering from <a href="https://www.jxufe.edu.cn/">Jiangxi University of Finance and Economics</a> in 2025. My research focuses on <strong>LLMs for code generation</strong>, software analysis, and deep learning for optimization.</p>
+    <div class="tag-cloud">
+      <span class="research-tag">Large Language Models</span>
+      <span class="research-tag">Software Analysis &amp; Verification</span>
+      <span class="research-tag">Automated Software Engineering</span>
+    </div>
+    {% include author-links.html %}
+  </div>
 </div>
 
 <!-- ============================= NEWS ============================= -->
