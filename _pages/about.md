@@ -21,14 +21,16 @@ redirect_from:
 
 # About Me
 
-I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China. I received my B.S. in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025. My research focuses on **LLMs for code generation**, software analysis, and deep learning for optimization.
+I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China, advised by Prof. Weiwei Guo (郭炜炜). I received my B.S. in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025.
 
-<p class="lang-cn">我是左文彬，<a href="https://www.tongji.edu.cn/">同济大学</a>智能科学与技术专业博士研究生，2025 年本科毕业于<a href="https://www.jxufe.edu.cn/">江西财经大学</a>软件工程专业。研究方向聚焦于<strong>面向代码生成的大语言模型</strong>、软件分析与深度学习优化。如有学术合作意向，欢迎邮件联系。</p>
+My research interests span **visual perception**, **neuro-symbolic computing**, and **human–computer interaction**, among related directions. I am broadly interested in intelligent systems that can perceive, reason, and interact with the world.
+
+<p class="lang-cn">我是左文彬，<a href="https://www.tongji.edu.cn/">同济大学</a>智能科学与技术专业在读博士生，导师为郭炜炜教授。2025 年本科毕业于<a href="https://www.jxufe.edu.cn/">江西财经大学</a>软件工程专业。研究方向主要包括<strong>视觉感知</strong>、<strong>神经符号计算</strong>与<strong>人机交互</strong>等。如有学术合作意向，欢迎邮件联系。</p>
 
 <div class="tag-cloud">
-  <span class="research-tag">Large Language Models</span>
-  <span class="research-tag">Software Analysis &amp; Verification</span>
-  <span class="research-tag">Automated Software Engineering</span>
+  <span class="research-tag">Visual Perception</span>
+  <span class="research-tag">Neuro-Symbolic Computing</span>
+  <span class="research-tag">Human–Computer Interaction</span>
 </div>
 
 </div>
