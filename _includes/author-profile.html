@@ -2,53 +2,19 @@
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
 
-<div itemscope itemtype="http://schema.org/Person" class="profile-card">
+<div itemscope itemtype="http://schema.org/Person" class="profile">
 
-  <img class="profile-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
+  <img class="profile-photo" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
 
   <h1 class="profile-name" itemprop="name">{{ author.name }}</h1>
+  {% if author.employer != blank %}<p class="profile-affil">{{ author.employer }}</p>{% endif %}
   {% if author.bio != blank %}<p class="profile-title">{{ author.bio }}</p>{% endif %}
-  {% if author.location != blank %}<p class="profile-affil">{{ author.location }}</p>{% endif %}
+  {% if author.location != blank %}<p class="profile-loc"><i class="fas fa-fw fa-map-marker-alt"></i> {{ author.location }}</p>{% endif %}
 
   {% if author.cv != blank %}
     <a href="{{ author.cv | relative_url }}" class="profile-cv"><i class="fas fa-file-pdf"></i> Curriculum Vitae</a>
   {% endif %}
 
-  <!-- Academic / social icon row. Empty _config fields are hidden (!= blank). -->
-  <div class="social-grid">
-    {% if author.googlescholar != blank %}
-      <a href="{{ author.googlescholar }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-    {% endif %}
-    {% if author.orcid != blank %}
-      <a href="{{ author.orcid }}" title="ORCID"><i class="ai ai-orcid"></i></a>
-    {% endif %}
-    {% if author.semanticscholar != blank %}
-      <a href="{{ author.semanticscholar }}" title="Semantic Scholar"><i class="ai ai-semantic-scholar"></i></a>
-    {% endif %}
-    {% if author.dblp != blank %}
-      <a href="{{ author.dblp }}" title="DBLP"><i class="ai ai-dblp"></i></a>
-    {% endif %}
-    {% if author.arxiv != blank %}
-      <a href="{{ author.arxiv }}" title="arXiv"><i class="ai ai-arxiv"></i></a>
-    {% endif %}
-    {% if author.researchgate != blank %}
-      <a href="{{ author.researchgate }}" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
-    {% endif %}
-    {% if author.github != blank %}
-      <a href="https://github.com/{{ author.github }}" title="GitHub"><i class="fab fa-fw fa-github"></i></a>
-    {% endif %}
-    {% if author.email != blank %}
-      <a href="mailto:{{ author.email }}" title="Email"><i class="fas fa-fw fa-envelope"></i></a>
-    {% endif %}
-    {% if author.linkedin != blank %}
-      <a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn"><i class="fab fa-fw fa-linkedin"></i></a>
-    {% endif %}
-    {% if author.twitter != blank %}
-      <a href="https://twitter.com/{{ author.twitter }}" title="Twitter"><i class="fab fa-fw fa-twitter"></i></a>
-    {% endif %}
-    {% if author.uri != blank %}
-      <a href="{{ author.uri }}" title="Website"><i class="fas fa-fw fa-link"></i></a>
-    {% endif %}
-  </div>
+  {% include author-links.html %}
 
 </div>

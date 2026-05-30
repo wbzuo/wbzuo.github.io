@@ -16,9 +16,9 @@ google_analytics_id      :  # get google_analytics_id from https://analytics.goo
 
 # Site Author
 author:
-  name             : "Wenbin Zuo"
+  name             : "Wenbin Zuo (左文彬)"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "PhD Student @ Tongji University"
+  bio              : "PhD Student in Intelligent Science and Technology"
   location         : "Shanghai, China"
   employer         : "Tongji University"
   cv               : ""

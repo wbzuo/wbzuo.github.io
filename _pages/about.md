@@ -15,23 +15,22 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
-<!-- ============================= ABOUT (hero: photo left, intro + links right) ============================= -->
+<!-- ============================= ABOUT ME ============================= -->
 <span class='anchor' id='about-me'></span>
-<div class="about-hero">
-  <img class="about-photo" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
-  <div class="about-body">
-    <h1 class="about-name">{{ site.author.name }}</h1>
-    <p class="about-role">{{ site.author.bio }} · {{ site.author.location }}</p>
-    <p class="about-intro">I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at <a href="https://www.tongji.edu.cn/">Tongji University</a>, Shanghai, China. I received my B.S. in Software Engineering from <a href="https://www.jxufe.edu.cn/">Jiangxi University of Finance and Economics</a> in 2025. My research focuses on <strong>LLMs for code generation</strong>, software analysis, and deep learning for optimization.</p>
-    <div class="tag-cloud">
-      <span class="research-tag">Large Language Models</span>
-      <span class="research-tag">Software Analysis &amp; Verification</span>
-      <span class="research-tag">Automated Software Engineering</span>
-    </div>
-  </div>
+<div class="section-card" markdown="1">
+
+# About Me
+
+I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China. I received my B.S. in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025. My research focuses on **LLMs for code generation**, software analysis, and deep learning for optimization.
+
+<p class="lang-cn">我是左文彬，<a href="https://www.tongji.edu.cn/">同济大学</a>智能科学与技术专业博士研究生，2025 年本科毕业于<a href="https://www.jxufe.edu.cn/">江西财经大学</a>软件工程专业。研究方向聚焦于<strong>面向代码生成的大语言模型</strong>、软件分析与深度学习优化。如有学术合作意向，欢迎邮件联系。</p>
+
+<div class="tag-cloud">
+  <span class="research-tag">Large Language Models</span>
+  <span class="research-tag">Software Analysis &amp; Verification</span>
+  <span class="research-tag">Automated Software Engineering</span>
 </div>
-<div class="about-links">
-  {% include author-links.html %}
+
 </div>
 
 <!-- ============================= NEWS ============================= -->
@@ -105,17 +104,16 @@ redirect_from:
 
 # Publications
 
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <div class="badge">In Progress</div>
-    <img src='images/favicon-32x32.png' loading="lazy" alt="publication-thumb">
-  </div>
-  <div class='paper-box-text'>
-    <span class="paper-label">Preprint</span>
-    <a href="https://github.com/wbzuo" class="paper-title">Future Publication Title: Optimizing Large Language Models for Software Engineering Tasks</a>
-    <p class="paper-authors"><strong>Wenbin Zuo</strong>, Co-authors</p>
-    <p class="paper-conf">To be submitted / Under review, 2026</p>
-    <div class="paper-links">
+<div class="pub-item">
+  <div class="pub-venue">Preprint</div>
+  <div class="pub-body">
+    <a class="pub-title" href="https://github.com/wbzuo">Optimizing Large Language Models for Software Engineering Tasks</a>
+    <p class="pub-authors"><strong>Wenbin Zuo</strong>, Co-authors. <span class="pub-conf">Under review, 2026.</span></p>
+    <ul class="pub-highlights">
+      <li>One-line summary of the contribution and why it matters.</li>
+      <li>Add 1–3 short highlights per paper (delete this line if unused).</li>
+    </ul>
+    <div class="pub-links">
       <a href="https://github.com/wbzuo"><i class="fas fa-link"></i> Project</a>
       <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
       <a href="javascript:void(0)" onclick="toggleBibtex('paper1-bib')"><i class="fas fa-quote-right"></i> Cite</a>
