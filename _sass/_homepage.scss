@@ -225,6 +225,13 @@ html { scroll-behavior: smooth; }
 }
 .contact-list a:hover { color: var(--text-muted); }
 
+/* Academic-profile group, separated by a hairline */
+.contact-list--academic {
+    margin-top: 0.7em;
+    padding-top: 0.7em;
+    border-top: 1px solid var(--border-color);
+}
+
 /* --- Section headings --- */
 
 .section-card {
@@ -444,17 +451,6 @@ html { scroll-behavior: smooth; }
 .gh-img--dark { display: none; }
 [data-theme="dark"] .gh-img--light { display: none; }
 [data-theme="dark"] .gh-img--dark { display: block; }
-
-.visitor-map {
-    max-width: 480px;
-    margin: 0.25em 0;
-
-    .visitor-map__title {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        margin-bottom: 10px;
-    }
-}
 
 /* --- Responsive: stack the sidebar above content --- */
 

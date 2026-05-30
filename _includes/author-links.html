@@ -1,7 +1,14 @@
 {% assign author = site.author %}
-<!-- Contact list: icon + readable address/label. Empty _config fields are hidden (!= blank). -->
+<!-- Contact / social links. Empty _config fields are hidden (!= blank). -->
 <ul class="contact-list">
   {% if author.email != blank %}<li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope"></i> {{ author.email }}</a></li>{% endif %}
+  {% if author.github != blank %}<li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github"></i> github.com/{{ author.github }}</a></li>{% endif %}
+  {% if author.linkedin != blank %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin"></i> LinkedIn</a></li>{% endif %}
+  {% if author.twitter != blank %}<li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-twitter"></i> Twitter</a></li>{% endif %}
+</ul>
+
+<!-- Academic profiles -->
+<ul class="contact-list contact-list--academic">
   {% if author.googlescholar != blank %}<li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar"></i> Google Scholar</a></li>{% endif %}
   {% if author.orcid != blank %}<li><a href="{{ author.orcid }}"><i class="ai ai-orcid"></i> ORCID</a></li>{% endif %}
   {% if author.semanticscholar != blank %}<li><a href="{{ author.semanticscholar }}"><i class="ai ai-semantic-scholar"></i> Semantic Scholar</a></li>{% endif %}
@@ -10,8 +17,5 @@
   {% if author.researchgate != blank %}<li><a href="{{ author.researchgate }}"><i class="ai ai-researchgate"></i> ResearchGate</a></li>{% endif %}
   {% if author.acm != blank %}<li><a href="{{ author.acm }}"><i class="ai ai-acm"></i> ACM DL</a></li>{% endif %}
   {% if author.publons != blank %}<li><a href="{{ author.publons }}"><i class="ai ai-publons"></i> Web of Science</a></li>{% endif %}
-  {% if author.github != blank %}<li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github"></i> github.com/{{ author.github }}</a></li>{% endif %}
-  {% if author.linkedin != blank %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin"></i> LinkedIn</a></li>{% endif %}
-  {% if author.twitter != blank %}<li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-twitter"></i> Twitter</a></li>{% endif %}
   {% if author.uri != blank %}<li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link"></i> Website</a></li>{% endif %}
 </ul>

@@ -184,19 +184,4 @@ I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology
 
 </div>
 
-<!-- ============================= VISITOR MAP ============================= -->
-<span class='anchor' id='visitor-map'></span>
-<div class="section-card" markdown="1">
-
-# Visitor Map
-
-<div class="visitor-map">
-  <div class="visitor-map__title">Global Visitor Distribution</div>
-  <script type="text/javascript" id="mapmyvisitors"
-    src="//mapmyvisitors.com/map.js?d=TExqnA3tGu9npMTINv6yTrAzGBWl9pvwiau3Cx5prQg&cl=ffffff&w=a">
-  </script>
-</div>
-
-</div>
-
 <br>
