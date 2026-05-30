@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wbzuo.github.io/sitemap.xml

@@ -9,6 +9,10 @@ title                    : "Wenbin Zuo | Tongji University"
 description              : "Wenbin Zuo is a PhD student in Intelligent Science and Technology at Tongji University, working on visual perception, neuro-symbolic computing, and human-computer interaction."
 og_image                 : "/images/android-chrome-512x512.png"
 repository               : "wbzuo/wbzuo.github.io"
+url                      : "https://wbzuo.github.io"   # absolute base — needed for canonical / og / sitemap / JSON-LD
+baseurl                  : ""
+locale                   : "en_US"
+# google_site_verification : "PASTE_CODE_HERE"   # from Google Search Console (Settings → Ownership) to verify the site
 google_scholar_stats_use_cdn : true
 
 # google analytics
