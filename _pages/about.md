@@ -21,11 +21,11 @@ redirect_from:
 
 # About Me
 
-I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China, advised by Prof. Weiwei Guo (郭炜炜). I received my B.S. in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025.
+I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at [Tongji University](https://www.tongji.edu.cn/), Shanghai, China, advised by [Prof. Weiwei Guo (郭炜炜)](https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm), as a member of the LV Group. I received my B.S. in Software Engineering from [Jiangxi University of Finance and Economics](https://www.jxufe.edu.cn/) in 2025.
 
 My research interests span **visual perception**, **neuro-symbolic computing**, and **human–computer interaction**, among related directions. I am broadly interested in intelligent systems that can perceive, reason, and interact with the world.
 
-<p class="lang-cn">我是左文彬，<a href="https://www.tongji.edu.cn/">同济大学</a>智能科学与技术专业在读博士生，导师为郭炜炜教授。2025 年本科毕业于<a href="https://www.jxufe.edu.cn/">江西财经大学</a>软件工程专业。研究方向主要包括<strong>视觉感知</strong>、<strong>神经符号计算</strong>与<strong>人机交互</strong>等。如有学术合作意向，欢迎邮件联系。</p>
+<p class="lang-cn">我是左文彬，<a href="https://www.tongji.edu.cn/">同济大学</a>智能科学与技术专业在读博士生，导师为<a href="https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm">郭炜炜</a>教授（LV Group）。2025 年本科毕业于<a href="https://www.jxufe.edu.cn/">江西财经大学</a>软件工程专业。研究方向主要包括<strong>视觉感知</strong>、<strong>神经符号计算</strong>与<strong>人机交互</strong>等。如有学术合作意向，欢迎邮件联系。</p>
 
 <div class="tag-cloud">
   <span class="research-tag">Visual Perception</span>
@@ -67,7 +67,7 @@ My research interests span **visual perception**, **neuro-symbolic computing**, 
     <span>2025.09 – 2031.03 (Expected)</span>
     <span>Shanghai, China</span>
   </div>
-  <p class="exp-desc">Focusing on LLMs for automated software engineering and software analysis.</p>
+  <p class="exp-desc">Focusing on visual perception, neuro-symbolic computing, and human–computer interaction.</p>
 </div>
 
 <div class="exp-item">
@@ -93,9 +93,9 @@ My research interests span **visual perception**, **neuro-symbolic computing**, 
   <div class="exp-institution">Tongji University</div>
   <div class="exp-meta-row">
     <span>2025.09 – Present</span>
-    <span>Intelligent Software Engineering Lab</span>
+    <span>LV Group</span>
   </div>
-  <p class="exp-desc">Conducting research on LLM-based code synthesis and testing.</p>
+  <p class="exp-desc">Research on visual perception and neuro-symbolic reasoning.</p>
 </div>
 
 </div>
