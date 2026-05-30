@@ -20,7 +20,7 @@
     --accent: #34507e;
     --highlight-bg: #f5f5f7;
     --accent-blue: var(--accent);
-    --serif: Georgia, Cambria, "Times New Roman", "Songti SC", "Noto Serif SC", serif;
+    --serif: "Source Serif 4", Georgia, Cambria, "Times New Roman", "Songti SC", "Noto Serif SC", serif;
     --nav-h: 52px;
 }
 
@@ -335,6 +335,12 @@ html { scroll-behavior: smooth; }
 }
 
 /* --- Publications: venue badge + body --- */
+
+.pub-note {
+    margin: 0 0 1.3em;
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
 
 .pub-item {
     display: grid;

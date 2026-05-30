@@ -104,6 +104,8 @@ I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology
 
 # Publications
 
+<p class="pub-note">A selection is shown below — see <a href="{{ site.author.googlescholar }}">Google Scholar</a> for the complete list. (<strong>*</strong> denotes equal contribution.)</p>
+
 <div class="pub-item">
   <div class="pub-venue">Preprint</div>
   <div class="pub-body">
