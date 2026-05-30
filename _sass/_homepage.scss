@@ -144,52 +144,23 @@ html { scroll-behavior: smooth; }
     .site-nav__links { display: none; }
 }
 
-/* --- About hero: photo left, intro + contact list right --- */
+/* --- About hero: photo left, intro right; links full-width below --- */
 
 .about-hero {
     display: flex;
     gap: 2em;
     align-items: flex-start;
-    margin-bottom: 3em;
-    padding-bottom: 2.25em;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.75em;
 }
 
-.about-hero .about-aside {
+.about-photo {
     flex: 0 0 210px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.about-hero .about-photo {
     width: 210px;
     height: 210px;
     object-fit: cover;
     border-radius: 12px;
     border: 1px solid var(--border-color);
 }
-
-/* Contact list: icon + address/label, one per line */
-.contact-list {
-    list-style: none;
-    margin: 1.1em 0 0;
-    padding: 0;
-    width: 100%;
-    font-size: 0.88em;
-}
-
-.contact-list li { margin: 0.32em 0; line-height: 1.4; }
-
-.contact-list a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55em;
-    color: var(--text-muted);
-    word-break: break-word;
-    i { width: 1.15em; text-align: center; flex-shrink: 0; }
-}
-.contact-list a:hover { color: var(--text-muted); }
 
 .about-hero .about-body { flex: 1 1 auto; min-width: 0; }
 
@@ -218,11 +189,39 @@ html { scroll-behavior: smooth; }
 
 .about-hero .tag-cloud { margin-top: 0.8em; }
 
+/* Links row below the hero (full width) */
+.about-links {
+    margin-bottom: 3em;
+    padding-bottom: 2.25em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55em 1.5em;
+    font-size: 0.9em;
+}
+
+.contact-list li { margin: 0; line-height: 1.4; }
+
+.contact-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--text-muted);
+    word-break: break-word;
+    i { width: 1.1em; text-align: center; flex-shrink: 0; }
+}
+.contact-list a:hover { color: var(--text-muted); }
+
 @media (max-width: 600px) {
     .about-hero { flex-direction: column; align-items: center; text-align: center; gap: 1.25em; }
-    .about-hero .about-aside { flex-basis: auto; align-items: center; }
-    .about-hero .about-photo { width: 180px; height: 180px; }
-    .contact-list { text-align: left; }
+    .about-photo { flex-basis: auto; width: 180px; height: 180px; }
+    .contact-list { justify-content: center; }
 }
 
 /* --- Section headings --- */

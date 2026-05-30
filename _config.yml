@@ -21,17 +21,21 @@ author:
   bio              : "PhD Student @ Tongji University"
   location         : "Shanghai, China"
   employer         : "Tongji University"
-  googlescholar    : ""
   cv               : ""
   email            : "wbzuo@tongji.edu.cn"
   github           : "wbzuo"
   twitter          : ""
   linkedin         : ""
-  orcid            : ""             # e.g. https://orcid.org/0000-0000-0000-0000
-  dblp             : ""             # e.g. https://dblp.org/pid/XXX/YYY.html
-  semanticscholar  : ""             # e.g. https://www.semanticscholar.org/author/XXX
-  arxiv            : ""             # e.g. https://arxiv.org/a/lastname_f_1
-  researchgate     : ""             # e.g. https://www.researchgate.net/profile/Your-Name
+  # Academic links — "#" are placeholders; replace with your real URLs.
+  # An empty string ("") hides that link entirely.
+  googlescholar    : "#"            # e.g. https://scholar.google.com/citations?user=YOUR_ID
+  orcid            : "#"            # e.g. https://orcid.org/0000-0000-0000-0000
+  semanticscholar  : "#"            # e.g. https://www.semanticscholar.org/author/XXX
+  dblp             : "#"            # e.g. https://dblp.org/pid/XXX/YYY.html
+  arxiv            : "#"            # e.g. https://arxiv.org/a/lastname_f_1
+  researchgate     : "#"            # e.g. https://www.researchgate.net/profile/Your-Name
+  acm              : "#"            # e.g. https://dl.acm.org/profile/XXX
+  publons          : "#"            # Web of Science, e.g. https://www.webofscience.com/wos/author/record/XXX
 
 # Reading Files
 include:

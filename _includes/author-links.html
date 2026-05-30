@@ -8,6 +8,8 @@
   {% if author.dblp != blank %}<li><a href="{{ author.dblp }}"><i class="ai ai-dblp"></i> DBLP</a></li>{% endif %}
   {% if author.arxiv != blank %}<li><a href="{{ author.arxiv }}"><i class="ai ai-arxiv"></i> arXiv</a></li>{% endif %}
   {% if author.researchgate != blank %}<li><a href="{{ author.researchgate }}"><i class="ai ai-researchgate"></i> ResearchGate</a></li>{% endif %}
+  {% if author.acm != blank %}<li><a href="{{ author.acm }}"><i class="ai ai-acm"></i> ACM DL</a></li>{% endif %}
+  {% if author.publons != blank %}<li><a href="{{ author.publons }}"><i class="ai ai-publons"></i> Web of Science</a></li>{% endif %}
   {% if author.github != blank %}<li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github"></i> github.com/{{ author.github }}</a></li>{% endif %}
   {% if author.linkedin != blank %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin"></i> LinkedIn</a></li>{% endif %}
   {% if author.twitter != blank %}<li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-twitter"></i> Twitter</a></li>{% endif %}

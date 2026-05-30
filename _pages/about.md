@@ -18,10 +18,7 @@ redirect_from:
 <!-- ============================= ABOUT (hero: photo left, intro + links right) ============================= -->
 <span class='anchor' id='about-me'></span>
 <div class="about-hero">
-  <div class="about-aside">
-    <img class="about-photo" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
-    {% include author-links.html %}
-  </div>
+  <img class="about-photo" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
   <div class="about-body">
     <h1 class="about-name">{{ site.author.name }}</h1>
     <p class="about-role">{{ site.author.bio }} · {{ site.author.location }}</p>
@@ -32,6 +29,9 @@ redirect_from:
       <span class="research-tag">Automated Software Engineering</span>
     </div>
   </div>
+</div>
+<div class="about-links">
+  {% include author-links.html %}
 </div>
 
 <!-- ============================= NEWS ============================= -->
