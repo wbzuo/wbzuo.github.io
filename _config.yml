@@ -54,6 +54,9 @@ exclude:
   - vendor
   - .sass-cache
   - .jekyll-assets-cache
+  - README.md
+  - GEMINI.md
+  - docs
 keep_files:
   - .git
   - .svn
