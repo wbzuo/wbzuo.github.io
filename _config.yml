@@ -5,6 +5,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
+search_indexing          : false # Set to true when the site is ready to appear in search results.
 title                    : "Wenbin Zuo | Tongji University"
 description              : "Wenbin Zuo is a PhD student in Intelligent Science and Technology at Tongji University, working on visual perception, neuro-symbolic computing, and human-computer interaction."
 og_image                 : "/images/android-chrome-512x512.png"

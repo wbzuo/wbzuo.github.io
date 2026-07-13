@@ -12,7 +12,11 @@
 <meta name="description" content="{{ site.description }}">
 <meta name="author" content="{{ site.author.name }}">
 <meta name="keywords" content="Wenbin Zuo, 左文彬, Tongji University, 同济大学, visual perception, neuro-symbolic computing, human-computer interaction, PhD student, artificial intelligence">
+{% if site.search_indexing %}
 <meta name="robots" content="index, follow">
+{% else %}
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+{% endif %}
 <meta property="og:type" content="profile">
 {% if site.og_image %}<meta property="og:image" content="{{ site.og_image | prepend: site.url }}">{% endif %}
 <meta name="twitter:card" content="summary">
