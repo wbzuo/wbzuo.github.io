@@ -24,9 +24,17 @@ short_bio: >-
     <a href="https://www.jxufe.edu.cn/" target="_blank">Jiangxi University of Finance and Economics</a> in 2025.
   </p>
   <p>
-    I am broadly interested in <strong>visual perception</strong> and <strong>visual reasoning</strong> — how a
-    vision system can move past recognising what is in a scene toward inferring how its parts relate.
-    I am currently reading and building in this area while narrowing down a specific direction.
+    My research is on <strong>neuro-symbolic reasoning for long-horizon embodied tasks</strong>:
+    how an agent in an unknown environment can decompose a high-level instruction, decide what to
+    do next, and keep checking that its plan still holds as the world changes underneath it.
+    The gap I care about is between task-level symbolic reasoning and the noisy perception that
+    has to ground it — detection and tracking are not a fixed pipeline but fallible, costly
+    actions a reasoner can choose to invoke.
+  </p>
+  <p>
+    I am building this out in simulation: a task environment with an explicit completion metric,
+    a temporal task specification with planning and runtime monitoring, and a perception interface
+    that exposes detection and tracking as grounded predicates with uncertainty.
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
@@ -49,7 +57,9 @@ education:
 experience:
 - name: Tongji University
   logo: /assets/images/badges/tongji.png
-  position: Research Assistant
+  position: >-
+    Research Assistant <br/>
+    Neuro-symbolic task reasoning and perception grounding
   date: Sep. 2025 - present
 
 awards:

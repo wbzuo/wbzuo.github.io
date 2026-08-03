@@ -18,7 +18,7 @@ url: "https://wbzuo.github.io"
 baseurl: ""          # 部署在用户主页根路径，留空
 
 # SEO 描述，出现在搜索结果摘要和分享卡片里
-description: "Wenbin Zuo is a PhD student at Tongji University, Shanghai, working on visual perception and visual reasoning."
+description: "Wenbin Zuo is a PhD student at Tongji University, Shanghai, working on neuro-symbolic reasoning for long-horizon embodied tasks and the perception that grounds it."
 
 # 不参与构建的目录
 exclude:
