@@ -39,6 +39,15 @@ python3 -m http.server 4000 -d _site
 - 修复：论文数为 0 时仍渲染出只有标题的空卡片
 - 新增：`experience_card` 的 Academic Service 板块
 
+## 引用数显示
+
+新模板通过 Semantic Scholar 拉取单篇论文的引用数：在论文的 front matter 里填
+`semantic_scholar_id`，前端会自动查询并显示。
+
+原 academicpages 的 Google Scholar 爬虫（每日 cron + `google-scholar-stats`
+分支）已删除——新模板不读它的输出，且远端从未生成过该分支。需要总引用数徽章
+的话可以从 git 历史恢复：`git log --all -- google_scholar_crawler`。
+
 ## 许可
 
 模板部分见 `LICENSE`（MIT）。内容与图片版权归左文彬所有；校徽为两校资产。
