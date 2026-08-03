@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ page.title }} - {{ site.data.profile.navbar_name }}</title>
 
+    <!-- Theme must be resolved before the first paint, otherwise a dark-mode
+         visitor gets a white flash on every navigation. Inline and synchronous
+         on purpose — a deferred script runs too late. -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved === 'dark' ||
+                    (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+            } catch (e) { /* private mode: fall through to light */ }
+        })();
+    </script>
+
     <!-- SEO / 分享卡片。上游模板没有这一段，搜索结果和社交预览会只剩标题。 -->
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.data.profile.primary_name }}">
@@ -62,6 +76,7 @@
         });
     </script>
     <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/theme_toggle.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/bubble_visual_hash.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/semantic_scholar_citation_count.js' | relative_url }}"></script>
 </body>
