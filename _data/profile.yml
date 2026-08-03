@@ -4,7 +4,7 @@ navbar_name: "Wenbin Zuo"
 
 positions:
 - name: Ph.D. Student in Intelligent Science and Technology
-- name: Tongji University
+- name: Tongji University &middot; LV Group
   logo: /assets/images/badges/tongji.png
 
 email: "wbzuo@tongji.edu.cn"
@@ -19,7 +19,9 @@ short_bio_text_justify: false
 short_bio: >-
   <p>
     I am Wenbin Zuo, a first-year PhD student in Intelligent Science and Technology at
-    <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>, Shanghai, China.
+    <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>, Shanghai, China,
+    advised by <a href="https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm" target="_blank">Prof. Weiwei Guo</a>
+    as a member of the LV Group.
     I received my B.S. in Software Engineering from
     <a href="https://www.jxufe.edu.cn/" target="_blank">Jiangxi University of Finance and Economics</a> in 2025.
   </p>
@@ -58,7 +60,7 @@ experience:
 - name: Tongji University
   logo: /assets/images/badges/tongji.png
   position: >-
-    Research Assistant <br/>
+    Research Assistant, LV Group <br/>
     Neuro-symbolic task reasoning and perception grounding
   date: Sep. 2025 - present
 
