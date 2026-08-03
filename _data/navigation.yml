@@ -1,20 +1,5 @@
-# main nav links — order mirrors the section order in _pages/about.md.
-# Pure in-page anchors (#id) so clicks never reload / open a new page.
-main:
-  - title: "About"
-    url: "#about-me"
-
-  - title: "News"
-    url: "#news"
-
-  - title: "Education"
-    url: "#education"
-
-  - title: "Experience"
-    url: "#research-experience"
-
-  - title: "Publications"
-    url: "#publications"
-
-  - title: "Honors"
-    url: "#honors-and-awards"
+# 导航栏。`name` 必须和页面 front matter 里的 navbar_title 一致，
+# 当前页才会高亮。现在只有一个首页。
+pages:
+- name: Home
+  url: /

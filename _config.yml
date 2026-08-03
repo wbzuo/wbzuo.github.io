@@ -1,115 +1,56 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your entire site.
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site Settings
-search_indexing          : false # Set to true when the site is ready to appear in search results.
-title                    : "Wenbin Zuo | Tongji University"
-description              : "Wenbin Zuo is a PhD student in Intelligent Science and Technology at Tongji University, working on visual perception, neuro-symbolic computing, and human-computer interaction."
-og_image                 : "/images/android-chrome-512x512.png"
-repository               : "wbzuo/wbzuo.github.io"
-url                      : "https://wbzuo.github.io"   # absolute base — needed for canonical / og / sitemap / JSON-LD
-baseurl                  : ""
-locale                   : "en_US"
-# google_site_verification : "PASTE_CODE_HERE"   # from Google Search Console (Settings → Ownership) to verify the site
-google_scholar_stats_use_cdn : true
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+# 站点地址。url + baseurl 供 absolute_url 使用（SEO / og:image 需要）。
+url: "https://wbzuo.github.io"
+baseurl: ""          # 部署在用户主页根路径，留空
 
-# google analytics
-google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
+# 搜索引擎收录。true = 输出 noindex，主页不进搜索结果。
+# personal-site 分支上是主动撤出状态，这里沿用；想被收录时改成 false。
+noindex: true
 
-# Site Author
-author:
-  name             : "Wenbin Zuo (左文彬)"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "PhD Student in Intelligent Science and Technology"
-  location         : "Shanghai, China"
-  employer         : "Tongji University"
-  cv               : ""
-  email            : "wbzuo@tongji.edu.cn"
-  github           : "wbzuo"
-  twitter          : ""
-  linkedin         : ""
-  # Academic links — "#" are placeholders; replace with your real URLs.
-  # An empty string ("") hides that link entirely.
-  googlescholar    : "#"            # e.g. https://scholar.google.com/citations?user=YOUR_ID
-  orcid            : "#"            # e.g. https://orcid.org/0000-0000-0000-0000
-  semanticscholar  : "#"            # e.g. https://www.semanticscholar.org/author/XXX
-  dblp             : "#"            # e.g. https://dblp.org/pid/XXX/YYY.html
-  arxiv            : "#"            # e.g. https://arxiv.org/a/lastname_f_1
-  researchgate     : "#"            # e.g. https://www.researchgate.net/profile/Your-Name
-  acm              : "#"            # e.g. https://dl.acm.org/profile/XXX
-  publons          : "#"            # Web of Science, e.g. https://www.webofscience.com/wos/author/record/XXX
+# SEO 描述，出现在搜索结果摘要和分享卡片里
+description: "Wenbin Zuo is a PhD student at Tongji University, Shanghai, working on neuro-symbolic reasoning for long-horizon embodied tasks and the perception that grounds it."
 
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-  - files
+# 不参与构建的目录
 exclude:
   - google_scholar_crawler
+  - README.md
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor
-  - .sass-cache
-  - .jekyll-assets-cache
-  - README.md
-  - GEMINI.md
-  - docs
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Conversion
+# Build settings
 markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Defaults
-defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: default
-      author_profile: true
-
-# Plugins
 plugins:
-  - jekyll-paginate
+  - jekyll-email-protect
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
 
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# timezone: Asia/Shanghai
+
+collections:
+  - publications
+  - news

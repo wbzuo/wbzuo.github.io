@@ -1,0 +1,9 @@
+homepage:
+  show_experience: true
+  show_news: true
+  show_selected_publications: true
+  num_news: 10
+
+# 页脚文字。
+footer_text: >-
+  &copy; 2026 Wenbin Zuo

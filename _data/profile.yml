@@ -1,0 +1,76 @@
+primary_name: "Wenbin Zuo"
+secondary_name: "左文彬"
+navbar_name: "Wenbin Zuo"
+
+positions:
+- name: Ph.D. Student in Intelligent Science and Technology
+- name: Tongji University &middot; LV Group
+  logo: /assets/images/badges/tongji.png
+
+email: "wbzuo@tongji.edu.cn"
+# cv_link: /assets/cv/CV_Wenbin_Zuo.pdf      # 放入 PDF 后取消注释
+# gscholar: YOUR_SCHOLAR_ID                  # 有 Scholar 账号后取消注释
+github: wbzuo
+# twitter:
+# linkedin:
+# orcid:
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at
+    <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>, Shanghai, China,
+    advised by <a href="https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm" target="_blank">Prof. Weiwei Guo (郭炜炜)</a>,
+    as a member of the LV Group. I received my B.S. in Software Engineering from
+    <a href="https://www.jxufe.edu.cn/" target="_blank">Jiangxi University of Finance and Economics</a> in 2025.
+  </p>
+  <p>
+    My research interests span <strong>visual perception</strong>, <strong>neuro-symbolic computing</strong>,
+    and <strong>human–computer interaction</strong>, among related directions. I am broadly interested in
+    intelligent systems that can perceive, reason, and interact with the world — in particular, how
+    task-level symbolic reasoning can be grounded in perception that is noisy, costly and fallible.
+  </p>
+  <p class="text-muted">
+    我是左文彬，<a href="https://www.tongji.edu.cn/" target="_blank">同济大学</a>智能科学与技术专业在读博士生，
+    导师为 <a href="https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm" target="_blank">郭炜炜</a> 教授（LV Group）。
+    2025 年本科毕业于 <a href="https://www.jxufe.edu.cn/" target="_blank">江西财经大学</a>软件工程专业。
+    研究方向主要包括视觉感知、神经符号计算与人机交互等。如有学术合作意向，欢迎邮件联系。
+  </p>
+
+portrait_url: /assets/images/photos/portrait.jpg
+# portrait_caption: 头像下方的说明文字，不需要就保持注释
+
+education:
+- name: Tongji University
+  logo: /assets/images/badges/tongji.png
+  position: >-
+    Ph.D. in Intelligent Science and Technology <br/>
+    Shanghai, China
+  date: Sep. 2025 - Mar. 2031 (Expected)
+- name: Jiangxi University of Finance and Economics
+  logo: /assets/images/badges/jxufe.png
+  position: >-
+    B.S. in Software Engineering <br/>
+    Jiangxi, China
+  date: Sep. 2021 - Jul. 2025
+
+experience:
+- name: Tongji University
+  logo: /assets/images/badges/tongji.png
+  position: >-
+    Research Assistant, LV Group <br/>
+    Visual perception and neuro-symbolic reasoning
+  date: Sep. 2025 - present
+
+awards:
+- name: Outstanding Graduate Award, Jiangxi University of Finance and Economics
+  date: 2025
+- name: University-level Scholarships
+  date: 2021 - 2025
+
+# 学术服务。整块注释掉就不渲染。
+# service:
+# - name: Reviewer, Conference Name
+#   date: 2027
+# - name: Student Volunteer, Conference Name
+#   date: 2026

@@ -1,0 +1,184 @@
+@charset "utf-8";
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    padding-top: 5.0rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 0.8rem!important;
+}
+
+.card-img-overlay {
+    border-radius: 0.8rem!important;
+}
+
+.rounded-xl {
+    border-radius: 0.8rem!important;
+}
+
+.rounded-xl-bottom {
+    border-bottom-right-radius: 0.8rem !important;
+    border-bottom-left-radius: 0.8rem !important;
+}
+
+.rounded-xl-top {
+    border-top-left-radius: 0.8rem !important;
+    border-top-right-radius: 0.8rem !important;
+}
+
+
+.text-profile-position {
+    font-weight: 400;
+}
+
+.text-profile-bio {
+    /* font-family: "Raleway"; */
+    font-weight: 400;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.inline-badge {
+    height: 16px;
+    vertical-align: -10%;
+    margin-right: 2px;
+    line-break: unset;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+.cover-image {
+    width: 180px;
+    max-height: 120px;
+}
+
+.abstract-body {
+    min-height: 100px;
+}
+
+img.lazy {
+    background-image: url('images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50px 50px;
+    min-height: 80px;
+}
+
+div.lazy {
+    background-image: url('images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50px 50px;
+    min-height: 80px;
+}
+
+.badge-publication {
+    font-size: 100%;
+}
+
+.email-text {
+    font-family: Source Code Pro, monospace;
+}
+
+
+/* ==========================================================================
+   Dark mode
+   --------------------------------------------------------------------------
+   The upstream template ships light-only and paints straight onto Bootstrap's
+   .bg-white / .text-muted / .border-* utilities. Rather than fork Bootstrap,
+   the handful of utilities this page actually uses are re-pointed at custom
+   properties, and [data-theme="dark"] swaps the values.
+
+   The attribute lives on <html>, not <body>: the canvas background comes from
+   the root element, and putting it on <body> leaves a light band below short
+   pages.
+   ========================================================================== */
+
+:root {
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --text: #212529;
+    --text-muted: #6c757d;
+    --border: #dee2e6;
+    --link: #0d6efd;
+    --navbar: rgba(255, 255, 255, 0.6);
+    --shadow: rgba(0, 0, 0, 0.075);
+}
+
+html[data-theme="dark"] {
+    --bg: #0f1216;
+    --surface: #181c22;
+    --text: #e6e8ea;
+    --text-muted: #9aa4af;
+    --border: #2b313a;
+    --link: #6ea8fe;
+    --navbar: rgba(24, 28, 34, 0.72);
+    --shadow: rgba(0, 0, 0, 0.45);
+}
+
+html { background-color: var(--bg); }
+
+body {
+    background-color: var(--bg) !important;
+    color: var(--text);
+}
+
+.bg-white,
+.card { background-color: var(--surface) !important; }
+
+.bg-light { background-color: var(--bg) !important; }
+
+.text-body { color: var(--text) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+.border-top,
+.border-bottom,
+.border-gray,
+.card,
+.footer { border-color: var(--border) !important; }
+
+.shadow-sm { box-shadow: 0 .125rem .25rem var(--shadow) !important; }
+
+a { color: var(--link); }
+a:hover { color: var(--link); }
+
+.navbar { background-color: var(--navbar) !important; }
+.navbar-brand,
+.navbar .nav-link { color: var(--text) !important; }
+.navbar .nav-item.active .nav-link { color: var(--link) !important; }
+.navbar-toggler { color: var(--text) !important; border-color: var(--border) !important; }
+
+/* KaTeX renders formulas as text; it inherits colour but its own rules win. */
+html[data-theme="dark"] .katex { color: var(--text); }
+
+/* Publication covers are photographs — knock the glare back a little. */
+html[data-theme="dark"] .cover-image,
+html[data-theme="dark"] .card-img,
+html[data-theme="dark"] img.lazy { filter: brightness(0.88); }
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: 0;
+    padding: 0.25rem 0.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    line-height: 1;
+}
+.theme-toggle:hover { color: var(--link); }
+
+@media (prefers-reduced-motion: no-preference) {
+    body { transition: background-color .25s ease, color .25s ease; }
+}
