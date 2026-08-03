@@ -1,0 +1,11 @@
+# 作者显示规则。key 要和论文 front matter 里 authors 列表中的名字完全一致。
+#   bold: true   把自己的名字加粗（学术主页惯例）
+#   url:         给合作者加主页链接
+#   name:        显示名与 key 不同时使用（同名不同机构时用得上）
+
+"Wenbin Zuo":
+  bold: true
+
+# 合作者示例，按需增删：
+# "Co-author Name":
+#   url: https://their-homepage.example.com

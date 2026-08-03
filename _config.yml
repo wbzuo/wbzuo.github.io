@@ -1,99 +1,51 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your entire site.
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site Settings
-title                    : "Wenbin Zuo | Tongji University"
-description              : "Wenbin Zuo is a PhD student at Tongji University, focusing on LLMs for Software Engineering and Intelligent Software Analysis."
-og_image                 : "/images/android-chrome-512x512.png"
-repository               : "wbzuo/wbzuo.github.io"
-google_scholar_stats_use_cdn : true
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+# 站点地址。url + baseurl 供 absolute_url 使用（SEO / og:image 需要）。
+url: "https://wbzuo.github.io"
+baseurl: ""          # 部署在用户主页根路径，留空
 
-# google analytics
-google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
+# SEO 描述，出现在搜索结果摘要和分享卡片里
+description: "Wenbin Zuo is a PhD student at Tongji University, Shanghai, working on visual perception and visual reasoning."
 
-# Site Author
-author:
-  name             : "Wenbin Zuo"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "PhD Student @ Tongji University"
-  location         : "Shanghai, China"
-  employer         : "Tongji University"
-  googlescholar    : "https://scholar.google.com/citations?user=YOUR_ID_HERE"
-  cv               : "assets/files/CV_Wenbin_Zuo.pdf"
-  email            : "wbzuo02@gmail.com"
-  github           : "wbzuo"
-  twitter          : ""
-  linkedin         : ""
-  orcid            : ""
-
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-  - files
+# 不参与构建的目录
 exclude:
   - google_scholar_crawler
+  - README.md
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor
-  - .sass-cache
-  - .jekyll-assets-cache
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Conversion
+# Build settings
 markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Defaults
-defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: default
-      author_profile: true
-
-# Plugins
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+  - jekyll-email-protect
 
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# timezone: Asia/Shanghai
+
+collections:
+  - publications
+  - news
