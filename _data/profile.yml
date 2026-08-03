@@ -18,25 +18,23 @@ github: wbzuo
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    I am Wenbin Zuo, a first-year PhD student in Intelligent Science and Technology at
+    I am Wenbin Zuo (左文彬), a PhD student in Intelligent Science and Technology at
     <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>, Shanghai, China,
-    advised by <a href="https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm" target="_blank">Prof. Weiwei Guo</a>
-    as a member of the LV Group.
-    I received my B.S. in Software Engineering from
+    advised by <a href="https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm" target="_blank">Prof. Weiwei Guo (郭炜炜)</a>,
+    as a member of the LV Group. I received my B.S. in Software Engineering from
     <a href="https://www.jxufe.edu.cn/" target="_blank">Jiangxi University of Finance and Economics</a> in 2025.
   </p>
   <p>
-    My research is on <strong>neuro-symbolic reasoning for long-horizon embodied tasks</strong>:
-    how an agent in an unknown environment can decompose a high-level instruction, decide what to
-    do next, and keep checking that its plan still holds as the world changes underneath it.
-    The gap I care about is between task-level symbolic reasoning and the noisy perception that
-    has to ground it — detection and tracking are not a fixed pipeline but fallible, costly
-    actions a reasoner can choose to invoke.
+    My research interests span <strong>visual perception</strong>, <strong>neuro-symbolic computing</strong>,
+    and <strong>human–computer interaction</strong>, among related directions. I am broadly interested in
+    intelligent systems that can perceive, reason, and interact with the world — in particular, how
+    task-level symbolic reasoning can be grounded in perception that is noisy, costly and fallible.
   </p>
-  <p>
-    I am building this out in simulation: a task environment with an explicit completion metric,
-    a temporal task specification with planning and runtime monitoring, and a perception interface
-    that exposes detection and tracking as grounded predicates with uncertainty.
+  <p class="text-muted">
+    我是左文彬，<a href="https://www.tongji.edu.cn/" target="_blank">同济大学</a>智能科学与技术专业在读博士生，
+    导师为 <a href="https://faculty.tongji.edu.cn/guoweiwei/zh_CN/index.htm" target="_blank">郭炜炜</a> 教授（LV Group）。
+    2025 年本科毕业于 <a href="https://www.jxufe.edu.cn/" target="_blank">江西财经大学</a>软件工程专业。
+    研究方向主要包括视觉感知、神经符号计算与人机交互等。如有学术合作意向，欢迎邮件联系。
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
@@ -48,7 +46,7 @@ education:
   position: >-
     Ph.D. in Intelligent Science and Technology <br/>
     Shanghai, China
-  date: Sep. 2025 - present
+  date: Sep. 2025 - Mar. 2031 (Expected)
 - name: Jiangxi University of Finance and Economics
   logo: /assets/images/badges/jxufe.png
   position: >-
@@ -61,7 +59,7 @@ experience:
   logo: /assets/images/badges/tongji.png
   position: >-
     Research Assistant, LV Group <br/>
-    Neuro-symbolic task reasoning and perception grounding
+    Visual perception and neuro-symbolic reasoning
   date: Sep. 2025 - present
 
 awards:

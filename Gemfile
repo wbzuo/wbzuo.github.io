@@ -20,6 +20,8 @@ gem "jekyll", "~> 3.9"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-email-protect"
+  # robots.txt 声明了 sitemap，没有这个插件那个地址是 404
+  gem "jekyll-sitemap"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -20,6 +20,12 @@
         })();
     </script>
 
+    <!-- 搜索引擎收录开关。personal-site 分支上主动设了 noindex 把主页撤出搜索，
+         这里沿用。想重新被收录时，把 _config.yml 的 noindex 改成 false。 -->
+    {% if site.noindex %}
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    {% endif %}
+
     <!-- SEO / 分享卡片。上游模板没有这一段，搜索结果和社交预览会只剩标题。 -->
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.data.profile.primary_name }}">

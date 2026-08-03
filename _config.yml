@@ -17,6 +17,10 @@
 url: "https://wbzuo.github.io"
 baseurl: ""          # 部署在用户主页根路径，留空
 
+# 搜索引擎收录。true = 输出 noindex，主页不进搜索结果。
+# personal-site 分支上是主动撤出状态，这里沿用；想被收录时改成 false。
+noindex: true
+
 # SEO 描述，出现在搜索结果摘要和分享卡片里
 description: "Wenbin Zuo is a PhD student at Tongji University, Shanghai, working on neuro-symbolic reasoning for long-horizon embodied tasks and the perception that grounds it."
 
@@ -31,6 +35,7 @@ exclude:
 markdown: kramdown
 plugins:
   - jekyll-email-protect
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
